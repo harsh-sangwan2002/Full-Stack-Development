@@ -40,4 +40,4 @@ Live Demo – Click here to see the project in action.
 Feel free to fork this repository, submit issues, or contribute by submitting pull requests. Contributions are welcome!
 
 ## 📬 Contact
-[GitHub](https://github.com/harsh-sangwan2003)
+[GitHub](https://github.com/harsh-sangwan2002)
