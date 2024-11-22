@@ -15,8 +15,6 @@ Welcome to the **HTML-CSS Project Repository**! This repository showcases a coll
 
 ```bash
 ├── /HTML-CSS/
-│   ├── 01-essential-html
-│   
 ```
 
 ## ✨ Features
