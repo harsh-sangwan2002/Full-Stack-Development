@@ -15,8 +15,6 @@ Welcome to the **HTML-CSS Project Repository**! This repository showcases a coll
 
 ```bash
 ├── /HTML-CSS/
-│   ├── 01-essential-html
-│   
 ```
 
 ## ✨ Features
@@ -28,7 +26,7 @@ Welcome to the **HTML-CSS Project Repository**! This repository showcases a coll
 ## 🚀 Getting Started
 1. Clone the repository:
 ```bash
-git clone https://github.com/harsh-sangwan2002/html-css.git
+git clone https://github.com/harsh-sangwan2002/Full-Stack-Development.git
 ```
 
 2. Launch index.html in your browser. 
