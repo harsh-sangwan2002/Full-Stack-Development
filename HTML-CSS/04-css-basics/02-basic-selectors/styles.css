@@ -1,0 +1,43 @@
+html,body{
+    font-family: Arial, Helvetica, sans-serif;
+    /* Border is not inherited */
+    border:3px solid red;
+}
+
+/* Type Selectors */
+h2{
+    color:red;
+    font-size:50px;
+}
+a{
+    color:blue;
+    text-decoration: none;
+}
+
+/* Class Selectors */
+.sporty{
+    color:red;
+}
+.casual{
+    color:blue;
+}
+.formal{
+    color:brown;
+}
+
+/* ID Selectors */
+#container{
+    max-width:600px;
+    margin:100px auto;
+    padding:20px;
+}
+
+/* Multiple Selectors */
+p,.sporty,.casual{
+    font-size:35px;
+}
+
+/* Descendant Selectors */
+/* #container p{
+    background-color: blue;
+} */
