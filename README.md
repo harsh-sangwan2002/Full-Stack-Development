@@ -1,13 +1,17 @@
-# HTML-CSS Project Repository 🌐
+# Full-Stack Development Repository 🌐
 
-Welcome to the **HTML-CSS Project Repository**! This repository showcases a collection of web development projects focusing on modern and responsive web design using **HTML** and **CSS**.
+Welcome to the **Full-Stack Development**! This repository showcases a collection of web development projects focusing on modern and responsive web design using **HTML**, **CSS**, **JavaScript**, **TypeScript**, **React**, **Node.js**, **Express** .
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **HTML5**: Semantic markup for a structured and accessible web.
-- **CSS3**: Responsive layouts, animations, and custom designs.
+- **HTML5**: Semantic markup for structured and accessible web content.
+- **CSS3**: Crafting responsive layouts, animations, and modern designs.
+- **JavaScript**: Enabling interactivity and dynamic web experiences.
+- **TypeScript**: Adding type safety and scalability to JavaScript projects.
+- **React**: Building dynamic, component-based user interfaces efficiently.
+- **Node.js**: Developing robust and scalable server-side applications.
 
 ---
 
@@ -15,6 +19,10 @@ Welcome to the **HTML-CSS Project Repository**! This repository showcases a coll
 
 ```bash
 ├── /HTML-CSS/
+├── /JavaScript/
+├── /TypeScript/
+├── /React/
+├── /Node.js/
 ```
 
 ## ✨ Features
