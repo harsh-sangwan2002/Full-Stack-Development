@@ -1,0 +1,38 @@
+body{
+    font-family: 'Lato',sans-serif;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.header{
+    background-color: #5e175b;
+    color:#fff;
+}
+.header h1{
+    text-align: center;
+    font-size:40px;
+    text-indent: 20px;
+}
+
+.main-menu{
+    background-color: #f4f4f4;
+    text-transform: uppercase;
+    text-indent: 10px;
+}
+ul{
+    list-style: none;
+    padding:0;
+}
+a{
+    text-decoration: none;
+    color:rebeccapurple;
+}
+a:hover{
+    color:red;
+}
+
+.lead{
+    font-weight: bold;
+    font-size:20px;
+    color:rebeccapurple;
+}
