@@ -30,6 +30,14 @@ Welcome to the **Full-Stack Development**! This repository showcases a collectio
 - **Modern UI/UX**: Clean and interactive design patterns.
 - **Animations**: Smooth transitions and hover effects.
 - **Cross-browser Compatibility**: Works seamlessly across popular browsers.
+- **Component-based Architecture**: Efficient and reusable components using React.
+- **State Management**: Seamless handling of application state with tools like Redux or Context API.
+- **Server-side Rendering (SSR)**: Faster load times and improved SEO using React and Node.js.
+- **RESTful APIs**: Built robust APIs using Node.js and Express for seamless client-server communication.
+- **Middleware Integration**: Enhanced request processing and security with Express middleware.
+- **Real-time Data**: Implemented real-time features with WebSockets and Node.js.
+- **Scalability**: Efficient backend architecture with Node.js for handling high traffic.
+
 
 ## 🚀 Getting Started
 1. Clone the repository:
