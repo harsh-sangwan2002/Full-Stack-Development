@@ -1,5 +1,10 @@
-body {
-  font-family: 'Poppins', sans-serif;
+/* CSS Reset */
+*{
+  margin:0;
+  padding:0;
+  border:0;
+  font-family: inherit;
+  box-sizing: border-box;
 }
 
 body {
@@ -10,5 +15,5 @@ body {
   background: coral;
   max-width: 400px;
   margin: 20px;
-  padding: 20px;
+  padding: 200px;
 }
