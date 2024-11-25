@@ -4,6 +4,7 @@ body {
 
 .flex-container {
   display: flex;
+  flex-direction: row-reverse;
 }
 
 .flex-item {
@@ -11,4 +12,29 @@ body {
   border: 1px solid black;
   padding: 30px;
   flex: 1;
+}
+
+.item-1{
+  order:5;
+}
+
+.item-2{
+  order:6;
+}
+
+.item-3{
+  order:4;
+}
+
+
+.item-4{
+  order:1;
+}
+
+.item-5{
+  order:2;
+}
+
+.item-6{
+  order:3;
 }
