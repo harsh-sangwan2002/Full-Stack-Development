@@ -46,7 +46,8 @@ li {
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
-  flex: 1; /* Make the card take up equal space */
+  flex: 1;
+  /* Make the card take up equal space */
   text-align: center;
   margin-bottom: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -64,21 +65,17 @@ li {
 
 /* Heading Background Gradients -  https://cssgradient.io */
 .card-pro h2 {
-  background: linear-gradient(
-    90deg,
-    rgba(194, 227, 255, 1) 13%,
-    rgba(180, 118, 254, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(194, 227, 255, 1) 13%,
+      rgba(180, 118, 254, 1) 100%);
   color: #fff;
 }
 
 .card-enterprise h2 {
   color: #fff;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 177, 194, 1) 13%,
-    rgba(255, 203, 114, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 177, 194, 1) 13%,
+      rgba(255, 203, 114, 1) 100%);
 }
 
 /* Price */
@@ -148,4 +145,22 @@ li {
 .card ul i {
   color: #98ca9e;
   margin-right: 10px;
+}
+
+/* Media Queries */
+@media screen and (max-width:768px){
+  .pricing{
+    flex-direction: column;
+  }
+
+  .container{
+    margin:2rem;
+    padding:40px 30px;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:1400px) {
+  .container{
+    margin: 2rem;
+  }
 }
