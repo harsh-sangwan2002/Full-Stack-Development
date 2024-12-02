@@ -43,3 +43,10 @@ y = 40; // redefinition
 /************************ const -> Cannot be re-declared and re-assigned ************************/
 const z = 50;
 console.log(z);
+
+let ax = 10;
+{
+    let ax = 20;
+    console.log(ax);
+}
+console.log(ax);
