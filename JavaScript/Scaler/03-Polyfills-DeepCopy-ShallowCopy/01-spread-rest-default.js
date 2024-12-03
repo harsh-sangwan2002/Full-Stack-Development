@@ -16,7 +16,7 @@ fn("Hi","Hello");
 // console.log("Actual array: ", arr);
 // console.log("Modified array: ", arr2);
 
-/************************* Deep Copy (Partial)
+/************************* Shallow Copy
  * Spread Operator: Copies values and ref's from one array to another only upto first level 
  * *************************/
 let arr = [1,2,[3,4],5,6];
