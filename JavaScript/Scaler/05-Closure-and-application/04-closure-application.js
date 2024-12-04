@@ -1,3 +1,4 @@
+// Function Currying
 /********************* Question-1 ***********************/
 function counter(a) {
     let count = 1;
