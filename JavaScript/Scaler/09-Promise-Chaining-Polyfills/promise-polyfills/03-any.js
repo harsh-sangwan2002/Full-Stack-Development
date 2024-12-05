@@ -12,7 +12,6 @@ Promise.myPromiseAny = function (arrayOfPromises) {
             try {
 
                 const result = await promise;
-                resolve(result);
 
                 if (resolved)
                     resolve(result);

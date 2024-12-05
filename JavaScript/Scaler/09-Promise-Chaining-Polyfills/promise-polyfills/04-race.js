@@ -11,7 +11,6 @@ Promise.myPromiseRace = function (arrayOfPromises) {
 
         arrayOfPromises.forEach(async (promise) => {
             try {
-
                 const res = await promise;
                 resolve(res);
             } catch (err) {
