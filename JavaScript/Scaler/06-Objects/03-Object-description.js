@@ -1,6 +1,4 @@
-let obj = {
-    age:26
-};
+let obj = {};
 
 Object.defineProperty(obj,'name',{
     value:"Harsh",
@@ -23,11 +21,11 @@ Object.defineProperty(obj,'tes3',{
     enumerable:false
 });
 
-console.log(obj);
+// console.log(obj);
 
-for(let key in obj){
-    console.log(key,obj[key]);
-}
+// for(let key in obj){
+//     console.log(key,obj[key]);
+// }
 
 /*
 If we create any member using defineProperty(objName, <key>, {
@@ -40,7 +38,7 @@ if value of enumerable is true ypu are allowed to interate over it.
 
 but in both cases you can't not override the value.
 */
-obj.age = 25;
+obj.name = 'Steve';
 console.log(obj);
 
 for(let key in obj){
@@ -52,7 +50,6 @@ for(let key in obj){
  1. to declare private key which is not overridden and iterable.
 
  Example: 
- a. you build a credit card class which have a key amount and it is obly changed by function call when payment is done.
+ a. you build a credit card class which have a key amount and it is only changed by function call when payment is done.
  b. It is used in network call when you are preperaing you response before network call and reponse have metadata information which is not suppose to be iterable and changable.
- 
 */
