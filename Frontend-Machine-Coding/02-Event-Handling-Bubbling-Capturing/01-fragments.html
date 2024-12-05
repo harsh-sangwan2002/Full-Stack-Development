@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>List Item</h1>
+    <ul id="list-container">
+
+    </ul>
+</body>
+
+<script>
+    let ul = document.querySelector('ul');
+    let N = 100000;
+
+    // TC : O(N^2)
+    // for (let i = 0; i <= N; i++) {
+
+    //     // 1.Creation
+    //     let li = document.createElement('li');
+
+    //     // 2.Update
+    //     li.textContent = i;
+
+    //     // 3.Append
+    //     ul.appendChild(li);
+    // }
+
+    //  TC : O(N)
+    let container = document.createDocumentFragment();
+    for(let i=0; i<=N; i++){
+
+        // 1.Creation
+        let li = document.createElement('li');
+
+        // 2.Update
+        li.textContent = i;
+
+        // 3.Append
+        container.appendChild(li); // TC : O(1)
+    }
+    ul.appendChild(container); // TC : O(1)
+
+</script>
+
+</html>
