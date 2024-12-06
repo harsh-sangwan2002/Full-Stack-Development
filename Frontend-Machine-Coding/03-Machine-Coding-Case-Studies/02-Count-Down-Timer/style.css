@@ -1,0 +1,101 @@
+input[type="number"] {
+    -moz-appearance: textfield;
+    /* For Firefox */
+    -webkit-appearance: none;
+    /* For Chrome, Safari, Edge */
+    appearance: none;
+    /* Standard property */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    /* For Chrome, Safari, Edge */
+    margin: 0;
+    /* Optional: Remove extra margin */
+}
+
+body {
+    background: linear-gradient(to right, lightblue, lightgreen);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem auto;
+    font-family: 'Arial', sans-serif;
+}
+
+.hero {
+    align-self: center;
+}
+
+.input-container {
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+input {
+    width: 60px;
+    height: 40px;
+    margin: 5px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #f8f9fa;
+    /* Light gray */
+    border: 2px solid #dcdfe6;
+    /* Soft gray border */
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #80bdff;
+    /* Light blue border on focus */
+    box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+    /* Subtle glow */
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    /* White text */
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    /* Purple to blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    /* Slight scaling */
+    filter: brightness(1.2);
+    /* Brightness increase */
+}
+
+button:active {
+    transform: scale(0.95);
+    /* Shrink slightly on click */
+    filter: brightness(0.9);
+    /* Darken slightly */
+}
+
+button.reset {
+    background-color: #e74c3c;
+    /* Vivid red */
+}
+
+button.reset:hover {
+    background-color: #c0392b;
+    /* Darker red */
+}

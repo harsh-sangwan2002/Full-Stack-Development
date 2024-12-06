@@ -38,25 +38,28 @@
 
 <body>
     <div class="container">
-        <h1>Count Down Timer</h1>
-        <h2 class="timer-label-hrs">Hours</h2>
-        <h2 class="timer-label-min">Minutes</h2>
-        <h2 class="timer-label-sec">Seconds</h2>
-    </div>
 
-    <!-- All inputs are of upto 2 digits. -->
-    <div class="input-container">
-        <input type="number" maxlength="2" oninput="this.value=this.value.slice(0,2)" id="hours">
-        <input type="number" maxlength="2" oninput="this.value=this.value.slice(0,2)" id="minutes">
-        <input type="number" maxlength="2" oninput="this.value=this.value.slice(0,2)" id="seconds">
-    </div>
+        <div class="hero">
+            <h1>Count Down Timer</h1>
+            <h2 class="timer-label-hrs">Hours: <span id="hr-text"></span></h2>
+            <h2 class="timer-label-min">Minutes: <span id="min-text"></span></h2>
+            <h2 class="timer-label-sec">Seconds: <span id="sec-text"></span></h2>
+        </div>
 
-    <!-- Buttons Container -->
-    <div class="button-container">
-        <button class="btn start">Start</button>
-        <button class="btn reset">Reset</button>
-        <button class="btn pause">Pause</button>
-        <button class="btn continue">Continue</button>
+        <!-- All inputs are of upto 2 digits. -->
+        <div class="input-container">
+            <input type="number" maxlength="2" oninput="this.value=this.value.slice(0,2)" id="hours">
+            <input type="number" maxlength="2" oninput="this.value=this.value.slice(0,2)" id="minutes">
+            <input type="number" maxlength="2" oninput="this.value=this.value.slice(0,2)" id="seconds">
+        </div>
+
+        <!-- Buttons Container -->
+        <div class="button-container">
+            <button class="btn start">Start</button>
+            <button class="btn reset">Reset</button>
+            <button class="btn pause">Pause</button>
+            <button class="btn continue">Continue</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
