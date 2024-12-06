@@ -14,6 +14,20 @@ starContainer.addEventListener('click', (e) => {
     }
 });
 
+// On mouse hover
+starContainer.addEventListener("mouseover",(e)=>{
+    if(e.target.hasAttribute("idx")){
+        currentHoverIdx = parseInt(e.target.getAttribute("idx"));
+        fillStarUptoIdx(currentHoverIdx);
+    }
+})
+
+// On mouse leave
+starContainer.addEventListener("mouseleave",(e)=>{
+    resetAllStars();
+    fillStarUptoIdx(clickedStarIdx);
+})
+
 function updateCount() {
     count.textContent = clickedStarIdx;
 }
