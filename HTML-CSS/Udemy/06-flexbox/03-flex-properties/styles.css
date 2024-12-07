@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.flex-container{
+  background-color: lightblue;
+  width:100%;
+
+  display: flex;
+}
+
+.flex-item{
+  padding:20px;
+  background-color: coral;
+  border:1px solid black;
+  /* flex-grow,shrink & basis */
+  flex:1 0 200px;
+}
+
+.item-1, .item-2{
+  /* flex-shrink: 2; */
+  /* flex-grow:1; */
+}
+
+.item-3{
+  /* flex-grow:2; */
+  /* flex-shrink:0; */
+  /* flex-basis:200px; */
+}

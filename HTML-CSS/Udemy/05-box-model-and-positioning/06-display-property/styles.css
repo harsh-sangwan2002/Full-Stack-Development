@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h2.none-el{
+  display:none;
+}
+
+h2{
+  visibility: hidden;
+}
+
+a{
+  display:inline-block;
+  background-color: lightblue;
+  border:1px solid blue;
+  padding:10px;
+
+  /* vertical margin, width & height aren't working. */
+  margin:20px 10px;
+  width:200px;
+  height:100px;
+}

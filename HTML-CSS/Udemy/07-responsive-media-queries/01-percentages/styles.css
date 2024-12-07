@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Image sticks out of the container */
+img{
+  max-width:100%;
+}
+
+.container{
+  /* 80% of the browser window */
+  width:80%;
+  max-width:1100px;
+  margin:10px auto;
+  padding:20px;
+}
+
+/* When not to use percentage?
+1) Fixed size elements
+2) Font size
+3) Precise positioning
+4) Nested percentage values */
