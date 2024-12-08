@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open sans', sans-serif;
+    background-color: black;
+    color: white;
+    line-height: 1.6;
+}
+
+.wrapper {
+    min-height: 100vh;
+    background: linear-gradient(to bottom,
+            rgba(255, 64, 50, 0.8),
+            rgba(71, 17, 116, 0.0)),
+        url('images/background.jpg') no-repeat center center;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.header .logo {
+    width: 100px;
+}
+
+.header .header-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.header .header-right i {
+    margin-right: 5px;
+}
+
+.header .header-right a {
+    color: white;
+}
+
+.header .header-right a:hover {
+    color: purple;
+}
+
+/* Main content */
+.main-content {
+    max-width: 1100px;
+    margin: 200px auto;
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    gap: 10rem;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+.main-content form {
+    flex: 1;
+}
+
+.main-content .text-container {
+    flex: 1;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: block;
+    padding: 15px 20px;
+    border-radius: 20px;
+    width: 100%;
+    border: none;
+    background-color: #ff4032;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ff5c4d;
+    opacity: 0.9;
+}
+
+.text-container h1 {
+    font-size: 50px;
+    margin: 50px 0 20px;
+    line-height: 1.2;
+}
+
+.text-container {
+    font-size: 18px;
+}
+
+/* Media Queries */
+@media screen and (max-width:768px) {
+
+    .header,
+    .header-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-content {
+        padding:0 40px;
+        margin: 20px auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .main-content form {
+        width: 100%;
+    }
+}
