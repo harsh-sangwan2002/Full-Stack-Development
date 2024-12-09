@@ -47,6 +47,16 @@ startBtn.addEventListener("click", (e) => {
     let minutes = getValidInput(minutesInput.value);
     let seconds = getValidInput(secondsInput.value);
 
+    if (seconds > 60) {
+        minutes += seconds / 60;
+        seconds %= 60;
+    }
+
+    if (minutes > 60) {
+        hours += minutes / 60;
+        minutes % 60;
+    }
+    
     if (!validateInput(hours, minutes, seconds))
         return;
 
