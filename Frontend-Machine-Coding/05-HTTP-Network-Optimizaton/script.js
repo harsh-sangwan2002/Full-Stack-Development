@@ -2,6 +2,7 @@ window.addEventListener('load', function () {
 
     let N = 8, M = 8;
     const table = document.querySelector('.table');
+    let player = "rook"
 
     // ri -> rowIndex, ci -> columnIndex
     for (let ri = 0; ri < N; ri++) {
@@ -19,15 +20,36 @@ window.addEventListener('load', function () {
         }
 
         table.appendChild(tr);
-        hoverEffect(table, N, M);
     }
+
+    hoverEffect(table, N, M, player);
 })
 
-function getDirectionVector() {
-    return [[-1, -1], [-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1]];
+function getDirectionVector(player) {
+
+    if (player == "bishop")
+        return [[1, 1], [-1, 1], [1, -1], [-1, -1]];
+
+    else if (player == "rook")
+        return [[-1, 0], [0, 1], [1, 0], [0, -1]];
+
+    else if (player == "knight")
+        return [[-2, -1], [-2, 1], [-1, 2], [1, 2], [2, 1], [2, -1], [1, -2], [-1, -2]];
+
+    else if (player == "queen")
+        return [[-1, -1], [-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1]];
 }
 
-function hoverEffect(table, N, M) {
+function getRadius(player){
+
+    if(player=="bishop" || player=="queen" || player=="rook")
+        return 8;
+
+    else if(player=="knight")
+        return 1;
+}
+
+function hoverEffect(table, N, M, player) {
 
     let boxArr = document.querySelectorAll('.box');
 
@@ -40,8 +62,8 @@ function hoverEffect(table, N, M) {
         removeYellowColorFromAllCells(boxArr);
         let [curr_row, curr_col] = dataIndex.split('-').map(idx => idx);
 
-        let directionVector = getDirectionVector();
-        storageOfPossibleMoves = possbileMoves(parseInt(curr_row), parseInt(curr_col), N, M, directionVector);
+        let directionVector = getDirectionVector(player);
+        storageOfPossibleMoves = possbileMoves(parseInt(curr_row), parseInt(curr_col), N, M, directionVector,player);
 
         colorMyPossibleMoves(storageOfPossibleMoves, boxArr);
 
@@ -59,13 +81,14 @@ function hoverEffect(table, N, M) {
     })
 }
 
-function possbileMoves(curr_row, curr_col, N, M, direction) {
+function possbileMoves(curr_row, curr_col, N, M, direction,player) {
 
+    const maxRaduis = getRadius(player);
     storageOfPossibleMoves = {};
 
     for (let dir of direction) {
 
-        for (let radius = 0; radius <= Math.max(N, M); radius++) {
+        for (let radius = 0; radius <= maxRaduis; radius++) {
 
             let r = curr_row + (radius * dir[0]);
             let c = curr_col + (radius * dir[1]);
