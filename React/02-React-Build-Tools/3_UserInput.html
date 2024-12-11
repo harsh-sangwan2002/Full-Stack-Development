@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- algorithm to efficiently manipulate your UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+
+    <!-- React DOM  -> uses react to update the DOM-->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- transpiler -> JSX -> into javascript -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>User Input</title>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+<script type="text/babel">
+
+    function UserInput() {
+
+        const [message, setMessage] = React.useState("");
+
+        const handleChange = (event) => {
+            console.log("Value is: ",event.target.value);
+            setMessage(event.target.value);
+        }
+
+        return <div>
+            <input type="text" id="message" name="message" value={message} onChange={handleChange}/>
+            <h2>{message}</h2>
+        </div>
+    }
+    
+    ReactDOM.render(<UserInput/>,document.getElementById('root'));
+</script>
+
+</html>
