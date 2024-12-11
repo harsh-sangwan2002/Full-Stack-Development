@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- algorithm to efficiently manipulate your UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+
+    <!-- React DOM  -> uses react to update the DOM-->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- transpiler -> JSX -> into javascript -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <title>App</title>
+</head>
+
+<body>
+    <!-- Whole applicaton lives here -->
+    <div id="root"></div>
+</body>
+
+<script type="text/babel">
+
+    const stationary = ["Pen", "Pencil", "Eraser", "Ruler"];
+
+    function List() {
+        return (<div>
+            <h1>List Item</h1>
+            <ul>
+                {
+                    stationary.map(item => (
+                        <li key={item}>{item}</li>
+                    ))
+                }
+            </ul>
+        </div>)
+    }
+
+    ReactDOM.render(<List />, document.getElementById('root'));
+
+</script>
+
+</html>
