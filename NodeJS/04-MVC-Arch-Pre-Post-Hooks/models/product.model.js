@@ -15,7 +15,7 @@ const productSchema = new mongoose.Schema({
         required: true,
     },
     category: {
-        type: String,
+        type: [String],
         required: true,
     },
     password: {
@@ -34,7 +34,30 @@ const productSchema = new mongoose.Schema({
             message: "Password and confirm password should be same"
         }
     }
-},{timestamps:true})
+}, { timestamps: true })
+
+const validCategories = ["Electronics", "Appliances", "Furniture", "Fashion"];
+
+productSchema.pre("save", function (next) {
+
+    console.log("pre save hook called.");
+    const invalidCategories = this.category.filter(cat => {
+        !validCategories.includes(cat);
+    })
+
+    console.log("Invalid categories: ", invalidCategories);
+
+    if (!invalidCategories.length)
+        return next(new Error("Invalid category"));
+
+    else
+        next();
+})
+
+// pre hook -> making confirmPassword undefined
+productSchema.pre("save", function () {
+    this.confirmPassword = undefined;
+})
 
 const productModel = mongoose.model('Products', productSchema);
 
