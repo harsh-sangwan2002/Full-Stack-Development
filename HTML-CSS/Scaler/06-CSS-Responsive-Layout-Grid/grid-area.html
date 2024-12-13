@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Area</title>
+    <style>
+        .container {
+            width:100vw;
+            height:100vh;
+            display: grid;
+            grid-template-areas:
+                "header header header header"
+                "navbar body body body"
+                "navbar body body body"
+                "navbar body body body"
+                "navbar body body body"
+                "footer footer footer footer";
+        }
+
+        .navbar {
+            grid-area: navbar;
+            background-color: aqua;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: red;
+        }
+
+        .body {
+            grid-area: body;
+            background-color: blue;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar"></div>
+        <div class="header"></div>
+        <div class="body"></div>
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>
