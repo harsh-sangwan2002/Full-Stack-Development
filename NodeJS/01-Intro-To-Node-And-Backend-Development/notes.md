@@ -1,9 +1,11 @@
 ## Agenda
+
 **Topics to cover in Node:**
-* Exploring different node inbuilt modules
-* Understanding server side development with node (http)
-* Understanding http  module with req and res
-* Serving static html sites & json files via the server
+
+- Exploring different node inbuilt modules
+- Understanding server side development with node (http)
+- Understanding http module with req and res
+- Serving static html sites & json files via the server
 
 We will try to cover most of these topics in today's sessions and the remaining in the next.
 
@@ -12,16 +14,20 @@ It is going to be a bit challenging, advanced, but very interesting session cove
 So let's start.
 
 ## Nodejs
+
 Node.js is an open-source, server-side JavaScript runtime environment that allows you to run JavaScript code on the server. It was created by Ryan Dahl and first released in 2009. Node.js is built on the V8 JavaScript engine, which is also used in Google Chrome, and it provides an event-driven, non-blocking I/O model that makes it well-suited for building scalable and high-performance network applications.
+
 ## Why use nodejs for web server
+
 Node.js is a popular choice for web servers, especially in scenarios involving heavy I/O operations and small server requirements. Here's why Node.js is a suitable option for such use cases:
 
 1. **Non-Blocking I/O Model:** Node.js is designed around a non-blocking, event-driven architecture. This means it can efficiently handle multiple I/O operations concurrently without blocking the execution of other tasks. When performing heavy I/O operations, such as reading and writing files, making network requests, or interacting with databases, Node.js can initiate these operations and continue executing other code while waiting for the I/O operations to complete. This asynchronous approach is highly advantageous for scenarios with many concurrent I/O tasks.
 2. **Scalability:** In situations involving heavy I/O, it's common for multiple clients to make simultaneous requests to the server. Node.js's non-blocking model allows it to handle a large number of concurrent connections efficiently, making it a suitable choice for scalable applications. It can process incoming requests as soon as they arrive, rather than waiting for each request to complete before moving on to the next one.
 3. **Low Overhead:** Node.js has a relatively small memory footprint compared to some other web server technologies. This makes it well-suited for small server applications where resource utilization needs to be efficient. You can run multiple Node.js instances on a single server without consuming excessive system resources.
-5. **Rich Ecosystem:** Node.js has a vast ecosystem of libraries and modules available through npm, which can simplify the development of web servers for various purposes. Developers can find packages to handle specific I/O tasks, such as file uploads, database connections, and HTTP requests, making it easier to build web servers tailored to their needs.
+4. **Rich Ecosystem:** Node.js has a vast ecosystem of libraries and modules available through npm, which can simplify the development of web servers for various purposes. Developers can find packages to handle specific I/O tasks, such as file uploads, database connections, and HTTP requests, making it easier to build web servers tailored to their needs.
 
-## How are we going to learn nodejs development 
+## How are we going to learn nodejs development
+
 Learning Node.js development and building a full-stack MERN (MongoDB, Express.js, React, Node.js) application involves multiple steps and concepts. Here's a roadmap to guide you through the process:
 
 1. **Basic JavaScript Knowledge**:
@@ -66,7 +72,8 @@ Learning Node.js development and building a full-stack MERN (MongoDB, Express.js
 14. **Practice and Build Projects**:
     The best way to solidify your skills is by working on projects. Start with simple projects and gradually move on to more complex ones to gain practical experience.
 
-## Fs module in depth 
+## Fs module in depth
+
 The `fs` module in Node.js stands for "File System," and it provides a way to work with the file system on your computer or server. It allows you to read from and write to files, manipulate directories, perform file operations, and more. Let's explore some of the key functionalities of the `fs` module in-depth:
 
 **1. Reading Files:**
@@ -74,9 +81,9 @@ The `fs` module in Node.js stands for "File System," and it provides a way to wo
 The `fs` module provides methods for reading the contents of files. The most commonly used method for this purpose is `fs.readFile()`:
 
 ```javascript
-const fs = require('fs');
+const fs = require("fs");
 
-fs.readFile('example.txt', 'utf8', (err, data) => {
+fs.readFile("example.txt", "utf8", (err, data) => {
   if (err) {
     console.error(err);
     return;
@@ -92,16 +99,16 @@ In this example, `readFile()` reads the content of 'example.txt' and then calls 
 You can also use the `fs` module to write data to files using methods like `fs.writeFile()`:
 
 ```javascript
-const fs = require('fs');
+const fs = require("fs");
 
-const content = 'Hello, world!';
+const content = "Hello, world!";
 
-fs.writeFile('example.txt', content, 'utf8', (err) => {
+fs.writeFile("example.txt", content, "utf8", (err) => {
   if (err) {
     console.error(err);
     return;
   }
-  console.log('File has been written.');
+  console.log("File has been written.");
 });
 ```
 
@@ -122,20 +129,20 @@ You can perform operations on directories using methods like `fs.mkdir()`, `fs.r
 `fs.rename()` can be used to rename files, and `fs.unlink()` to delete them:
 
 ```javascript
-fs.rename('old-file.txt', 'new-file.txt', (err) => {
+fs.rename("old-file.txt", "new-file.txt", (err) => {
   if (err) {
     console.error(err);
     return;
   }
-  console.log('File has been renamed.');
+  console.log("File has been renamed.");
 });
 
-fs.unlink('file-to-delete.txt', (err) => {
+fs.unlink("file-to-delete.txt", (err) => {
   if (err) {
     console.error(err);
     return;
   }
-  console.log('File has been deleted.');
+  console.log("File has been deleted.");
 });
 ```
 
@@ -144,20 +151,19 @@ fs.unlink('file-to-delete.txt', (err) => {
 The `fs.stat()` method provides information about a file's status, including its size, permissions, and modification timestamp.
 
 ```javascript
-fs.stat('example.txt', (err, stats) => {
+fs.stat("example.txt", (err, stats) => {
   if (err) {
     console.error(err);
     return;
   }
-  console.log('File size: ' + stats.size);
-  console.log('Is directory? ' + stats.isDirectory());
+  console.log("File size: " + stats.size);
+  console.log("Is directory? " + stats.isDirectory());
 });
 ```
 
 **7. Watching for Changes:**
 
 Node.js also allows you to watch for changes to files and directories using `fs.watch()` and `fs.watchFile()` methods, which can be useful for real-time monitoring of file system changes.
-
 
 In Node.js, you can use the `fs` module to create and delete directories. Here's how you can do it:
 
@@ -166,9 +172,9 @@ In Node.js, you can use the `fs` module to create and delete directories. Here's
 To create a directory, you can use the `fs.mkdir()` method. Here's an example:
 
 ```javascript
-const fs = require('fs');
+const fs = require("fs");
 
-const directoryName = 'my-directory';
+const directoryName = "my-directory";
 
 fs.mkdir(directoryName, (err) => {
   if (err) {
@@ -186,9 +192,9 @@ In this code, `fs.mkdir()` is used to create a directory named "my-directory." T
 To delete a directory, you can use the `fs.rmdir()` method. Here's an example:
 
 ```javascript
-const fs = require('fs');
+const fs = require("fs");
 
-const directoryName = 'my-directory';
+const directoryName = "my-directory";
 
 fs.rmdir(directoryName, { recursive: true }, (err) => {
   if (err) {
@@ -210,9 +216,9 @@ You can check whether a directory or file exists in Node.js using the `fs` modul
 To check if a directory exists, you can use the `fs.existsSync()` method. Here's an example:
 
 ```javascript
-const fs = require('fs');
+const fs = require("fs");
 
-const directoryPath = '/path/to/your/directory';
+const directoryPath = "/path/to/your/directory";
 
 if (fs.existsSync(directoryPath)) {
   console.log(`The directory "${directoryPath}" exists.`);
@@ -228,9 +234,9 @@ Replace `/path/to/your/directory` with the actual path to the directory you want
 To check if a file exists, you can use the `fs.existsSync()` method as well. Here's an example:
 
 ```javascript
-const fs = require('fs');
+const fs = require("fs");
 
-const filePath = '/path/to/your/file.txt';
+const filePath = "/path/to/your/file.txt";
 
 if (fs.existsSync(filePath)) {
   console.log(`The file "${filePath}" exists.`);
@@ -241,13 +247,12 @@ if (fs.existsSync(filePath)) {
 
 Replace `/path/to/your/file.txt` with the actual path to the file you want to check. `fs.existsSync()` returns `true` if the file exists and `false` if it doesn't.
 
-
 It's worth noting that `fs.existsSync()` is a synchronous method, so it can block the Node.js event loop. If you prefer an asynchronous approach, you can use the `fs.access()` method. Here's an example:
 
 ```javascript
-const fs = require('fs');
+const fs = require("fs");
 
-const pathToCheck = '/path/to/your/directory-or-file';
+const pathToCheck = "/path/to/your/directory-or-file";
 
 fs.access(pathToCheck, fs.constants.F_OK, (err) => {
   if (err) {
@@ -262,85 +267,86 @@ Replace `/path/to/your/directory-or-file` with the actual path you want to check
 
 Both approaches can be used to determine whether a directory or file exists in your Node.js application, depending on your preference for synchronous or asynchronous code.
 
-
 ## Path Module
+
 The `path` module in Node.js provides utilities for working with file and directory paths. It's an essential module when dealing with file system operations and path manipulation in your Node.js applications. Here are some important functions and concepts from the `path` module:
 
 1. **`path.join([...paths])`**: This method joins multiple path segments into a single path string, taking care of platform-specific path separators (e.g., backslashes on Windows and forward slashes on Unix-like systems).
 
    ```javascript
-   const path = require('path');
-   const fullPath = path.join('folder', 'subfolder', 'file.txt');
+   const path = require("path");
+   const fullPath = path.join("folder", "subfolder", "file.txt");
    ```
 
 2. **`path.resolve([...paths])`**: Resolves an absolute path from multiple path segments, starting from the root directory. It can be helpful for creating absolute paths based on relative ones.
 
    ```javascript
-   const path = require('path');
-   const absolutePath = path.resolve('folder', 'subfolder', 'file.txt');
+   const path = require("path");
+   const absolutePath = path.resolve("folder", "subfolder", "file.txt");
    ```
 
 3. **`path.basename(path[, ext])`**: Returns the base filename of a path, optionally removing a file extension if provided.
 
    ```javascript
-   const path = require('path');
-   const fileName = path.basename('/path/to/file.txt');
+   const path = require("path");
+   const fileName = path.basename("/path/to/file.txt");
    ```
 
 4. **`path.dirname(path)`**: Returns the directory name of a path.
 
    ```javascript
-   const path = require('path');
-   const dirName = path.dirname('/path/to/file.txt');
+   const path = require("path");
+   const dirName = path.dirname("/path/to/file.txt");
    ```
 
 5. **`path.extname(path)`**: Returns the file extension of a path, including the dot.
 
    ```javascript
-   const path = require('path');
-   const extension = path.extname('/path/to/file.txt');
+   const path = require("path");
+   const extension = path.extname("/path/to/file.txt");
    ```
 
 6. **`path.parse(pathString)`**: Parses a path string into an object with properties like `root`, `dir`, `base`, `name`, and `ext`.
 
    ```javascript
-   const path = require('path');
-   const pathInfo = path.parse('/path/to/file.txt');
+   const path = require("path");
+   const pathInfo = path.parse("/path/to/file.txt");
    ```
 
 7. **`path.normalize(path)`**: Normalizes a path by resolving '..' and '.' segments and converting slashes to the appropriate platform format.
 
    ```javascript
-   const path = require('path');
-   const normalizedPath = path.normalize('/path/to/../file.txt');
+   const path = require("path");
+   const normalizedPath = path.normalize("/path/to/../file.txt");
    ```
 
 8. **`path.isAbsolute(path)`**: Checks if a path is an absolute path.
 
    ```javascript
-   const path = require('path');
-   const isAbsolute = path.isAbsolute('/path/to/file.txt');
+   const path = require("path");
+   const isAbsolute = path.isAbsolute("/path/to/file.txt");
    ```
 
 9. **`path.relative(from, to)`**: Returns the relative path from one path to another.
 
    ```javascript
-   const path = require('path');
-   const relativePath = path.relative('/path/from', '/path/to');
+   const path = require("path");
+   const relativePath = path.relative("/path/from", "/path/to");
    ```
 
 The `path` module is particularly useful when working on cross-platform applications or when dealing with file and directory paths dynamically in your Node.js code. It ensures that your path manipulation is consistent and compatible with various operating systems.
 
 ### Copy a file from one folder to another in Node.js
+
 To copy a file from one folder to another in Node.js, you can use the `fs` module. Here's how you can do it:
 
 ```javascript
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 // Define the source and destination file paths
-const sourceFilePath = '/path/to/source-folder/source-file.txt';
-const destinationFilePath = '/path/to/destination-folder/destination-file.txt';
+const sourceFilePath = "/path/to/source-folder/source-file.txt";
+const destinationFilePath = "/path/to/destination-folder/destination-file.txt";
 
 // Create a readable stream from the source file
 const readStream = fs.createReadStream(sourceFilePath);
@@ -352,17 +358,17 @@ const writeStream = fs.createWriteStream(destinationFilePath);
 readStream.pipe(writeStream);
 
 // Handle any errors that may occur during the copy process
-readStream.on('error', (err) => {
+readStream.on("error", (err) => {
   console.error(`Error reading the source file: ${err}`);
 });
 
-writeStream.on('error', (err) => {
+writeStream.on("error", (err) => {
   console.error(`Error writing to the destination file: ${err}`);
 });
 
 // When the copy is complete, log a success message
-writeStream.on('finish', () => {
-  console.log('File copied successfully.');
+writeStream.on("finish", () => {
+  console.log("File copied successfully.");
 });
 ```
 
@@ -381,14 +387,17 @@ Here's an explanation of what the code does:
 
 This code will copy the contents of the source file to the destination file. If the destination file already exists, it will be overwritten. Make sure to handle errors and adjust file paths as needed for your specific use case.
 
-
 ---
+
 title: Server side development  
 description: Exploring Server side Development with http module
 duration: 2100
 card_type: cue_card
+
 ---
+
 ## Server side development
+
 Server-side development, client-side development, and working with database clients are essential components of modern web application development. Let's explore these concepts:
 
 **1. Server-Side Development:**
@@ -419,15 +428,15 @@ A database client is a software component or library that allows your server-sid
 - **ORM (Object-Relational Mapping):** Some server-side frameworks and languages offer ORMs (e.g., Sequelize for Node.js, Hibernate for Java) that provide a higher-level abstraction for working with databases. ORMs map database tables to objects in code, simplifying database interactions.
 - **Data Access:** Server-side code uses database clients to perform CRUD operations (Create, Read, Update, Delete) on data stored in databases. This includes querying data, inserting new records, updating existing records, and deleting records.
 
-
 ## Server-side development using the `http` module
+
 Server-side development using the `http` module in Node.js allows you to create a basic HTTP server to handle incoming requests and send responses. Here's a step-by-step guide to building a simple HTTP server using the `http` module:
 
 1. **Import the `http` Module:**
    Start by requiring the `http` module in your Node.js script:
 
    ```javascript
-   const http = require('http');
+   const http = require("http");
    ```
 
 2. **Create the HTTP Server:**
@@ -445,11 +454,11 @@ Server-side development using the `http` module in Node.js allows you to create 
    ```javascript
    const server = http.createServer((req, res) => {
      // Set response header
-     res.setHeader('Content-Type', 'text/plain');
-     
+     res.setHeader("Content-Type", "text/plain");
+
      // Write response content
-     res.write('Hello, World!');
-     
+     res.write("Hello, World!");
+
      // End the response
      res.end();
    });
@@ -462,8 +471,8 @@ Server-side development using the `http` module in Node.js allows you to create 
 
    ```javascript
    const port = 3000;
-   const host = 'localhost';
-   
+   const host = "localhost";
+
    server.listen(port, host, () => {
      console.log(`Server is listening on http://${host}:${port}`);
    });
@@ -478,21 +487,21 @@ Server-side development using the `http` module in Node.js allows you to create 
 Here's the complete code for a basic HTTP server:
 
 ```javascript
-const http = require('http');
+const http = require("http");
 
 const server = http.createServer((req, res) => {
   // Set response header
-  res.setHeader('Content-Type', 'text/plain');
-  
+  res.setHeader("Content-Type", "text/plain");
+
   // Write response content
-  res.write('Hello, World!');
-  
+  res.write("Hello, World!");
+
   // End the response
   res.end();
 });
 
 const port = 3000;
-const host = 'localhost';
+const host = "localhost";
 
 server.listen(port, host, () => {
   console.log(`Server is listening on http://${host}:${port}`);
@@ -504,23 +513,23 @@ This simple HTTP server will respond with "Hello, World!" to any incoming reques
 You can modify the code to send an HTML response containing an `<h1>` tag. Here's an example of a Node.js HTTP server that responds with an HTML `<h1>` tag:
 
 ```javascript
-const http = require('http');
+const http = require("http");
 
 const server = http.createServer((req, res) => {
   // Set response header with Content-Type as text/html
-  res.setHeader('Content-Type', 'text/html');
-  
+  res.setHeader("Content-Type", "text/html");
+
   // Write HTML response
-  res.write('<html><head><title>Node.js HTTP Server</title></head><body>');
-  res.write('<h1>Hello, World!</h1>');
-  res.write('</body></html>');
-  
+  res.write("<html><head><title>Node.js HTTP Server</title></head><body>");
+  res.write("<h1>Hello, World!</h1>");
+  res.write("</body></html>");
+
   // End the response
   res.end();
 });
 
 const port = 3000;
-const host = 'localhost';
+const host = "localhost";
 
 server.listen(port, host, () => {
   console.log(`Server is listening on http://${host}:${port}`);

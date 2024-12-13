@@ -8,18 +8,18 @@ const app = express();
 app.use(express.json());
 
 // Routes
-app.use('/api/products',productRouter);
+app.use('/api/products', productRouter);
 
-app.get('/',(req,res)=>{
-    res.status(200).json({message:"Welcome to the home page."});
+app.get('/', (req, res) => {
+    res.status(200).json({ message: "Welcome to the home page." });
 })
 
-app.use((req,res)=>{
-    res.status(404).json({message:"Page not found."});
+app.use((req, res) => {
+    res.status(404).json({ message: "Page not found." });
 })
 
 connectDB();
 
-app.listen(3000,()=>{
+app.listen(8080, () => {
     console.log("Backend server is running.")
 })
