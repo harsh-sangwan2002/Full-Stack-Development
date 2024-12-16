@@ -22,7 +22,7 @@
 /************ setInterval, clearInterval *********/
 
 
-//  cb -> of setTimout -> higher precedence then cb of setInterval -> why precedence of SINt<STime
+//  cb -> of setTimeout -> higher precedence then cb of setInterval -> why precedence of SINt<STime
 console.log("Before");
 
 function cb(){
@@ -37,7 +37,6 @@ function cancelInterval(){
     console.timeEnd();
     console.log("Cancelling the interval timer.");
     clearInterval(timerId);
-
 }
 
 console.time();
