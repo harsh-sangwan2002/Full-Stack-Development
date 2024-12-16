@@ -8,6 +8,11 @@ setImmediate(() => {
     console.log("This is setImmediate");
 })
 
+setInterval(() => {
+    add(3, 10);
+    console.log("This is setInterval");
+}, 1000);
+
 // timerQueue has higher priority-2
 setTimeout(() => {
     add(3, 3);
