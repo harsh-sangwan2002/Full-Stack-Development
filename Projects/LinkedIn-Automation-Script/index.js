@@ -1,8 +1,10 @@
 const puppeteer = require('puppeteer');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const loginLink = "https://www.linkedin.com/login";
-const email = "Your_Email";
-const passwd = "Your_Password";
+const email = process.env.User_Email;
+const passwd = process.env.User_Password;
 
 (async function () {
     try {
@@ -19,15 +21,23 @@ const passwd = "Your_Password";
         await page.type('input[id="password"]', passwd, { delay: 60 });
         await page.click('button[type="submit"]');
 
-        await waitAndClick('span[title="My Network"]', page);
-        await waitAndClick('footer.mt2', page);
+        await waitAndClick('input[placeholder="Search"]', page);
+        // await waitAndClick('span[title="My Network"]', page);
+        await page.type('input[placeholder="Search"]', "Human Resource", { delay: 60 });
+        await page.keyboard.press('Enter');
+        await delay(5000);
+
+        const buttonArr = await page.$$('button[aria-pressed="false"]', page);
+        buttonArr[0].click();
+
+        await delay(10000);
 
         await scrollToBottom(page);
         console.log('Finished scrolling through the page.');
 
         // Select all buttons inside the footer after scrolling
         const buttons = await page.$$(
-            'footer.mt2 button'
+            'button.artdeco-button artdeco-button--2 artdeco-button--secondary ember-view'
         ); // Query all buttons inside the footer
         console.log(`Found ${buttons.length} buttons inside the footer.`);
 
@@ -45,7 +55,7 @@ const passwd = "Your_Password";
         }
 
         console.log('Finished clicking buttons inside the footer.');
-        await browserOpen.close();
+        // await browserOpen.close();
 
     } catch (err) {
         console.log(err);
