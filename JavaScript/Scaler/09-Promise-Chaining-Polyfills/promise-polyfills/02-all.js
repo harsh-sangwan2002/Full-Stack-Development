@@ -1,8 +1,8 @@
-Promise.myPromiseAll = function(promiseArr){
+Promise.myPromiseAll = function (promiseArr) {
 
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve, reject) => {
 
-        if(!Array.isArray(promiseArr)){
+        if (!Array.isArray(promiseArr)) {
             reject("Expected an array of promises");
             return;
         }
@@ -10,17 +10,17 @@ Promise.myPromiseAll = function(promiseArr){
         let result = [];
         let count = promiseArr.length;
 
-        if(count==0)
+        if (count == 0)
             return resolve(result);
 
-        promiseArr.forEach(async (promise)=>{
+        promiseArr.forEach(async (promise) => {
             try {
-            
+
                 const rVal = await promise;
                 result.push(rVal);
 
                 count--;
-                if(count==0)
+                if (count == 0)
                     resolve(result);
 
             } catch (err) {
