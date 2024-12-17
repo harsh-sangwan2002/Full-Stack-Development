@@ -22,15 +22,8 @@ const passwd = process.env.User_Password;
         await page.click('button[type="submit"]');
 
         await waitAndClick('input[placeholder="Search"]', page);
-        // await waitAndClick('span[title="My Network"]', page);
-        await page.type('input[placeholder="Search"]', "Human Resource", { delay: 60 });
-        await page.keyboard.press('Enter');
+        await waitAndClick('span[title="My Network"]', page);
         await delay(5000);
-
-        const buttonArr = await page.$$('button[aria-pressed="false"]', page);
-        buttonArr[0].click();
-
-        await delay(10000);
 
         await scrollToBottom(page);
         console.log('Finished scrolling through the page.');
@@ -41,13 +34,11 @@ const passwd = process.env.User_Password;
         ); // Query all buttons inside the footer
         console.log(`Found ${buttons.length} buttons inside the footer.`);
 
-        // Loop through each button and click
         for (let i = 0; i < buttons.length; i++) {
             try {
                 await buttons[i].click();
                 console.log(`Clicked button ${i + 1} inside the footer.`);
 
-                // Optional delay to mimic human behavior
                 await delay(1000);
             } catch (err) {
                 console.error(`Error clicking button ${i + 1}:`, err);
@@ -55,7 +46,6 @@ const passwd = process.env.User_Password;
         }
 
         console.log('Finished clicking buttons inside the footer.');
-        // await browserOpen.close();
 
     } catch (err) {
         console.log(err);
