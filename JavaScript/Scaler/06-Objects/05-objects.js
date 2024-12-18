@@ -49,28 +49,28 @@ const config = {
  * ->  It applied at current level only
  * **/
 
-let notExtendableObj = Object.seal(config);
-notExtendableObj.database = Object.seal(notExtendableObj.database);
+// let notExtendableObj = Object.seal(config);
+// notExtendableObj.database = Object.seal(notExtendableObj.database);
 
-notExtendableObj.tempServer = "127.0.0.18";
-notExtendableObj.database.newpwd = "fake";
-delete notExtendableObj.extra;
-notExtendableObj.appName = "interviewbit.com";
-// // console.log(config);
-console.log(notExtendableObj);
+// notExtendableObj.tempServer = "127.0.0.18";
+// notExtendableObj.database.newpwd = "fake";
+// delete notExtendableObj.extra;
+// notExtendableObj.appName = "interviewbit.com";
+// // // console.log(config);
+// console.log(notExtendableObj);
 
-/*******
- * Object.freeze -> you cannot update/ delete / add
- * -> Updation, adding and deletion is not allowed.
- * ->  It applied at current level only
- * **/
+// /*******
+//  * Object.freeze -> you cannot update/ delete / add
+//  * -> Updation, adding and deletion is not allowed.
+//  * ->  It applied at current level only
+//  * **/
 
-notExtendableObj = Object.freeze(config);
-notExtendableObj.database = Object.freeze(notExtendableObj.database);
+// notExtendableObj = Object.freeze(config);
+// notExtendableObj.database = Object.freeze(notExtendableObj.database);
 
-notExtendableObj.tempServer = "127.0.0.18";
-notExtendableObj.database.newpwd = "fake";
-delete notExtendableObj.extra;
-notExtendableObj.appName = "interviewbit.com";
-// // console.log(config);
-console.log(notExtendableObj);
+// notExtendableObj.tempServer = "127.0.0.18";
+// notExtendableObj.database.newpwd = "fake";
+// delete notExtendableObj.extra;
+// notExtendableObj.appName = "interviewbit.com";
+// // // console.log(config);
+// console.log(notExtendableObj);

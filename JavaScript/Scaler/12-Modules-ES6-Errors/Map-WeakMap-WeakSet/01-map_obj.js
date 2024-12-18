@@ -9,10 +9,10 @@ let cap = {
 cap.newProp = "Hello";
 delete cap.name;
 
-console.log(cap);
+// console.log(cap);
 
 let arrKeys = Object.keys(cap);
-console.log(arrKeys);
+// console.log(arrKeys);
 
 // b. map
 const personMap = new Map();
@@ -23,9 +23,9 @@ personMap.set('occupation',"Software Engineer");
 
 personMap.delete('name');
 
-print(personMap);
-print(personMap.has('age'));
-print(personMap.size);
+// print(personMap);
+// print(personMap.has('age'));
+// print(personMap.size);
 
 /************* Differences
  * 1. iteration
@@ -34,20 +34,20 @@ print(personMap.size);
  *          for of loop,
  *          for in loop does not work
  * Can't iterate over an object ->
- *          hoF not applicable,
+ *          HoF not applicable,
  *          for of loop not work,
  *          for in loop work
  *  ***************/
 
 
 // It will work
-for(let [key,val] of personMap){
-    print(key,val);
-}
+// for(let [key,val] of personMap){
+//     print(key,val);
+// }
 
-personMap.forEach((val,key)=>{
-    print(key,val);
-});
+// personMap.forEach((val,key)=>{
+//     print(key,val);
+// });
 
 // It will not work
 // for(let key of cap){
@@ -60,9 +60,9 @@ personMap.forEach((val,key)=>{
 // }
 
 // It will work
-for(let key in cap){
-    print(key);
-} 
+// for(let key in cap){
+//     print(key);
+// } 
 
 /******
  * Map -> keys can be of any type
@@ -86,6 +86,7 @@ preferenceMap.set(user1, preferenecsObj1);
 preferenceMap.set(user2, preferenecsObj2);
 preferenceMap.set(user3, preferenecsObj3);
 
+console.log(preferenceMap);
 console.log("first Users name", user1.name);
 console.log("first users preference", preferenceMap.get(user1));
 
@@ -103,17 +104,17 @@ console.log("first users preference", preferenceMap.get(user1));
 //     pereferences: { theme: 'dark', language: 'de' }
 // };
 
-console.log("first Users name", user1.name);
-console.log("first users preference", user1.pereferences);
+// console.log("first Users name", user1.name);
+// console.log("first users preference", user1.pereferences);
 
 //  2. when you have lot update / delete -> amount of data set -> Map
 
-print(cap);
-print(personMap);
+// print(cap);
+// print(personMap);
 
 print("````````````````");
 let strMap = JSON.stringify(personMap);
-console.log("strMap: " , strMap);
+// console.log("strMap: " , strMap);
 print("````````````````");
 let strObj=JSON.stringify(cap);
-print("strObj: " , strObj);
+// print("strObj: " , strObj);

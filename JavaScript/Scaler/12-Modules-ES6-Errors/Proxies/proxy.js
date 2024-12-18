@@ -23,6 +23,7 @@ let handler = {
 // Create Proxy
 let proxy = new Proxy(obj, handler);
 
+console.log(proxy);
 console.log(proxy.eng);
 console.log(proxy.math);
 console.log(proxy.sci);

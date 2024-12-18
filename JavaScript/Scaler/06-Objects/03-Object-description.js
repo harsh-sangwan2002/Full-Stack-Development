@@ -47,9 +47,9 @@ for(let key in obj){
 
 /*
  Use case of enumerable = false.
- 1. to declare private key which is not overridden and iterable.
+ 1. To declare private key which is not overridden and iterable.
 
  Example: 
- a. you build a credit card class which have a key amount and it is only changed by function call when payment is done.
+ a. You build a credit card class which have a key amount and it is only changed by function call when payment is done.
  b. It is used in network call when you are preperaing you response before network call and reponse have metadata information which is not suppose to be iterable and changable.
 */

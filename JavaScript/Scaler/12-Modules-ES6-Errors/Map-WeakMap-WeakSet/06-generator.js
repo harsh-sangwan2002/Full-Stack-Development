@@ -11,6 +11,6 @@ function* fn(){
 }
 
 let geneartor = fn();
-console.log(geneartor.next());
-console.log(geneartor.next());
-console.log(geneartor.next());
+console.log(geneartor.next().value);
+console.log(geneartor.next().value);
+console.log(geneartor.next().value);
