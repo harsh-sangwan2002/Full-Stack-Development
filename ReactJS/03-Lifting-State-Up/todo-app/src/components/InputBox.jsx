@@ -16,7 +16,7 @@ function InputBox(props) {
     return (
         <div className="input-box">
             <input type="text" value={inputValue} onChange={handleInput} />
-            <button type='submit'>Submit</button>
+            <button type='submit' onClick={addTaskChild}>Submit</button>
         </div>
     )
 }
