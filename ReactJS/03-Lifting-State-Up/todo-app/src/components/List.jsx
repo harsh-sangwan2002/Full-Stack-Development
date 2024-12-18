@@ -1,14 +1,15 @@
 import React from 'react'
 
-function List(props) {
-
-    const tasks = props.taskArr;
+function List({ taskArr, handleDelete }) {
 
     return (
         <ul>
             {
-                tasks.map((task,idx) => (
-                    <li key={idx}>{task}</li>
+                taskArr.map((task, idx) => (
+                    <div key={idx}>
+                        <li>{task}</li>
+                        <button onClick={() => handleDelete(idx)}>Delete</button>
+                    </div>
                 ))
             }
         </ul>

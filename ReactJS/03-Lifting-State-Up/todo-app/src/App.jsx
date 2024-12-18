@@ -1,11 +1,16 @@
-import { useState } from 'react'
 import HandleAllTodo from './components/HandleAllTodo'
+import GetData from './components/GetData'
+import UseEffectExamples from './components/useEffectExamples'
+import UseEffectCleanupExamples from './components/UseEffectCleanupExamples'
 
 function App() {
 
   return (
     <>
-      <HandleAllTodo />
+      {/* <HandleAllTodo /> */}
+      {/* <GetData /> */}
+      {/* <UseEffectExamples /> */}
+      <UseEffectCleanupExamples />
     </>
   )
 }
