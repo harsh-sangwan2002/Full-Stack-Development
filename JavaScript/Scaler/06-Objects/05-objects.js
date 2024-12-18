@@ -28,9 +28,9 @@ const config = {
 
 /***************************
  * new property should not  be added on the first level -> update and delete
- * -> update is allowed
- * -> Adding a new key-value pair is not allowed.
+ * -> Updation is allowed
  * -> Deletion is allowed.
+ * -> Adding a new key-value pair is not allowed.
 
  * **************************/
 // let nonExtendableObj = Object.preventExtensions(config);
