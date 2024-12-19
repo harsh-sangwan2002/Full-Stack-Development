@@ -1,4 +1,4 @@
-package lld.accessModifiers;
+package lld.accessModifiers.somePackage;
 
 public class Student {
 

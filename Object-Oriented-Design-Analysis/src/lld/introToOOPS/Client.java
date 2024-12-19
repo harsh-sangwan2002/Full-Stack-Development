@@ -1,4 +1,4 @@
-package lld.intro_to_oop;
+package lld.introToOOPS;
 
 public class Client {
 
