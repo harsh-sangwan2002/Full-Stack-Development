@@ -21,10 +21,11 @@
 .toolbox-priority-cont {
     background-color: #3d3d3d;
     height: 3.5rem;
-    width: 16rem;
+    width: 20rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 1rem;
 }
 
 .color {
@@ -73,6 +74,7 @@
 /* Main/Ticket Container */
 .main-cont {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     margin: 2rem auto;
@@ -87,7 +89,6 @@
 }
 
 .ticket-color {
-    background-color: lightpink;
     height: 1rem;
 }
 
@@ -97,9 +98,18 @@
 }
 
 .task-cont {
-    height: calc(100% - 3rem);
+    height: calc(100% - 1rem - 2rem - 2rem);
     overflow: auto;
     padding: 1rem;
+    outline: none;
+}
+
+.ticket-lock {
+    height: 2rem;
+    /* background-color: lightblue; */
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
 }
 
 /* Modal Container */
