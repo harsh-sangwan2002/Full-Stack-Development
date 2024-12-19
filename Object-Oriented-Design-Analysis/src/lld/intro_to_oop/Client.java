@@ -1,4 +1,4 @@
-package lld.oop;
+package lld.intro_to_oop;
 
 public class Client {
 
