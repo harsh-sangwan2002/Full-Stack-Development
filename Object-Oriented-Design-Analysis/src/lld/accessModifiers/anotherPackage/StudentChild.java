@@ -6,9 +6,9 @@ public class StudentChild extends Student  {
 
     public static void main(String[] args) {
 
-        Student stu = new Student();
+        StudentChild stu = new StudentChild();
 //        stu.univName = "IIT";
-//        stu.batch = "Dec_2024";
+        stu.batch = "Dec_2024";
         stu.parentName = "Kuldeep";
     }
 }
