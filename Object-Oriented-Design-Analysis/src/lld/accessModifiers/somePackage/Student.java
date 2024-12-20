@@ -2,9 +2,9 @@ package lld.accessModifiers.somePackage;
 
 public class Student {
 
+    protected String batch;
     private String name;
     String univName;
-    protected String batch;
     public String parentName;
 
     public void doSomething(){
