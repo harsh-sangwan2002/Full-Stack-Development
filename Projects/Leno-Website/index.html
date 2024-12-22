@@ -12,6 +12,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script src="scripts/script.js" defer></script>
 
@@ -19,7 +22,79 @@
 </head>
 
 <body>
-    <h1>Leno</h1>
+    <navbar class="navbar">
+        <div class="navbar__container">
+            <div class="navbar__logo">
+                <img src="assets/images/logo.svg" alt="Leno">
+            </div>
+            <div class="navbar__menu">
+                <ul class="navbar__menu-list">
+                    <li class="navbar__menu-item">
+                        <a href="" class="navbar__menu-link">Home</a>
+                    </li>
+                    <li class="navbar__menu-item">
+                        <a href="#features" class="navbar__menu-link">Features</a>
+                    </li>
+                    <li class="navbar__menu-item">
+                        <a href="#preview" class="navbar__menu-link">Preview</a>
+                    </li>
+                    <li class="navbar__menu-item">
+                        <a href="#details" class="navbar__menu-link">Details</a>
+                    </li>
+                    <li class="navbar__menu-item">
+                        <a href="#download" class="navbar__menu-link">Download</a>
+                    </li>
+                    <li class="navbar__menu-item">
+                        <a href="#" class="navbar__menu-link--primary">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="navbar__menu-item">
+                        <a href="#" class="navbar__menu-link--primary">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mobile Menu & Hamburger Icon -->
+            <div class="navbar__mobile-menu">
+                <div class="navbar__mobile-menu-toggle">
+                    <i class="fas fa-bars fa-2x"></i>
+                </div>
+                <!-- Mobile-menu items -->
+                <div class="navbar__mobile-menu-items active">
+                    <ul class="navbar__mobile-menu-list">
+                        <li class="navbar__mobile-menu-item">
+                            <a href="" class="navbar__mobile-menu-link">Home</a>
+                        </li>
+                        <li class="navbar__mobile-menu-item">
+                            <a href="#features" class="navbar__mobile-menu-link">Features</a>
+                        </li>
+                        <li class="navbar__mobile-menu-item">
+                            <a href="#preview" class="navbar__mobile-menu-link">Preview</a>
+                        </li>
+                        <li class="navbar__mobile-menu-item">
+                            <a href="#details" class="navbar__mobile-menu-link">Details</a>
+                        </li>
+                        <li class="navbar__mobile-menu-item">
+                            <a href="#download" class="navbar__mobile-menu-link">Download</a>
+                        </li>
+                        <li class="navbar__mobile-menu-item">
+                            <a href="#" class="navbar__mobile-menu-link--primary">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="navbar__mobile-menu-item">
+                            <a href="#" class="navbar__mobile-menu-link--primary">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </navbar>
 </body>
 
 </html>

@@ -1,0 +1,129 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #08c0dd;
+    --secondary-color: #262432;
+    --tertiary-color: #2f2c3d;
+}
+
+html,
+body {
+    font-family: 'Open-sans', sans-serif;
+    background: var(--secondary-color);
+    color: #fff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+/* Navbar */
+.navbar {
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar__container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__logo img {
+    width: 112px;
+    height: 36px;
+}
+
+.navbar__menu-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar__menu-link:hover,
+.navbar__mobile-menu-link:hover {
+    color: var(--primary-color);
+}
+
+.navbar__menu-link--primary,
+.navbar__mobile-menu-link--primary {
+    color: var(--primary-color);
+}
+
+.navbar__menu-link--primary:hover,
+.navbar__mobile-menu-link--primary:hover {
+    color: #fff;
+}
+
+
+/* Mobile menu */
+.navbar__mobile-menu-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--secondary-color);
+    opacity: 0.95;
+    padding: 3rem 2rem;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar__mobile-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.2rem;
+
+}
+
+.navbar__mobile-menu-items {
+    transform: translateX(100%);
+}
+
+.navbar__mobile-menu-items.active {
+    transform: translateX(0);
+}
+
+.navbar__mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px) {
+    .navbar__menu {
+        display: none;
+    }
+
+    .navbar__mobile-menu {
+        display: block;
+    }
+}
