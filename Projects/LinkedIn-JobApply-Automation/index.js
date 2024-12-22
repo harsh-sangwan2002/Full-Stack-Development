@@ -27,31 +27,64 @@ const passwd = process.env.User_Password;
         await page.keyboard.press('Enter');
 
         await delay(3000);
-        await scrollToBottom(page);
 
 
         const filterList = await page.$$('li.search-reusables__primary-filter');
         await filterList[0].click();
         await delay(5000);
-        // await filterList[5].click();
 
-        const jobsArr = await page.$$('li[data-occludable-job-id]');
+        await waitAndClick('button[aria-label="Show all filters. Clicking this button displays all available filter options."]', page);
 
-        jobsArr.forEach(async (job, i) => {
+        const easyApplyButton = await page.$$('div.artdeco-toggle.artdeco-toggle--32dp.artdeco-toggle--default.ember-view');
+        await delay(5000);
+        await scrollToBottom(page);
+        easyApplyButton[0].click();
 
-            const jobHTML = await page.evaluate(el => el.innerHTML, job);
-            const $ = cheerio.load(jobHTML);
+        await delay(2000);
+        const loactions = await page.$$('input[name="location-filter-value"]');
+        await delay(2000);
+        loactions[9].click();
 
-            // Find the 'jobs-apply-button' within the job
-            console.log($('button[data-job-id]'));
-        })
+        await delay(2000);
+        await waitAndClick('button.reusable-search-filters-buttons', page);
 
+        await delay(3000);
+        await scrollToBottom(page);
+        await applyToJobs(page);
 
     } catch (err) {
         console.log(err);
     }
 })();
 
+const applyToJobs = async (page) => {
+    try {
+        console.log("Extracting job cards...");
+        const jobsArr = await page.$$('div[data-job-id]'); // Select all job cards with data-job-id attribute
+
+        console.log(`Found ${jobsArr.length} job cards.`);
+
+        for (let i = 0; i < jobsArr.length; i++) {
+            console.log(`Processing job card ${i + 1}...`);
+
+            // Scroll the current job card into view
+            await page.evaluate((job) => {
+                job.scrollIntoView();
+            }, jobsArr[i]);
+
+            const applyButton = await page.$$('button.jobs-apply-button');
+            applyButton[0].click();
+
+            await waitAndClick('button[aria-label="Continue to next step"]',page);
+
+            console.log("Moving to the next job card...");
+        }
+
+        console.log("Finished processing all job cards.");
+    } catch (err) {
+        console.error("Error while applying to jobs:", err);
+    }
+};
 
 const scrollToBottom = async (page) => {
     let previousHeight = await page.evaluate('document.body.scrollHeight');
