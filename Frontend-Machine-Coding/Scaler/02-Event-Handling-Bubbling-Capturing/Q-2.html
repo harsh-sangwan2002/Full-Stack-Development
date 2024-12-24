@@ -29,6 +29,8 @@
 </body>
 
 <script>
+
+    // Event delegation -> Prevents addition of additional event-listeners
     const container = document.querySelector('.container');
     container.addEventListener('click', (e) => {
         const color = e.target.getAttribute('class');
