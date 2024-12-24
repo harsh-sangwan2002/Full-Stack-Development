@@ -16,160 +16,92 @@
 */
 
 // Buttons
-const startBtn = document.querySelector('.start');
+const starBtn = document.querySelector('.start');
 const resetBtn = document.querySelector('.reset');
 const pauseBtn = document.querySelector('.pause');
 const continueBtn = document.querySelector('.continue');
 
 // Inputs
-const hoursInput = document.querySelector('#hours');
-const minutesInput = document.querySelector('#minutes');
-const secondsInput = document.querySelector('#seconds');
+let hours = document.querySelector('#hours');
+let minutes = document.querySelector('#minutes');
+let seconds = document.querySelector('#seconds');
+let timeLeft = 0;
+let timerId;
 
 // Text
-const hourText = document.querySelector('#hr-text');
-const minuteText = document.querySelector('#min-text');
+const hoursText = document.querySelector('#hr-text');
+const minutesText = document.querySelector('#min-text');
 const secondsText = document.querySelector('#sec-text');
 
-let seconds_in_hours = 3600;
-let seconds_in_minutes = 60;
+// Event listeners
+starBtn.addEventListener('click', (e) => {
 
-let counterId;
-let saveTimeLeft;
+    hours = parseInt(hours.value) || 0;
+    minutes = parseInt(minutes.value) || 0;
+    seconds = parseInt(seconds.value) || 0;
 
-
-resetSetup();
-
-// Event Listener
-startBtn.addEventListener("click", (e) => {
-
-    let hours = getValidInput(hoursInput.value);
-    let minutes = getValidInput(minutesInput.value);
-    let seconds = getValidInput(secondsInput.value);
-
-    if (seconds > 60) {
-        minutes += seconds / 60;
-        seconds %= 60;
-    }
-
-    if (minutes > 60) {
-        hours += minutes / 60;
-        minutes % 60;
-    }
-    
-    if (!validateInput(hours, minutes, seconds))
-        return;
-
-    let countDownTime = hours * seconds_in_hours + minutes * seconds_in_minutes + seconds;
-
-    runCountDownTimer(countDownTime);
-
-    startBtn.style.display = "none";
-    pauseBtn.style.display = "block";
-    resetBtn.style.display = "block";
+    timeLeft = hours * 3600 + minutes * 60 + seconds;
+    console.log(timeLeft);
+    startTimerCountDown();
 })
 
-pauseBtn.addEventListener('click', e => {
+function startTimerCountDown() {
 
-    // Clear the interval for pausing the timer
-    clearInterval(counterId);
+    timerId = setInterval(() => {
 
-    // No UI change required.
+        timeLeft--;
 
-    pauseBtn.style.display = "none";
-    continueBtn.style.display = "block";
-})
+        if (timeLeft < 0) {
+            clearInterval(timerId);
+            resetAll();
+            return;
+        }
 
-continueBtn.addEventListener("click", (e) => {
-
-    // Continue the timer.
-    runCountDownTimer(saveTimeLeft);
-
-    // No change in UI.
-
-    pauseBtn.style.display = "block";
-    continueBtn.style.display = "none";
-    resetBtn.style.display = "block";
-});
-
-resetBtn.addEventListener('click', e => {
-
-    resetSetup();
-})
-
-function resetSetup() {
-
-    hourText.textContent = "00";
-    minuteText.textContent = "00";
-    secondsText.textContent = "00";
-
-    hoursInput.value = "00";
-    minutesInput.value = "00";
-    secondsInput.value = "00";
-
-    saveTimeLeft = 0;
-    clearInterval(counterId);
-
-    startBtn.style.display = "block";
-    pauseBtn.style.display = "none";
-    resetBtn.style.display = "none";
-    continueBtn.style.display = "none";
-}
-
-function runCountDownTimer(countDownTime) {
-
-    counterId = setInterval(() => {
-        console.log(countDownTime);
-
-        saveTimeLeft = countDownTime--;
-
-        if (countDownTime < 0)
-            clearInterval(counterId);
-
-        else
-            updateUI(countDownTime);
-
+        console.log(timeLeft);
+        updateUI();
     }, 1000)
 }
 
-function updateUI(countDownTime) {
-    let hour = Math.floor(countDownTime / 3600);
-    let minute = Math.floor((countDownTime % 3600) / 60);
-    let second = Math.floor(countDownTime % 60);
+function updateUI() {
 
-    updateUI_Hour_Min_Sec(hour, minute, second);
+    let hoursLeft = Math.floor(timeLeft / 3600);
+    let minuteLeft = Math.floor((timeLeft % 3600) / 60);
+    let secondsLeft = Math.floor(timeLeft % 60);
+
+    hoursText.innerText = hoursLeft;
+    minutesText.innerText = minuteLeft;
+    secondsText.innerText = secondsLeft;
 }
 
-function updateUI_Hour_Min_Sec(hour, minute, second) {
-    hourText.textContent = hour < 10 ? `0${hour}` : hour;
-    minuteText.textContent = minute < 10 ? `0${minute}` : minute;
-    secondsText.textContent = second < 10 ? `0${second}` : second;
+pauseBtn.addEventListener('click', () => {
+
+    console.log("Pause was clicked");
+    clearInterval(timerId);
+    updateUI();
+})
+
+continueBtn.addEventListener('click', () => {
+
+    console.log("continue was clicked");
+    startTimerCountDown();
+})
+
+resetBtn.addEventListener('click', () => {
+
+    console.log("reset was clicked");
+    resetAll();
+})
+
+function resetAll() {
+
+    document.querySelector('#hours').value = "";
+    document.querySelector('#minutes').value = "";
+    document.querySelector('#seconds').value = "";
+
+    hoursText.innerText = "00";
+    minutesText.innerText = "00";
+    secondsText.innerText = "00";
+
+    clearInterval(timerId);
+    timeLeft = 0;
 }
-
-function getValidInput(value) {
-    console.log(parseInt(0));
-    return parseInt(!value ? 0 : value);
-}
-
-function validateInput(hours, minutes, seconds) {
-
-    if (hours < 0 || minutes < 0 || seconds < 0) {
-        alert("Negative values are not allowed.");
-        return false;
-    }
-
-    else if (hours > 24) {
-        alert("Invalid hours input.");
-        return false;
-    }
-
-    else if (minutes > 60) {
-        alert("Invalid minutes input.");
-        return false;
-    }
-
-    else {
-        return true;
-    }
-}
-
