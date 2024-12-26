@@ -3,6 +3,7 @@ function apply20Coupon() {
     console.log("New price: ", productValue - (0.20 * productValue));
 }
 
+// When you want to an event to happen only once in an interval
 function throttle(cb, delay) {
 
     let flag = false;
@@ -15,7 +16,9 @@ function throttle(cb, delay) {
         }
 
         cb(...args);
-        flag = true;
+        setTimeout(() => {
+            flag = true;
+        }, delay)
     }
 }
 
