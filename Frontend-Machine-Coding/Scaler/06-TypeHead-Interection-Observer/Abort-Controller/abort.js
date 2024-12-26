@@ -2,7 +2,6 @@
 // First, Create a instance of abort controller.
 const abortController = new AbortController();
 
-
 (async function () {
 
     try {
