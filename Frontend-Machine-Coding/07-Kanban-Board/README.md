@@ -2,6 +2,12 @@
 
 A simple and interactive Kanban Board built using HTML, CSS, and JavaScript.
 
+## Live Demo
+
+Check out the live demo of this website [here](https://harsh-kanban-board.vercel.app/).
+
+<img src ="./image.webp">
+
 ## Features
 
 - **Create Tickets**: Add new tickets with a unique ID, task description, and priority color.
