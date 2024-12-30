@@ -75,7 +75,8 @@ async function scrollAndConnect(page) {
             try {
                 await page.evaluate((label) => {
                     const button = Array.from(document.querySelectorAll('button')).find(btn => btn.getAttribute('aria-label') === label);
-                    if (button) button.click();
+                    if (button)
+                        button.click();
                 }, label);
                 console.log(`Sent connect request: ${label}`);
                 await delay(1000); // Short delay between requests
