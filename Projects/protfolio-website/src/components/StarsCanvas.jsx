@@ -1,11 +1,11 @@
 import React from 'react'
 
-function StarCanvas() {
+function StarsCanvas() {
     return (
         <div>
-            StarCanavs
+            Stars
         </div>
     )
 }
 
-export default StarCanvas
+export default StarsCanvas

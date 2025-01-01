@@ -4,10 +4,11 @@ import Navbar from "./components/Navbar"
 import Hero from './components/Hero'
 import About from "./components/About"
 import Experience from './components/Experience'
+import Tech from './components/Tech'
 import Works from './components/Works'
 import Feedbacks from './components/Feedbacks'
 import Contact from './components/Contact'
-import StarCanvas from './components/StarCanvas'
+import StarsCanvas from './components/StarsCanvas'
 
 function App() {
 
@@ -18,9 +19,15 @@ function App() {
           <Navbar />
           <Hero />
         </div>
-        <About/>
-        <Experience/>
-        
+        <About />
+        <Experience />
+        <Tech />
+        <Works />
+        <Feedbacks />
+        <div className="relative z-0">
+          <Contact />
+          <StarsCanvas />
+        </div>
       </div>
     </Router>
   )
