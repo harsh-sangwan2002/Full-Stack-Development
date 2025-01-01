@@ -7,7 +7,7 @@ const p2 = new Promise((resolve, reject) => {
 })
 
 const p3 = new Promise((resolve, reject) => {
-    setTimeout(() => reject("P3 rejected"), 2000);
+    setTimeout(() => resolve("P3 resolved"), 2000);
 })
 
 // Promise fullfilled when the first promise is fullfilled
