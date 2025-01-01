@@ -24,8 +24,7 @@ function Hero() {
                     </p>
                 </div>
             </div>
-
-
+            <ComputerCanvas />
         </section>
     )
 }
