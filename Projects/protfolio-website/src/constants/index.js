@@ -121,7 +121,7 @@ const experiences = [
   {
     title: "Software Developer Intern",
     company_name: "Vedaz.io",
-    icon: tata,
+    icon: vedaz,
     iconBg: "#383E56",
     date: "Dec 2024 - Feb 2024",
     points: [
@@ -188,7 +188,7 @@ const projects = [
 
     ],
     image: disney,
-    source_code_link: "https://github.com/harsh-sangwan2003/100-days-web-dev/tree/main/ReactJS/Projects/disney-clone",
+    source_code_link: "https://github.com/harsh-sangwan2002/disney-clone",
   },
   {
     name: "Fiverr",
@@ -213,7 +213,7 @@ const projects = [
       },
     ],
     image: fiverr,
-    source_code_link: "https://github.com/harsh-sangwan2003/fiverr",
+    source_code_link: "https://github.com/harsh-sangwan2002/fiverr",
   },
   {
     name: "File System Organizer",
@@ -230,7 +230,7 @@ const projects = [
       },
     ],
     image: fileSystem,
-    source_code_link: "https://github.com/harsh-sangwan2003/File-System-Organizer",
+    source_code_link: "https://github.com/harsh-sangwan2002/File-System-Organizer",
   },
 ];
 
