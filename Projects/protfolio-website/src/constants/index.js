@@ -123,7 +123,7 @@ const experiences = [
     company_name: "Vedaz.io",
     icon: vedaz,
     iconBg: "#383E56",
-    date: "Dec 2024 - Feb 2024",
+    date: "Dec 2024 - Feb 2025",
     points: [
       "Migrated an existing website to Remix, enhancing performance and scalability, while developing responsive and user - friendly web and mobile applications using Remix and Tailwind CSS.",
       "Authored clean, efficient, and maintainable code by adhering to industry best practices, resulting in improved code quality and reduced technical debt.",
