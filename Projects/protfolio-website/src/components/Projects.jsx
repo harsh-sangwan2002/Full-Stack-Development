@@ -9,10 +9,11 @@ import "react-vertical-timeline-component/style.min.css";
 
 import { styles } from "../styles";
 import { experiences } from "../constants";
+import { featuredProjects } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
-const ExperienceCard = ({ experience }) => {
+const ProjectCard = ({ experience }) => {
     return (
         <VerticalTimelineElement
             contentStyle={{
@@ -27,7 +28,7 @@ const ExperienceCard = ({ experience }) => {
                     <img
                         src={experience.icon}
                         alt={experience.company_name}
-                        className='w-[60%] h-[60%] object-contain'
+                        style={{borderRadius:'50%', objectFit:'cover', width:'100%', height:'100%'}}
                     />
                 </div>
             }
@@ -56,22 +57,22 @@ const ExperienceCard = ({ experience }) => {
     );
 };
 
-const Experience = () => {
+const Projects = () => {
     return (
         <>
             <motion.div variants={textVariant()}>
                 <p className={`${styles.sectionSubText} text-center`}>
-                    What I have done so far
+                    Some of the best projects I have worked on.
                 </p>
                 <h2 className={`${styles.sectionHeadText} text-center`}>
-                    Work Experience.
+                    Featured Projects.
                 </h2>
             </motion.div>
 
             <div className='mt-20 flex flex-col'>
                 <VerticalTimeline>
-                    {experiences.map((experience, index) => (
-                        <ExperienceCard
+                    {featuredProjects.map((experience, index) => (
+                        <ProjectCard
                             key={`experience-${index}`}
                             experience={experience}
                         />
@@ -82,4 +83,4 @@ const Experience = () => {
     );
 };
 
-export default SectionWrapper(Experience, "work");
+export default SectionWrapper(Projects, "projects");
