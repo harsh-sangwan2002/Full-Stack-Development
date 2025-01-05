@@ -9,6 +9,38 @@ body {
   line-height: 1.6;
 }
 
+/* Navbar */
+.nav_wrapper {
+  background-color: black;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  color: white; 
+  cursor: pointer;
+}
+
+.search_input {
+  width: 15rem;
+  height: 2rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Product */
 .product_wrapper {
   margin: 3rem;
   display: flex;
