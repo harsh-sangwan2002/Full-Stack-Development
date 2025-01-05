@@ -13,9 +13,12 @@ function useFetchList(url) {
             try {
 
                 setLoader(true);
+
                 const response = await fetch(url);
                 const data = await response.json();
                 setProductList(data);
+
+                console.log(data);
                 setLoader(false);
 
             } catch (err) {
@@ -29,9 +32,9 @@ function useFetchList(url) {
         })()
     }
 
-    useEffect(getProducts, [url]);
+    useEffect(getProducts, []);
 
-    return [productList, loader, error];
+    return [productList, loader, error, setProductList, setLoader, setError];
 }
 
 export default useFetchList
