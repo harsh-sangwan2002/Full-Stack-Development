@@ -80,13 +80,34 @@ function child() {
 // console.log('D');
 
 // Example - 8
-let i = 100;
-setInterval(() => {
-    console.log(i);
-    // i--;
-}, 1000)
+// let i = 100;
+// setInterval(() => {
+//     console.log(i);
+//     // i--;
+// }, 1000)
 
-// Has higher priority than setInterval
+// // Has higher priority than setInterval
+// setTimeout(() => {
+//     console.log('A');
+// })
+
+// Example - 9
+// console.log('A');
+
+// setTimeout(() => {
+//     console.log('B');
+// }, 0);
+
+// for (let i = 0; i < 1000000; i++)
+//     console.log('C');
+
+// Example - 10
+console.log('A');
+
 setTimeout(() => {
-    console.log('A');
-})
+    console.log('B');
+}, 0);
+
+while (true) {
+    console.log('C');
+}
