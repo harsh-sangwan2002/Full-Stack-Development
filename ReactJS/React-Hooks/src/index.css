@@ -21,10 +21,10 @@ h1 {
     margin-bottom: 1rem;
 }
 
-button {    
+button {
     background-color: rgb(117, 46, 215);
     color: white;
-    padding: 1rem;
+    padding: 0.5rem;
     margin: 8px 0;
     border: none;
     border-radius: 10px;
@@ -35,4 +35,15 @@ button {
 
 button:hover {
     opacity: 0.8;
+}
+
+input {
+    background-color: white;
+    color: #000;
+    padding: 0.75rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 10rem;
 }
