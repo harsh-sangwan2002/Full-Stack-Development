@@ -9,7 +9,11 @@ body {
     line-height: 1.6;
     background-color: black;
     color: white;
-    margin: 1rem;
+}
+
+.container {
+    margin: 1rem auto;
+    text-align: center;
 }
 
 h1 {
@@ -17,8 +21,7 @@ h1 {
     margin-bottom: 1rem;
 }
 
-button {
-    display: block;
+button {    
     background-color: rgb(117, 46, 215);
     color: white;
     padding: 1rem;
