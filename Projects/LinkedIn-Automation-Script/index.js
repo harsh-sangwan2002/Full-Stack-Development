@@ -12,92 +12,65 @@ const passwd = process.env.User_Password;
             headless: false,
             args: ['--start-maximized'],
             defaultViewport: null,
-        });
+        })
 
-        let browserPage = await browserOpen.newPage();
-        await browserPage.goto(loginLink);
+        let page = await browserOpen.newPage();
+        await page.goto(loginLink);
 
-        // Login
-        await browserPage.type('input[id="username"]', email, { delay: 60 });
-        await browserPage.type('input[id="password"]', passwd, { delay: 60 });
-        await browserPage.click('button[type="submit"]');
-        await delay(5000);
+        await page.type('input[id="username"]', email, { delay: 60 });
+        await page.type('input[id="password"]', passwd, { delay: 60 });
+        await page.click('button[type="submit"]');
 
-        // Search for "Human Resource"
-        await waitAndClick('input[placeholder="Search"]', browserPage);
-        await browserPage.type('input[placeholder="Search"]', "Human Resource", { delay: 100 });
-        await browserPage.keyboard.press('Enter');
-        await delay(3000);
+        await waitAndClick('span[title="My Network"]', page);
+        await waitAndClick('footer.mt2', page);
 
-        // Click the first pill filter button (e.g., "People")
-        const allButtons = await browserPage.$$('.artdeco-pill');
-        if (allButtons.length > 0) {
-            await allButtons[0].click();
-            await delay(3000);
-        }
+        await scrollToBottom(page);
+        console.log('Finished scrolling through the page.');
 
-        // Process the first 10 pages
-        for (let i = 1; i <= 10; i++) {
-            console.log(`Processing page ${i}`);
-            await scrollAndConnect(browserPage);
+        // Select all buttons inside the footer after scrolling
+        const buttons = await page.$$(
+            'footer.mt2 button'
+        ); // Query all buttons inside the footer
+        console.log(`Found ${buttons.length} buttons inside the footer.`);
 
-            // Move to the next page
-            const nextButton = await browserPage.$('button[aria-label="Next"]');
-            if (nextButton) {
-                await nextButton.click();
-                await delay(5000); // Wait for the next page to load
-            } else {
-                console.log("No more pages available.");
-                break;
+        // Loop through each button and click
+        for (let i = 0; i < buttons.length; i++) {
+            try {
+                await buttons[i].click();
+                console.log(`Clicked button ${i + 1} inside the footer.`);
+
+                // Optional delay to mimic human behavior
+                await delay(1000);
+            } catch (err) {
+                console.error(`Error clicking button ${i + 1}:`, err);
             }
         }
 
-        console.log("Finished processing all pages.");
+        console.log('Finished clicking buttons inside the footer.');
         await browserOpen.close();
+
     } catch (err) {
         console.log(err);
     }
 })();
 
-async function scrollAndConnect(page) {
-    let previousHeight = 0;
+
+const scrollToBottom = async (page) => {
+    let previousHeight = await page.evaluate('document.body.scrollHeight');
     while (true) {
-        // Find "Connect" buttons and click them
-        const connectButtons = await page.evaluate(() => {
-            const buttons = Array.from(document.querySelectorAll('button'));
-            return buttons
-                .filter(btn => btn.textContent.trim() === "Connect")
-                .map(btn => btn.getAttribute('aria-label')); // Return unique attributes for logs
-        });
-
-        console.log(`Found ${connectButtons.length} "Connect" buttons on the page.`);
-        for (const label of connectButtons) {
-            try {
-                await page.evaluate((label) => {
-                    const button = Array.from(document.querySelectorAll('button')).find(btn => btn.getAttribute('aria-label') === label);
-                    if (button)
-                        button.click();
-                }, label);
-                console.log(`Sent connect request: ${label}`);
-                await delay(1000); // Short delay between requests
-            } catch (err) {
-                console.error(`Failed to send connect request for ${label}:`, err);
-            }
-        }
-
-        // Scroll to the bottom of the page
-        previousHeight = await page.evaluate('document.body.scrollHeight');
         await page.evaluate('window.scrollTo(0, document.body.scrollHeight)');
-        await delay(3000); // Wait for new content to load
+        await delay(2000); // Wait for new content to load
 
         const newHeight = await page.evaluate('document.body.scrollHeight');
         if (newHeight === previousHeight) break; // Exit if no new content is loaded
+        previousHeight = newHeight;
     }
-}
+};
 
 async function waitAndClick(selector, cPage) {
     await cPage.waitForSelector(selector);
-    return cPage.click(selector);
+    let selectorClicked = cPage.click(selector);
+    return selectorClicked;
 }
 
 function delay(ms) {
