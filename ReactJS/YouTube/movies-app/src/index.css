@@ -7,7 +7,7 @@
 body {
     font-family: sans-serif;
     line-height: 1.6;
-    background: linear-gradient(to right, #5b42f3, #00ddeb);
+    background: linear-gradient(to right, #af40ff, #5b42f3, #00ddeb);
 }
 
 ul {
@@ -18,10 +18,6 @@ li {
     text-decoration: none;
 }
 
-a {
-    color: #333;
-}
-
 /* Navbar */
 
 /* Banner */
@@ -30,6 +26,7 @@ a {
     margin-top: 1vh;
     height: 70vh;
     color: #fff;
+    position: relative;
 }
 
 .banner-img {
@@ -39,15 +36,60 @@ a {
     border-radius: 10px;
 }
 
-.banner-content {
+.banner-title {
+    white-space: nowrap;
     position: absolute;
-    width: 90%;
-    top: 40vh;
-    left: 2rem;
-    overflow: hidden;
+    top: 10rem;
+    left: 5rem;
 }
 
-.banner-title {
-    font-size: 5rem;
+.banner-text {
+    position: absolute;
+    width: 80%;
+    top: 15rem;
+    left: 5rem;
     margin-bottom: 7rem;
+}
+
+/* Movies */
+.movies-list {
+    margin-top: 10rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 0;
+
+}
+
+.movie-card {
+    width: 25vw;
+    height: 50vh;
+    margin: 1rem;
+    position: relative;
+}
+
+.movie-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-title {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movies-button {
+    position: absolute;
+    bottom: 2rem;
 }
