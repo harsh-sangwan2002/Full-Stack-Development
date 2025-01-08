@@ -1,15 +1,15 @@
 function createDummPromise(delay, message) {
     return new Promise((resolve, reject) => {
         const TIMEOUT = 5000;
-        if (delay > TIMEOUT) {
-            setTimeout(() => {
-                reject('Timeout')
-            }, TIMEOUT)
-        } else {
-            setTimeout(() => {
-                resolve(message)
-            }, delay)
-        }
+        const maxDelay = Math.min(delay, TIMEOUT);
+
+        setTimeout(() => {
+            if (delay > TIMEOUT)
+                reject(`Max delay can be 5000ms current delay: ${message}`)
+
+            else
+                resolve(message);
+        }, maxDelay);
     })
 }
 
