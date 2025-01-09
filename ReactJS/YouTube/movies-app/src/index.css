@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +8,8 @@
 body {
     font-family: sans-serif;
     line-height: 1.6;
-    background: linear-gradient(to right, #af40ff, #5b42f3, #00ddeb);
+    background: linear-gradient(135deg, #af40ff, #5b42f3, #00ddeb);
+    animation: gradientShift 8s infinite alternate;
 }
 
 ul {
@@ -22,33 +24,54 @@ li {
 
 /* Banner */
 .banner-card {
-    width: 100vw;
+    width: 90vw;
     margin-top: 1vh;
+    margin: 1rem;
     height: 70vh;
     color: #fff;
     position: relative;
 }
 
 .banner-img {
-    margin-left: 10px;
-    width: 99vw;
+    margin-left: 5px;
+    width: 97vw;
     height: 80vh;
     border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.banner-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .banner-title {
     white-space: nowrap;
     position: absolute;
-    top: 10rem;
+    top: 20rem;
     left: 5rem;
+    font-size: 5rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.banner-title:hover {
+    color: #ffd700;
 }
 
 .banner-text {
     position: absolute;
-    width: 80%;
-    top: 15rem;
+    width: auto;
+    top: 28rem;
     left: 5rem;
     margin-bottom: 7rem;
+    font-size: 1.2rem;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.banner-text:hover {
+    opacity: 0.8;
+    transform: translateX(10px);
 }
 
 /* Movies */
@@ -59,7 +82,6 @@ li {
     justify-content: center;
     flex-wrap: wrap;
     border: 0;
-
 }
 
 .movie-card {
@@ -67,12 +89,25 @@ li {
     height: 50vh;
     margin: 1rem;
     position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .movie-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-img:hover {
+    transform: scale(1.05);
 }
 
 .movie-title {
@@ -81,6 +116,12 @@ li {
     left: 1rem;
     color: #fff;
     font-size: 2rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+.movie-title:hover {
+    text-shadow: 0 4px 10px rgba(255, 255, 255, 0.8);
 }
 
 .button-wrapper {
@@ -92,4 +133,28 @@ li {
 .movies-button {
     position: absolute;
     bottom: 2rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background: #5b42f3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.movies-button:hover {
+    background: #af40ff;
+    transform: scale(1.1);
+}
+
+/* Keyframes for Gradient Animation */
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(135deg, #af40ff, #5b42f3, #00ddeb);
+    }
+
+    100% {
+        background: linear-gradient(135deg, #5b42f3, #00ddeb, #af40ff);
+    }
 }
