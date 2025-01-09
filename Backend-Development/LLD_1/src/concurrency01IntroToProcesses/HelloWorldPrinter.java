@@ -1,4 +1,4 @@
-package concurrencyIntroToProcesses;
+package concurrency01IntroToProcesses;
 
 public class HelloWorldPrinter implements Runnable{
 
