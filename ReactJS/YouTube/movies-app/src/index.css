@@ -9,7 +9,6 @@ body {
     font-family: sans-serif;
     line-height: 1.6;
     background: linear-gradient(135deg, #af40ff, #5b42f3, #00ddeb);
-    animation: gradientShift 8s infinite alternate;
 }
 
 ul {
@@ -140,21 +139,9 @@ li {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .movies-button:hover {
     background: #af40ff;
     transform: scale(1.1);
-}
-
-/* Keyframes for Gradient Animation */
-@keyframes gradientShift {
-    0% {
-        background: linear-gradient(135deg, #af40ff, #5b42f3, #00ddeb);
-    }
-
-    100% {
-        background: linear-gradient(135deg, #5b42f3, #00ddeb, #af40ff);
-    }
 }
