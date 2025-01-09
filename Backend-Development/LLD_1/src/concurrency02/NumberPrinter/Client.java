@@ -1,4 +1,4 @@
-package concurrency02;
+package concurrency02.NumberPrinter;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

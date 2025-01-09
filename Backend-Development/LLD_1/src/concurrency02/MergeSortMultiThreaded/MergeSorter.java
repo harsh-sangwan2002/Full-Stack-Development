@@ -1,4 +1,4 @@
-package concurrency02.mergeSortMultiThreaded;
+package concurrency02.MergeSortMultiThreaded;
 
 import java.util.ArrayList;
 import java.util.concurrent.*;

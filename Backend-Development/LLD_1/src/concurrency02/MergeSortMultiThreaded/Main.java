@@ -1,4 +1,4 @@
-package concurrency02.mergeSortMultiThreaded;
+package concurrency02.MergeSortMultiThreaded;
 
 import java.util.concurrent.ExecutionException;
 import java.util.List;

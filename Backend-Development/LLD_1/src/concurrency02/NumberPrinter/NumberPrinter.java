@@ -1,4 +1,4 @@
-package concurrency02;
+package concurrency02.NumberPrinter;
 
 public class NumberPrinter implements  Runnable{
 
