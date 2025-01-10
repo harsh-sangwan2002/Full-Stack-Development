@@ -1,4 +1,5 @@
 public class HelpFromSam {
+    
     public int solve(int A) {
 
         int ones = 0;

@@ -1,4 +1,5 @@
 public class NumberOfBits {
+    
     public int numSetBits(int A) {
 
         int countOne = 0;
