@@ -1,9 +1,9 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const emailValidator = require('email-validator');
+const mongoose = require('mongoose');
 
 const app = express();
+const userModel = require('./models/userModel');
 
 app.use(express.json());
 dotenv.config();
@@ -13,47 +13,6 @@ const authRouter = express.Router();
 
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
-
-const userSchema = mongoose.Schema({
-    name: {
-        required: true,
-        type: String,
-    },
-    email: {
-        required: true,
-        type: String,
-    },
-    password: {
-        required: true,
-        type: String,
-        min: 8,
-        validate: function () {
-            return emailValidator.validate(this.email);
-        }
-    },
-    confirmPassword: {
-        required: true,
-        type: String,
-        min: 8,
-        validate: function () {
-            return this.confirmPassword === this.password;
-        }
-    }
-})
-
-// Before the saven event occurs
-userSchema.pre('save', function () {
-    console.log("Before saving in the database", this);
-})
-
-// After the save event occurs
-userSchema.post('save', function (doc) {
-    this.confirmPassword = undefined;
-    console.log("After saving in the database", doc);
-})
-
-const userModel = mongoose.model('User', userSchema);
-
 
 const middleware1 = (req, res, next) => {
     console.log("middleware1 is called");
