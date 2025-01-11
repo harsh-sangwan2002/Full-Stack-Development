@@ -120,7 +120,7 @@ li {
 }
 
 .movie-title:hover {
-    text-shadow: 0 4px 10px rgba(255, 255, 255, 0.8);
+    color: #ffd700;
 }
 
 .button-wrapper {

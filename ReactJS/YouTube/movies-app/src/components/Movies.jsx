@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import { movies } from '../utils/getMovies';
+import axios from 'axios';
 
 export default class Movies extends Component {
+
+
     constructor() {
         super();
         this.state = {
             hover: '',
             parr: [1],
+            currPage: 1,
         };
     }
 
     render() {
         let movie = movies.results;
-        console.log(movie);
+        console.log('Render');
 
         return (
             <>
