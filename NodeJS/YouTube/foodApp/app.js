@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 
-
 app.use(express.json());
 
 // mini app
@@ -10,6 +9,16 @@ const authRouter = express.Router();
 
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
+
+const middleware1 = (req, res, next) => {
+    console.log("middleware1 is called");
+    next();
+}
+
+const middleware2 = (req, res, next) => {
+    console.log("middleware2 is called");
+    next();
+}
 
 const getSignUp = (req, res) => {
     res.sendFile('/public/index.html', { root: __dirname });
@@ -78,8 +87,8 @@ userRouter.route('/:id')
     .get();
 
 authRouter.route('/signup')
-    .get(getSignUp)
-    .post(postSignUp);
+    .get(middleware1, getSignUp)
+    .post(middleware2, postSignUp);
 
 app.listen(3000, (req, res) => {
     console.log("Server is running on port 3000");
