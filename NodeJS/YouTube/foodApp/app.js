@@ -1,14 +1,41 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
 const app = express();
 
 app.use(express.json());
-
+dotenv.config();
 // mini app
 const userRouter = express.Router();
 const authRouter = express.Router();
 
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
+
+const userSchema = mongoose.Schema({
+    name: {
+        required: true,
+        type: String,
+    },
+    email: {
+        required: true,
+        type: String,
+    },
+    password: {
+        required: true,
+        type: String,
+        min: 8,
+    },
+    confirmPassword: {
+        required: true,
+        type: String,
+        min: 8,
+    }
+})
+
+const userModel = mongoose.model('User', userSchema);
+
 
 const middleware1 = (req, res, next) => {
     console.log("middleware1 is called");
@@ -20,17 +47,36 @@ const middleware2 = (req, res, next) => {
     next();
 }
 
-const getSignUp = (req, res) => {
-    res.sendFile('/public/index.html', { root: __dirname });
-}
-
-const postSignUp = (req, res) => {
-    const body = req.body;
+const findUsers = async (req, res) => {
+    const body = await userModel.find();
     res.json({
-        message: "Data recieved successfully",
+        message: "Users retrieved successfully",
         body: body
     })
-    console.log(body);
+}
+
+const createUser = async (req, res) => {
+    try {
+        const user = req.body;
+        const result = await userModel.create(user);
+        res.json({
+            message: "User created successfully",
+            result: result
+        })
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+const updateUser = async (req, res) => {
+
+    const user = req.body;
+    const updatedUser = await userModel.findOneAndUpdate({ email: user.email }, user);
+
+    res.json({
+        message: "Data updated successfully.",
+        user: updatedUser
+    })
 }
 
 const getUser = (req, res) => {
@@ -41,30 +87,18 @@ const postUser = (req, res) => {
     console.log(req.body);
     users = req.body.name;
     res.json({
-        message: "Data received successfully.",
-        user: req.body
-    })
-}
-
-const updateUser = (req, res) => {
-    console.log(req.body);
-
-    const datatoBeUpdated = req.body;
-    for (let key in datatoBeUpdated) {
-        users[key] = datatoBeUpdated[key];
-    }
-
-    res.json({
         message: "Data updated successfully.",
         user: req.body
     })
 }
 
-const deleteUser = (req, res) => {
-    users = {};
+const deleteUser = async (req, res) => {
+
+    const user = req.body;
+    const deletedUser = await userModel.findOneAndDelete({ email: user.email });
     res.json({
-        message: "Data deleted successfully.",
-        user: users
+        message: "User deleted successfully.",
+        user: deletedUser
     })
 }
 
@@ -87,8 +121,19 @@ userRouter.route('/:id')
     .get();
 
 authRouter.route('/signup')
-    .get(middleware1, getSignUp)
-    .post(middleware2, postSignUp);
+    .get(findUsers)
+    .post(createUser)
+    .patch(updateUser)
+    .delete(deleteUser);
+
+(async function connect() {
+    try {
+        await mongoose.connect(process.env.DB_LINK);
+        console.log("MongoDB is connected");
+    } catch (err) {
+        console.log(err);
+    }
+})()
 
 app.listen(3000, (req, res) => {
     console.log("Server is running on port 3000");
