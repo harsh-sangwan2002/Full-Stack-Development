@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <!-- Write your code solution here, inside the main function -->
+    <!-- WARNING:
+        Don't make any changes outside the given function. (would fail test cases)
+        Write the required code and return the correct answer. -->
+    <script id='solution' defer>
+        function divide(a, b) {
+            //write your code here ===============================================
+            if (a <= 0 || b <= 0) {
+                throw new Error('Division by zero is not allowed.');
+            }
+
+            // divide the value "a" and "b" 
+            let output = a / b;
+            return output;
+
+            try {
+                const result = divide(a, b);
+                console.log('result', result);
+            }
+            catch (error) {
+                console.error(error);
+                return null;
+            }
+        }
+    </script>
+</body>
+
+</html>

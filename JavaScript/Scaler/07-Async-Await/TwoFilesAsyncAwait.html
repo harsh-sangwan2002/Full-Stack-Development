@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <script defer>
+        function fetchByPromise(fileName) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    resolve(`content : ${fileName}`);
+                }, 100 * Math.random());
+            });
+        }
+    </script>
+    <!-- Write your code solution here, inside the nSeries function -->
+    <!-- WARNING:
+        Don't make any changes outside the given function. (would fail test cases)
+        Write the required code and return the correct answer. -->
+    <script id='solution' defer>
+        async function nSeries(fileArray, ansArray) {
+            //write your code here =========================================
+            try {
+
+                for (let i = 0; i < fileArray.length; i++) {
+                    const res = await fetchByPromise(fileArray[i]);
+                    ansArray.push(res);
+
+                    if (i == fileArray.length - 1)
+                        ansArray.push("All files have been read");
+                }
+
+                return ansArray;
+            } catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
+</body>
+
+</html>
