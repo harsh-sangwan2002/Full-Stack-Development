@@ -1,9 +1,10 @@
 const fs = require('fs');
+const path = require('path');
 
 var a = 10, b = 20, c = a + b;
-const path = "/Users/harshsangwan/Desktop/Full-Stack-Development/NodeJS/BrainMentors/Basics/content.txt";
+const fullPath = path.join(__dirname, 'sample.txt');
 
-fs.readFile(path, (err, data) => {
+fs.readFile(fullPath, (err, data) => {
 
     if (err)
         console.log(err);
