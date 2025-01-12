@@ -33,8 +33,18 @@
         <a href="https://kodekarma.dev">Kode Karma</a>
     </div>
 
+    <button class="random-button">Show Random Number</button>
+
     <script>
         var title = 'Chirag Goel JS class'
+        const buttonRef = document.querySelector('.random-button');
+
+        function showRandom() {
+            alert(Math.random() * 10 + 1);
+        }
+
+        buttonRef.addEventListener('click', showRandom);
+
     </script>
 </body>
 
