@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- algorithm to efficiently manipulate your UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+
+    <!-- React DOM  -> uses react to update the DOM-->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- transpiler -> JSX -> into javascript -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <title>Multiple Counter</title>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+<script type="text/babel">
+
+    function Counter(props) {
+
+        const [count, setCount] = React.useState(0);
+
+        const increment = () => {
+            setCount(count + 1);
+        }
+
+        const decrement = () => {
+            setCount(count - 1);
+        }
+
+        return <div class="counter">
+            <h1>Counter Number: {props.number}</h1>
+            <button onClick={increment}>+</button>
+            <p>{count}</p>
+            <button onClick={decrement}>-</button>
+            <hr />
+        </div>
+    }
+
+    function CounterParent() {
+
+        return <div>
+            <Counter number="1" />
+            <Counter number="2" />
+            <Counter number="3" />
+        </div>
+    }
+
+    ReactDOM.render(<CounterParent/>,document.getElementById('root'));
+</script>
+
+</html>
