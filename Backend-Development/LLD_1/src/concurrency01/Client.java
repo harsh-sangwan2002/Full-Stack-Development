@@ -1,4 +1,4 @@
-package concurrency01IntroToProcesses;
+package concurrency01;
 
 public class Client {
 
