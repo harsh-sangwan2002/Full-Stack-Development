@@ -1,33 +1,16 @@
-import { useState } from 'react'
-
-import UseEffect from './useEffect/UseEffect'
-import UseMemo from './useMemo/UseMemo'
-import UseCallback from './useCallBack/useCallback'
-import Dasboard from './useContext/Dasboard'
-
+import UseCallBack from './components/UseCallBack'
+import UseEffect from './components/UseEffect'
+import UseMemo from './components/UseMemo'
 import './index.css'
-import { DashboardContext } from './useContext/UseContext'
-import UseRef from './useRef/UseRef'
-import UseRef2 from './useRef/UseRef2'
 
 function App() {
 
-  const [user] = useState({
-    isSubscribed: true,
-    name: 'You'
-  })
-
   return (
-    <div>
+    <>
       {/* <UseEffect /> */}
       {/* <UseMemo /> */}
-      {/* <UseCallBack /> */}
-      {/* <DashboardContext.Provider value={user}>
-        <Dasboard />
-      </DashboardContext.Provider> */}
-      {/* <UseRef /> */}
-      <UseRef2 />
-    </div>
+      <UseCallBack />
+    </>
   )
 }
 
