@@ -1,6 +1,7 @@
 package functionalInterface;
 
 import java.util.function.BiPredicate;
+import java.util.function.BinaryOperator;
 
 public class Main {
 
@@ -24,5 +25,9 @@ public class Main {
         // Way-3. Lambda expression (Java 8)
         BiPredicate<String, Integer> biPredicate3 = (str, val) -> str.length() > val;
         System.out.println(biPredicate3.test("Hello", 10));
+
+        BinaryOperator<String> binaryOperator = (str1,str2)->str1+" "+str2;
+        System.out.println(binaryOperator.apply("Hello","World"));
+
     }
 }

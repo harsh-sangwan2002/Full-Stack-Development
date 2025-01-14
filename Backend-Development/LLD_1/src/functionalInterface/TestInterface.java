@@ -1,9 +1,9 @@
 package functionalInterface;
 
 @FunctionalInterface
-public interface TestInterface {
+public interface TestInterface<T> {
 
-    void fun();
+    void fun(T t);
 
     default void fun2(){
         System.out.println("fun2");
