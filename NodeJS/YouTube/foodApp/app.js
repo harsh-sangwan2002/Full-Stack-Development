@@ -1,11 +1,13 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 const userModel = require('./models/userModel');
 
 app.use(express.json());
+app.use(cookieParser());
 dotenv.config();
 // mini app
 const userRouter = express.Router();
@@ -96,6 +98,24 @@ userRouter.route('/')
 
 userRouter.route('/:id')
     .get();
+
+userRouter.route('/setCookies')
+    .get(setCookies);
+
+userRouter.route('/getCookies')
+    .get(getCookies);
+
+function setCookies(req, res) {
+    res.cookie("username", "john doe", { maxAge: 1000 * 60 * 60 * 24, httpOnly: true, secure: true });
+    res.cookie("isAuthenticated", true);
+    res.send("Cookies are set");
+}
+
+function getCookies(req, res) {
+    const cookies = req.cookies;
+    console.log(cookies);
+    res.send("Cookies are retrieved");
+}
 
 authRouter.route('/signup')
     .get(findUsers)
