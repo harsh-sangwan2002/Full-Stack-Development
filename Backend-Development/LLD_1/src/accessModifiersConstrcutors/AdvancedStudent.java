@@ -1,6 +1,6 @@
 package accessModifiersConstrcutors;
 
-import introToOOPS.Student;
+import IntroToOOPS.Student;
 
 public class AdvancedStudent extends Student {
 
