@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book My Show</title>
+
+    <style>
+        .container {
+            margin: 3rem auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .heading {
+            font-size: 3rem;
+        }
+
+        .filter {
+            margin: 3rem 0;
+        }
+
+        .movies {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .movie {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 150px;
+            position: relative;
+        }
+
+        .movie-delete-icon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+            padding: 5px;
+            cursor: pointer;
+            color: red;
+        }
+
+        .movie-title {
+            padding: 5px;
+            background-color: black;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .movie-price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: chocolate;
+            font-size: 25px;
+            color: white;
+            height: 100px;
+        }
+    </style>
+
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">Book My Show</div>
+        <div class="filter">
+            <select name="" id="">
+                <option value="all">All</option>
+                <option value="action">Action</option>
+                <option value="horror">Horror</option>
+                <option value="comedy">Comedy</option>
+            </select>
+            <button type="delete" class="delete-all">Remove All</button>
+        </div>
+        <div class="movies">
+            <div class="movie">
+                <div class="movie-delete-icon">X</div>
+                <div class="movie-title">Action: Movie 1</div>
+                <div class="movie-price">Rs 100</div>
+            </div>
+            <div class="movie">
+                <div class="movie-delete-icon">X</div>
+                <div class="movie-title">Comedy: Movie 2</div>
+                <div class="movie-price">Rs 100</div>
+            </div>
+            <div class="movie">
+                <div class="movie-delete-icon">X</div>
+                <div class="movie-title">Horror: Movie 3</div>
+                <div class="movie-price">Rs 100</div>
+            </div>
+            <div class="movie">
+                <div class="movie-delete-icon">X</div>
+                <div class="movie-title">Drama: Movie 4</div>
+                <div class="movie-price">Rs 100</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
