@@ -31,7 +31,6 @@ const userSchema = mongoose.Schema({
 
 // Before the save event occurs
 userSchema.pre('save', async function () {
-    console.log("Before saving in the database", this);
     const salt = await bcrypt.genSalt();
     const hashedString = await bcrypt.hash(this.password, salt);
     this.password = hashedString;
@@ -40,7 +39,6 @@ userSchema.pre('save', async function () {
 // After the save event occurs
 userSchema.post('save', function (doc) {
     this.confirmPassword = undefined;
-    console.log("After saving in the database", doc);
 })
 
 const userModel = mongoose.model('User', userSchema);
