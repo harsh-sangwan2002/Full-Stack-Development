@@ -29,7 +29,7 @@ const userSchema = mongoose.Schema({
     }
 })
 
-// Before the saven event occurs
+// Before the save event occurs
 userSchema.pre('save', async function () {
     console.log("Before saving in the database", this);
     const salt = await bcrypt.genSalt();
