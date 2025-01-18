@@ -18,14 +18,20 @@ Welcome to the **Full-Stack Development**! This repository showcases a collectio
 ## 📂 Project Structure
 
 ```bash
+├── /Backend-Development/
+├── /Databases-And-SQL/
+├── /Frontend-Machine-Coding/
 ├── /HTML-CSS/
+├── /ReactJS/
 ├── /JavaScript/
-├── /TypeScript/
-├── /React/
-├── /Node.js/
+├── /NodeJS/
+├── /Interview-Prep-DSA/
+├── /Object-Oriented-Design-Analysis/
+├── /Operating-System-Computer-Networks/
 ```
 
 ## ✨ Features
+
 - **Responsive Design**: Optimized for all screen sizes.
 - **Modern UI/UX**: Clean and interactive design patterns.
 - **Animations**: Smooth transitions and hover effects.
@@ -38,20 +44,24 @@ Welcome to the **Full-Stack Development**! This repository showcases a collectio
 - **Real-time Data**: Implemented real-time features with WebSockets and Node.js.
 - **Scalability**: Efficient backend architecture with Node.js for handling high traffic.
 
-
 ## 🚀 Getting Started
+
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/harsh-sangwan2002/Full-Stack-Development.git
 ```
 
-2. Launch index.html in your browser. 
+2. Launch index.html in your browser.
 
 ## 🌟 Demo
+
 Live Demo – Click here to see the project in action.
 
 ## 🤝 Contributions
+
 Feel free to fork this repository, submit issues, or contribute by submitting pull requests. Contributions are welcome!
 
 ## 📬 Contact
+
 [GitHub](https://github.com/harsh-sangwan2002)
