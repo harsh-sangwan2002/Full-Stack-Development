@@ -34,6 +34,7 @@ userSchema.pre('save', async function () {
     const salt = await bcrypt.genSalt();
     const hashedString = await bcrypt.hash(this.password, salt);
     this.password = hashedString;
+    this.confirmPassword = undefined;
 })
 
 // After the save event occurs
