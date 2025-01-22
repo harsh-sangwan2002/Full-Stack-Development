@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="filters">
+            <div class="priority lightblue"></div>
+            <div class="priority lightcoral"></div>
+            <div class="priority lightgreen"></div>
+            <div class="priority lightsalmon"></div>
+        </div>
+        <div class="actions">
+            <div class="create-icon">+</div>
+            <div class="delete-icon">X</div>
+        </div>
+    </header>
+
+    <!-- Create Task Modal -->
+    <div class="task-modal hide">
+        <div class="left-section">
+            <div class="close">X</div>
+            <textarea></textarea>
+        </div>
+        <div class="right-section">
+            <div class="priority p1" data-priority="1"></div>
+            <div class="priority p2" data-priority="2"></div>
+            <div class="priority p3" data-priority="3"></div>
+            <div class="priority p4" data-priority="4"></div>
+        </div>
+    </div>
+
+    <!-- Task Container -->
+    <div class="task-container">
+    </div>
+</body>
+
+</html>
