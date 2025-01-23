@@ -1,20 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { movies } from './GetMovies'
+import MovieCard from './MovieCard';
+import Pagination from './Pagination';
 
 function Movies() {
 
+    const [movieList, setMovieList] = useState([]);
+
+    // Lifting the state up to Movies.jsx
+    const [pageNo, setPageNo] = useState(1);
+
+    const handlePrev = () => {
+        if (pageNo > 1)
+            setPageNo(pageNo - 1);
+    }
+
+    const handleNext = () => {
+        setPageNo(pageNo + 1);
+    }
+
+    useEffect(() => {
+        const res = movies.results;
+        setMovieList(res);
+    }, [pageNo])
 
     return (
-        <div className='flex flex-wrap justify-around mt-20'>
-            {
-                movies.results.map(movie => (
-                    <div key={movie.id} className='relative m-4 rounded overflow-hidden'>
-                        <img className='h-[15rem] w-[20rem] object-cover rounded-lg' src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" />
-                        <p className='absolute bottom-2 left-2 text-white'>{movie.title}</p>
-                    </div>
-                ))
-            }
-        </div>
+        <>
+            <h1 className='text-center m-12 text-4xl'>Trending Movies</h1>
+            <div className='flex flex-wrap justify-around mt-20'>
+                {
+                    !movieList ? <div>Loading...</div> :
+                        movieList.map(movie => (
+                            <MovieCard key={movie.id} title={movie.title} backdrop_path={movie.backdrop_path} />
+                        ))
+                }
+            </div>
+            <Pagination handlePrev={handlePrev} handleNext={handleNext} pageNo={pageNo} />
+        </>
     )
 }
 

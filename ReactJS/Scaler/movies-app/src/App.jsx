@@ -15,7 +15,6 @@ function App() {
           <>
             <Banner />
             <Movies />
-            <Pagination />
           </>
         } />
         <Route path="/watchlist" element={<WatchList />} />

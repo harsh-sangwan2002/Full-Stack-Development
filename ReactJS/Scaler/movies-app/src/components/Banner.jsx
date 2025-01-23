@@ -1,11 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { movies } from './GetMovies';
 
 function Banner() {
+
+    const [trendingMovie, setTreandingMovie] = useState();
+
+    useEffect(() => {
+        let res = movies.results[Math.floor(Math.random() * movies.results.length)];
+        setTreandingMovie(res);
+    }, []);
+
     return (
-        <div>
-            <img className='h-[35rem] w-screen' src="https://image.tmdb.org/t/p/original//6EdKBYkB1ssgGjc249ud1L55o8d.jpg" alt="" />
-            <p className='absolute bottom-0 text-white'>Jurassic Park</p>
-        </div>
+        <>
+            {
+                !trendingMovie ? <div>Loading...</div> :
+                    <div className='relative flex flex-col justify-around items-center'>
+                        <img className='h-[45rem] w-screen p-5 object-cover rounded-sm' src={`https://image.tmdb.org/t/p/original/${trendingMovie?.backdrop_path}`} alt="" />
+                        <p className='bg-slate-300 absolute bottom-6 text-6xl tracking-wide text-blue-600 mt-10'>{trendingMovie?.original_title}</p>
+                    </div>
+            }
+        </>
     )
 }
 
