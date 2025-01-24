@@ -33,22 +33,6 @@ body {
     border-radius: 5px;
 }
 
-.lightblue {
-    background-color: lightblue;
-}
-
-.lightcoral {
-    background-color: lightcoral;
-}
-
-.lightgreen {
-    background-color: lightgreen;
-}
-
-.lightsalmon {
-    background-color: lightsalmon;
-}
-
 .actions {
     display: flex;
     gap: 2rem;
@@ -62,11 +46,19 @@ body {
     font-size: 3rem;
 }
 
-.delete-icon {
+.create-icon:hover {
+    color: green;
+}
+
+.delete-action {
     cursor: pointer;
     padding: 8px 10px;
     width: 3rem;
     font-size: 2rem;
+}
+
+.delete-action:hover {
+    color: red;
 }
 
 /* Task Modal */
@@ -159,9 +151,11 @@ body {
 
 /* Task Container */
 .task-container {
+    margin-left: 3rem;
+    padding: 1rem;
     margin-top: 5rem;
     display: flex;
-    gap: 15px;
+    gap: 5rem;
     flex-wrap: wrap;
     padding: 10px;
 }
@@ -171,11 +165,11 @@ body {
     background-color: aquamarine;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .task-priority {
     padding: 5px 10px;
-    background-color: yellow;
     height: 2rem;
     width: 100%;
 }
@@ -189,4 +183,15 @@ body {
 .task-content {
     padding: 5px 10px;
     height: 200px;
+}
+
+.delete-icon {
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.delete-icon:hover {
+    color: red;
 }
