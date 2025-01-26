@@ -1,6 +1,10 @@
 import Counter from "./components/Counter"
+import DataComp from "./components/DataComp"
 import FuncTodo from "./components/FuncTodo"
 import Todo from './components/Todo'
+import WithLoading from "./components/WithLoading"
+
+const EnhancedComponent = WithLoading(DataComp);
 
 function App() {
 
@@ -8,7 +12,8 @@ function App() {
     <>
       {/* <Counter name="Class Based Component" /> */}
       {/* <Todo /> */}
-      <FuncTodo />
+      {/* <FuncTodo /> */}
+      <EnhancedComponent data="Here is some data!" />
     </>
   )
 }
