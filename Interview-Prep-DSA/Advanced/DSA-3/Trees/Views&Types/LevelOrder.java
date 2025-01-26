@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
-public class Solution {
-    
+public class LevelOrder {
+
     public int[][] solve(TreeNode A) {
 
         List<List<Integer>> list = new ArrayList<>();
