@@ -50,14 +50,14 @@ body {
     color: green;
 }
 
-.delete-action {
+.readonly-icon {
     cursor: pointer;
     padding: 8px 10px;
     width: 3rem;
     font-size: 2rem;
 }
 
-.delete-action:hover {
+.readonly-icon:hover {
     color: red;
 }
 
@@ -147,6 +147,7 @@ body {
 
 .selected {
     border: 1px solid grey;
+    color: red;
 }
 
 /* Task Container */
@@ -155,7 +156,7 @@ body {
     padding: 1rem;
     margin-top: 5rem;
     display: flex;
-    gap: 5rem;
+    gap: 2rem;
     flex-wrap: wrap;
     padding: 10px;
 }
@@ -180,18 +181,32 @@ body {
     color: #fff;
 }
 
-.task-content {
+.task-content textarea {
     padding: 5px 10px;
+    font-size: 1.5rem;
+    resize: none;
+    outline: none;
+    border: none;
     height: 200px;
+    width: 100%;
+    background-color: aquamarine;
 }
 
-.delete-icon {
+.task-delete-icon {
     position: absolute;
     bottom: 2px;
     right: 10px;
     cursor: pointer;
 }
 
-.delete-icon:hover {
+.task-delete-icon:hover {
     color: red;
+}
+
+.noneditable .task-delete-icon {
+    display: none;
+}
+
+.noneditable .task-content textarea {
+    pointer-events: none;
 }

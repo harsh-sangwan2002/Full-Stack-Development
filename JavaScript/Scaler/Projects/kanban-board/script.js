@@ -55,11 +55,11 @@ const taskModal = document.querySelector('.task-modal');
 const closeButton = document.querySelector('.task-modal .close');
 const allPriorityRef = document.querySelectorAll('.task-modal .priority');
 const textareaRef = document.querySelector('.task-modal textarea');
+const readOnlyButtonRef = document.querySelector('.readonly-icon');
 
 let modalFlag = false;
 
 // Filter Tickets
-
 function applyFilter(priority) {
 
     let allTasks = document.querySelectorAll('.task');
@@ -92,8 +92,10 @@ createIcon.addEventListener('click', e => {
 
     modalFlag = !modalFlag;
 
-    if (modalFlag)
+    if (modalFlag) {
         taskModal.classList.remove('hide');
+        taskModal.querySelector('textarea').focus();
+    }
 
     else
         taskModal.classList.add('hide');
@@ -142,6 +144,7 @@ textareaRef.addEventListener('keypress', e => {
         renderTasks();
 
         removeModal();
+        updateLocalStorage();
     }
 })
 
@@ -153,25 +156,62 @@ function createTask(id, priority, content) {
     taskRef.innerHTML = `
         <div class="task-priority priority p${priority}">${priority}</div>
         <div class="task-id">#${id}</div>
-        <div class="task-content">${content}</div>
-        <div class="delete-icon"><i class="fa-solid fa-trash fa-2x"></i></div>
+        <div class="task-content">
+            <textarea spellcheck="false">${content}</textarea>
+        </div>
+        <div class="task-delete-icon"><i class="fa-solid fa-trash fa-2x"></i></div>
     `;
     taskRef.setAttribute('data-id', id);
     taskRef.setAttribute('data-priority', priority);
     taskContainer.appendChild(taskRef);
-    const deleteIcon = taskRef.querySelector('.delete-icon');
+    const deleteIcon = taskRef.querySelector('.task-delete-icon');
 
     deleteIcon.addEventListener('click', e => {
         removeTask(taskRef, id);
+        renderTasks();
     })
+
+    taskRef.querySelector('.task-content textarea').addEventListener('change', e => {
+        updateTask(id, e.target.value);
+    })
+
+    updateLocalStorage();
+}
+
+function updateLocalStorage() {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+
+function updateTask(id, newValue) {
+
+    let idx = tasks.findIndex(task => task.id === id);
+
+    if (idx != -1) {
+        const currTask = tasks[idx];
+        currTask.content = newValue;
+        tasks.splice(idx, 1, currTask);
+    }
+
+    updateLocalStorage();
 }
 
 function removeTask(taskRef, id) {
     tasks = tasks.filter(task => task.id != id);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    updateLocalStorage();
     taskRef.remove();
-    renderTasks();
 }
+
+readOnlyButtonRef.addEventListener('click', function (e) {
+    const readOnlyBtnClassList = readOnlyButtonRef.classList;
+    if (readOnlyBtnClassList.contains('selected')) {
+        readOnlyBtnClassList.remove('selected');
+        taskContainer.classList.remove('noneditable');
+    } else {
+        readOnlyBtnClassList.add('selected');
+        taskContainer.classList.add('noneditable');
+    }
+})
 
 // Render Tasks
 function renderTasks() {
@@ -181,7 +221,7 @@ function renderTasks() {
         createTask(task.id, task.priority, task.content);
     })
 
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    updateLocalStorage();
 }
 
 renderTasks();
