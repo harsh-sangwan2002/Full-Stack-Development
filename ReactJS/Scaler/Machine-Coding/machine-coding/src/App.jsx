@@ -1,17 +1,19 @@
 import { useState } from 'react'
 import Ref from './components/Ref'
+import StopWatch from './components/StopWatch';
 
 function App() {
 
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
 
   return (
     <>
-      <h1>Hello World</h1>
+      {/* <h1>Hello World</h1>
       {
         show && <Ref />
       }
-      <button onClick={() => setShow(!show)}>Toggle Ref Component</button>
+      <button onClick={() => setShow(!show)}>Toggle Ref Component</button> */}
+      <StopWatch />
     </>
   )
 }
