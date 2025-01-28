@@ -4,21 +4,27 @@ function Ref() {
 
     // useRef is used to access the DOM element directly
     const inputRef = useRef(null);
+    const intervaRef = useRef(null);
     const [seconds, setSeconds] = useState(0);
 
     useEffect(() => {
         console.log("Timer callback running");
-        const intervalId = setInterval(() => {
+        intervaRef.current = setInterval(() => {
             setSeconds((prevSec => prevSec + 1));
         }, 1000)
 
         return () => {
-            clearInterval(intervalId);
+            clearInterval(intervaRef.current);
         }
-    })
+    }, [])
 
     const handleClick = () => {
         inputRef.current.focus();
+    }
+
+    const handlePause = () => {
+        console.log("Handle Pause");
+        clearInterval(intervaRef.current);
     }
 
     return (
@@ -28,6 +34,7 @@ function Ref() {
             <div>
                 <h1>Timer</h1>
                 <h2>{seconds}</h2>
+                <button onClick={handlePause}>Pause</button>
             </div>
         </div>
     )
