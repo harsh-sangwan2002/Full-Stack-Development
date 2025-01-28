@@ -43,11 +43,13 @@ function StopWatch() {
     }, []);
 
     return (
-        <div>
+        <div className='timer-container'>
             <h1>{formatTime(time)}</h1>
-            <button onClick={handleStart}>Start Timer</button>
-            <button onClick={handlePause}>Stop Timer</button>
-            <button onClick={handleReset}>Reset</button>
+            <div className="buttons-container">
+                <button className="btn" onClick={handleStart}>Start Timer</button>
+                <button className='btn' onClick={handlePause}>Stop Timer</button>
+                <button className='btn' onClick={handleReset}>Reset</button>
+            </div>
         </div>
     )
 }
