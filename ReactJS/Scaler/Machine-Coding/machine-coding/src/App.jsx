@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Ref from './components/Ref'
 import StopWatch from './components/StopWatch';
+import Carousel from './components/Carousel';
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
         show && <Ref />
       }
       <button onClick={() => setShow(!show)}>Toggle Ref Component</button> */}
-      <StopWatch />
+      {/* <StopWatch /> */}
+      <Carousel />
     </>
   )
 }
