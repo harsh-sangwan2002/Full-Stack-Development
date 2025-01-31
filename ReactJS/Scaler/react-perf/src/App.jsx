@@ -2,6 +2,7 @@ import { Link, BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 import { useState, lazy, Suspense } from 'react'
 import LargeArraySum from './components/LargeArraySum';
+import Todo from './components/Todo';
 
 function App() {
 
@@ -39,7 +40,8 @@ function App() {
     //     </Routes>
     //   </Suspense>
     // </Router>
-    <LargeArraySum />
+    // <LargeArraySum />
+    <Todo />
   )
 }
 
