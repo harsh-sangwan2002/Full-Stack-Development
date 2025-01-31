@@ -2,12 +2,12 @@ import React from 'react'
 import GrandSon from './GrandSon'
 import GrandDaughter from './GrandDaugther'
 
-function Child({ familyInfo }) {
+function Child() {
     return (
         <div>
             I am child component
-            <GrandSon familyInfo={familyInfo} />
-            <GrandDaughter familyInfo={familyInfo} />
+            <GrandSon />
+            <GrandDaughter />
         </div>
     )
 }

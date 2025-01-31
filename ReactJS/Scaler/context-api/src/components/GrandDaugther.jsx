@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import FamilyContext from '../context/FamilyContext';
 
-function GrandDaugther({ familyInfo }) {
+function GrandDaugther() {
+
+    const familyInfo = useContext(FamilyContext);
+
     return (
         <div>
             I am grand daugther component. {familyInfo.onlyForGrandChildren()}
