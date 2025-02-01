@@ -22,5 +22,7 @@ public class recursion {
 
         int res = fibonacci(n);
         System.out.println(res);
+
+        scn.close();
     }
 }
