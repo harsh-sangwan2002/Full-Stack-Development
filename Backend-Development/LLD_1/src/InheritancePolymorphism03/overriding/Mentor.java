@@ -1,4 +1,4 @@
-package InheritancePolymorphism.overriding;
+package InheritancePolymorphism03.overriding;
 
 public class Mentor extends User{
 

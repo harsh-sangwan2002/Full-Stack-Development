@@ -1,4 +1,4 @@
-package InheritancePolymorphism.polymorphism;
+package InheritancePolymorphism03.polymorphism;
 
 public class C extends A{
     String companyName;

@@ -1,4 +1,4 @@
-package InheritancePolymorphism.overriding;
+package InheritancePolymorphism03.overriding;
 
 public class D extends C{
 
