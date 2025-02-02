@@ -1,4 +1,4 @@
-package accessModifiersConstrcutors;
+package AccessModifiersConstructors02;
 
 public class Student {
 
