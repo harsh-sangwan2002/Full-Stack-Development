@@ -10,7 +10,8 @@ public class Main {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-        List<Integer> listToSort = List.of(3,2,1,4,9,7,8,6,5);
+        List<Integer> listToSort = List.of(3,1,2,4,8,7,6,5);
+
         ExecutorService executorService = Executors.newCachedThreadPool();
         MergeSorter mergeSorter = new MergeSorter(listToSort,executorService);
 

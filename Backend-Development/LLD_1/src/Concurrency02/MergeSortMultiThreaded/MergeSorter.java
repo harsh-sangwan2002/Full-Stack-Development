@@ -7,60 +7,68 @@ import java.util.List;
 public class MergeSorter implements Callable<List<Integer>>{
 
     private List<Integer> listToSort;
-    ExecutorService executorService;
+    private ExecutorService executorService;
 
     public MergeSorter(List<Integer> listToSort, ExecutorService executorService){
         this.listToSort = listToSort;
         this.executorService = executorService;
     }
 
-    public List<Integer> call() throws Exception {
-        int n = listToSort.size();
+    @Override
+    public List<Integer> call() throws Exception{
 
-        if(n <= 1){
-            return listToSort;
-        }
+        int n = this.listToSort.size();
+
+        if(n<=1)
+            return this.listToSort;
 
         int mid = n/2;
+        List<Integer> leftHalf = new ArrayList<Integer>();
+        List<Integer> rightHalf = new ArrayList<Integer>();
 
-        List<Integer> left = listToSort.subList(0, mid);
-        List<Integer> right = listToSort.subList(mid, n);
+        for(int i=0; i<mid; i++)
+            leftHalf.add(this.listToSort.get(i));
 
-        MergeSorter leftSorter = new MergeSorter(left,executorService);
-        MergeSorter rightSorter = new MergeSorter(right,executorService);
+        for(int i=mid; i<n; i++)
+            rightHalf.add(this.listToSort.get(i));
 
-        Future<List<Integer>> leftSortedListFuture = executorService.submit(leftSorter);
-        Future<List<Integer>> rightSortedListFuture = executorService.submit(rightSorter);
+        MergeSorter leftMergeSorter = new MergeSorter(leftHalf,executorService);
+        MergeSorter rightMergeSorter = new MergeSorter(rightHalf,executorService);
+
+        Future<List<Integer>> leftSortedListFuture = executorService.submit(leftMergeSorter);
+        Future<List<Integer>> rightSortedListFuture = executorService.submit(rightMergeSorter);
 
         List<Integer> leftSortedList = leftSortedListFuture.get();
         List<Integer> rightSortedList = rightSortedListFuture.get();
 
-        return getIntegers(leftSortedList, rightSortedList);
+        return mergeSortedLists(leftSortedList, rightSortedList);
     }
 
-    private static List<Integer> getIntegers(List<Integer> leftSortedList, List<Integer> rightSortedList) {
-        int i = 0, j = 0;
-        List<Integer> sortedList = new ArrayList<>();
+    private List<Integer> mergeSortedLists(List<Integer> list1, List<Integer> l2){
 
-        while(i < leftSortedList.size() && j < rightSortedList.size()){
-            if(leftSortedList.get(i) < rightSortedList.get(j)){
-                sortedList.add(leftSortedList.get(i));
+        int i = 0, j = 0;
+        List<Integer> res = new ArrayList<>();
+
+        while(i<list1.size() && j<l2.size()){
+            if(list1.get(i)<l2.get(j)){
+                res.add(list1.get(i));
                 i++;
             }else{
-                sortedList.add(rightSortedList.get(j));
+                res.add(l2.get(j));
                 j++;
             }
         }
 
-        while(i < leftSortedList.size()){
-            sortedList.add(leftSortedList.get(i));
+        while(i<list1.size()){
+            res.add(list1.get(i));
             i++;
         }
 
-        while(j < rightSortedList.size()){
-            sortedList.add(rightSortedList.get(j));
+        while(j<l2.size()){
+            res.add(l2.get(j));
             j++;
         }
-        return sortedList;
+
+        return res;
     }
 }
