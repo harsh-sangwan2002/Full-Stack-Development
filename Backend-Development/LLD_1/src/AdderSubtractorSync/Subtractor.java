@@ -1,4 +1,4 @@
-package adderSubtractorSync;
+package AdderSubtractorSync;
 
 public class Subtractor implements  Runnable{
 

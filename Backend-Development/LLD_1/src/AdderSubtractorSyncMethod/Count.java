@@ -1,4 +1,4 @@
-package adderSubtractorSyncMethod;
+package AdderSubtractorSyncMethod;
 
 public class Count {
 

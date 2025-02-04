@@ -1,4 +1,4 @@
-package adderSubtractorLock;
+package AdderSubtractorSync;
 
 public class Count {
 

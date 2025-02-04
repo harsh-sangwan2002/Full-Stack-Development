@@ -1,4 +1,4 @@
-package adderSubtractorSync;
+package AdderSubtractor;
 
 public class Main {
 

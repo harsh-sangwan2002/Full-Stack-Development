@@ -1,4 +1,4 @@
-package adderSubtractor;
+package AdderSubtractor;
 
 public class Adder implements Runnable{
 

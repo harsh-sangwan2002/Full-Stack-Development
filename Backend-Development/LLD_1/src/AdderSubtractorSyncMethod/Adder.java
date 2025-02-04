@@ -1,10 +1,10 @@
-package adderSubtractorSyncMethod;
+package AdderSubtractorSyncMethod;
 
-public class Subtractor implements  Runnable{
+public class Adder implements Runnable{
 
     Count count;
 
-    public Subtractor(Count count){
+    public Adder(Count count){
         this.count = count;
     }
 
@@ -13,7 +13,7 @@ public class Subtractor implements  Runnable{
 
         for(int i=0; i<100; i++){
             synchronized (count) {
-                count.value -= i;
+                count.value += i;
             }
         }
     }
