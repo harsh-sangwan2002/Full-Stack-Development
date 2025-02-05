@@ -23,8 +23,7 @@
         let timerId;
         return function (...args) {
 
-            if (timerId)
-                clearTimeout(timerId);
+            clearTimeout(timerId);
 
             timerId = setTimeout(() => {
                 cb(...args);
