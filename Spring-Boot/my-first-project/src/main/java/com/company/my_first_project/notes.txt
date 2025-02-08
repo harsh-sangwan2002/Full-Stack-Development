@@ -1,0 +1,13 @@
+1. Maven is a build-automation tool that helps in managing dependencies.
+2. If we want to use external jar libraries.
+3. It gives a simplified way to integrate the jar files using maven.
+4. Dependencies are maintained by the maven.
+5. Build life-cycle is made up of phases -
+    1) validate -> Pom is correct or not
+    2) compile -> compiles the source code
+    3) test -> run necessary tests if available
+    4) package -> converts into jar/var
+    5) verify -> integration testing
+    6) install -> install the required packages
+    7) deploy -> done in build environment
+6. mvn package -> repackaging the jar file with dependencies.
