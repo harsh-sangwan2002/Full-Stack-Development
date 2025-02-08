@@ -1,6 +1,6 @@
 # Full-Stack Development Repository 🌐
 
-Welcome to the **Full-Stack Development**! This repository showcases a collection of web development projects focusing on modern and responsive web design using **HTML**, **CSS**, **JavaScript**, **TypeScript**, **React**, **Node.js**, **Express** .
+Welcome to the **Full-Stack Development**! This repository showcases a collection of web development projects focusing on modern and responsive web design using **HTML**, **CSS**, **JavaScript**, **TypeScript**, **React**, **Node.js**, **Express** **Spring Boot** **Python** .
 
 ---
 
@@ -22,12 +22,16 @@ Welcome to the **Full-Stack Development**! This repository showcases a collectio
 ├── /Databases-And-SQL/
 ├── /Frontend-Machine-Coding/
 ├── /HTML-CSS/
-├── /ReactJS/
-├── /JavaScript/
-├── /NodeJS/
 ├── /Interview-Prep-DSA/
+├── /JavaScript/
+├── /Microservices-Kubernetes/
+├── /NodeJS/
+├── /ReactJS/
 ├── /Object-Oriented-Design-Analysis/
 ├── /Operating-System-Computer-Networks/
+├── /Python/
+├── /ReactJS/
+├── /Spring-Boot/
 ```
 
 ## ✨ Features
