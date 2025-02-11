@@ -1,0 +1,25 @@
+1. Component -> Isolated, independent, reusable piece of code.
+2. Class component ->
+    class Comp extends React.components{
+        constructor(props){
+            super(props)
+            this.state = {
+                obj:val,
+            }
+        }
+        render(){
+            return(
+                <div></div>
+            )
+        }
+    }
+
+3. Functional component ->
+    function Comp(){
+
+        const [state,setState] = useState([]);
+        
+        return(
+            <div></div>
+        )
+    }
