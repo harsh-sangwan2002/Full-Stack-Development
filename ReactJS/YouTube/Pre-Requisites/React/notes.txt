@@ -1,0 +1,6 @@
+1. React is a JS library which is used to develop UI/frontend. It was developed by Facebook.
+2. Why React?
+    a. Fast & Efficient -> React uses virtual dom for dom manipulation.
+    b. Easy event-handling.
+    c. It's a small library & have limited terminologies.
+    d. It manages UI by states.
