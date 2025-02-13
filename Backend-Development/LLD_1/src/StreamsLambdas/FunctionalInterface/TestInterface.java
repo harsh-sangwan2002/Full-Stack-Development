@@ -1,4 +1,4 @@
-package FunctionalInterface;
+package StreamsLambdas.FunctionalInterface;
 
 @FunctionalInterface
 public interface TestInterface<T> {

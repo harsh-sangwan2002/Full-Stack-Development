@@ -1,4 +1,4 @@
-package Streams;
+package StreamsLambdas.FunctionalInterface.Streams;
 
 import java.util.Arrays;
 import java.util.List;
