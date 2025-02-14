@@ -3,13 +3,11 @@ const obj = {
     printValue: function () {
 
         function inner() {
-            console.log(this.value);
+            console.log(this);
         }
-        // 42
-        inner.call(this);
 
-        // undefined
-        inner();
+        // Global object
+        setTimeout(inner, 1000);
     }
 }
 

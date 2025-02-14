@@ -3,12 +3,12 @@ const obj = {
     printValue: function () {
 
         function inner() {
-            console.log(this.value);
+            console.log(this);
         }
-        // 42
+        // obj
         inner.call(this);
 
-        // undefined
+        // Global object
         inner();
     }
 }
