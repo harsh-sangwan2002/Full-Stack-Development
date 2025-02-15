@@ -1,5 +1,6 @@
 import Auth from "./components/Auth"
 import Firestore from "./components/Firestore"
+import Storage from "./components/Storage"
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <Auth />
       <Firestore />
+      <Storage />
     </>
   )
 }
