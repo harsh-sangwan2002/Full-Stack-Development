@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-function Bat({ bats, buyBat }) {
+function Bat() {
     const [qty, setQty] = useState(1);
-
+    const bats = useSelector(state => state.bat.bats);
+    const dispatch = useDispatch();
     return (
         <div>
             <h1>Bats: {bats}</h1>
@@ -12,21 +13,10 @@ function Bat({ bats, buyBat }) {
                 value={qty}
                 onChange={(e) => setQty(Number(e.target.value))}
             />
-            <button onClick={() => buyBat(qty)}>Buy Bat</button>
+            <button onClick={() => dispatch({ type: "BUY_BAT", payload: qty })}>Buy Bat</button>
         </div>
     );
 }
 
-const mapStateToProps = (state) => {
-    return {
-        bats: state.bat.bats
-    };
-};
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        buyBat: (qty) => dispatch({ type: "BUY_BAT", payload: qty })
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Bat);
+export default Bat;

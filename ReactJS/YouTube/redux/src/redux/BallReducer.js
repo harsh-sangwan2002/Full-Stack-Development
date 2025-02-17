@@ -1,3 +1,4 @@
+// Defines initial state
 const initialState = {
     balls: 50
 }

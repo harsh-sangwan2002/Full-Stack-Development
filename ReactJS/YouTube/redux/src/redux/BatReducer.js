@@ -1,3 +1,4 @@
+// Defines initial state
 const initialState = {
     bats: 20
 }
