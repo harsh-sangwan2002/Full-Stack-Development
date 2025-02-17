@@ -3,7 +3,7 @@ import Context from './context'
 
 function Navbar() {
 
-    const theme = useContext(Context);
+    const { theme } = useContext(Context);
     console.log("Navbar");
     return (
         <div className={theme ? 'dark' : 'light'}>

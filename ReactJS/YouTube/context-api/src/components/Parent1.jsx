@@ -4,7 +4,7 @@ import Context from './context'
 
 function Parent1() {
 
-    const theme = useContext(Context);
+    const { theme } = useContext(Context);
     console.log("Parent1");
     return (
         <div className={theme ? 'dark' : 'light'}>
