@@ -1,6 +1,6 @@
 const path = require('path');
 
-const fullPath = path.join("folder","subfolder","file.txt");
+const fullPath = path.join("folder", "subfolder", "file.txt");
 console.log(fullPath);
 
 const absolutePath = path.resolve(fullPath);
