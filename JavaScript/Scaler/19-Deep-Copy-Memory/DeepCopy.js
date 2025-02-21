@@ -17,6 +17,15 @@ console.log(obj);
 // Own deep clone
 function deepClone(obj) {
 
+    if (typeof obj !== 'object' || obj == null)
+        return obj;
+
+    else if (Array.isArray(obj))
+        return obj.map(item => deepClone(item))
+
+    else if (obj instanceof Function)
+        return obj.bind({})
+
     let res = {}
 
     for (let key in obj) {
