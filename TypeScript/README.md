@@ -33,7 +33,7 @@ Ensure you have the following installed:
 ### Cloning the Repository
 
 ```sh
-git clone https://github.com/harsh-sangwan2002/Typescript.git
+git clone https://github.com/harsh-sangwan2002/Full-Stack-Development/tree/main/TypeScript
 cd typescript-playground
 ```
 
