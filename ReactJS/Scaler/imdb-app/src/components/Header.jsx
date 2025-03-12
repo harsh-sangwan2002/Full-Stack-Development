@@ -1,18 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     return (
-        <div className='header'>
-            <h1>Header</h1>
+        <div className="header">
+            <h1>IMDB</h1>
             <ul>
                 <li>
-                    <Link to="/">Movies</Link>
+                    <Link to="/"> Movies</Link>
                 </li>
                 <li>
-                    <Link to="/watchlist">Watchlist</Link>
+                    <Link to="/details">Detail</Link>
                 </li>
                 <li>
-                    <Link to="/details">Details</Link>
+                    <Link to="/watchlist">Watch List</Link>
                 </li>
             </ul>
         </div>
