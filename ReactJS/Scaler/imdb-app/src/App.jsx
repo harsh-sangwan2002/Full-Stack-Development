@@ -5,15 +5,19 @@ import Header from './components/Header.jsx'
 import './App.css'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
 
 function App() {
+
+  const [watchlist, setWatchlist] = useState({})
+
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<MovieListPage />} />
+        <Route path="/" element={<MovieListPage watchlist={watchlist} setWatchlist={setWatchlist} />} />
         <Route path="/details" element={<MovieDetail />} />
-        <Route path="/watchlist" element={<WatchList />} />
+        <Route path="/watchlist" element={<WatchList watchlist={watchlist} setWatchlist={setWatchlist}/>} />
       </Routes>
     </Router>
   )

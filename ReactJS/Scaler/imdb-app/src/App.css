@@ -118,9 +118,37 @@ button:focus-visible {
     margin: 2rem;
 }
 
-.pagination {
+.pagination-section {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
     gap: 1rem;
+}
+
+.watchlist-container {
+    text-align: center;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
