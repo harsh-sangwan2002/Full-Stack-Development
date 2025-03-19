@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 const Header = () => {
     return (
         <div className="header">
-            <h1>IMDB</h1>
+            <h1>
+                <Link to="/">IMDB</Link>
+            </h1>
             <ul>
                 <li>
                     <Link to="/"> Movies</Link>
