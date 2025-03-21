@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { WatchListContext } from '../context/WatchListContext';
 
-const WatchList = ({ watchlist, setWatchlist }) => {
+const WatchList = () => {
+
+    const WatchListContextData = useContext(WatchListContext);
+    const { watchlist, setWatchlist } = WatchListContextData;
 
     let genreids = {
         28: "Action",
