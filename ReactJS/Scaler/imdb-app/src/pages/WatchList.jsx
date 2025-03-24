@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { WatchListContext } from '../context/WatchListContext';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeFromWatchList } from '../redux/WatchListSlice';
 
 const WatchList = () => {
 
-    const WatchListContextData = useContext(WatchListContext);
-    const { watchlist, setWatchlist } = WatchListContextData;
+    const watchlist = useSelector(state => state.watchList);
+    const dispatch = useDispatch();
 
     let genreids = {
         28: "Action",
@@ -55,8 +56,7 @@ const WatchList = () => {
     const handleRemove = (movie) => {
         const getMovie = watchlist[movie.id]
         if (getMovie) {
-            delete watchlist[movie.id]
-            setWatchlist({ ...watchlist })
+            dispatch(removeFromWatchList(getMovie))
         }
 
         return;

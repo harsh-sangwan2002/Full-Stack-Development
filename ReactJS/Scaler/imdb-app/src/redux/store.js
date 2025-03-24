@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./Counter";
+import watchListReducer from "./WatchListSlice";
 
 export const store = configureStore({
     reducer: {
-        counter: counterReducer,
+        watchList: watchListReducer,
     }
 });
