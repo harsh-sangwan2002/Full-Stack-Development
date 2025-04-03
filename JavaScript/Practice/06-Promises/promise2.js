@@ -15,6 +15,7 @@ function createDummyPromise(delay, message) {
     })
 }
 
+// ES5 using promise chaining
 createDummyPromise(6000, "6 sec").then(data => console.log(data)).catch(err => console.log(err));
 createDummyPromise(3000, "3 sec").then(data => console.log(data)).catch(err => console.log(err));
 createDummyPromise(5000, "5 sec").then(data => console.log(data)).catch(err => console.log(err));

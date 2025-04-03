@@ -2,16 +2,18 @@ const toss = new Promise((resolve, reject) => {
     resolve("Toss");
 });
 
-// ES5 using promise chaining
-function doFlip() {
+// ES6 using async/await
+async function doFlip2() {
 
     console.log("A");
 
-    toss.then((data) => {
+    try {
+        const data = await toss;
         console.log(data);
-    }).catch(err => {
+    } catch (err) {
         console.log(err);
-    });
+    }
+
     console.log("B");
 }
-doFlip();
+doFlip2();
