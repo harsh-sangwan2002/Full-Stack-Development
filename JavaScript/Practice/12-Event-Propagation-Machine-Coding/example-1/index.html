@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container,
+        .quantity,
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .container {
+            flex-direction: column;
+        }
+
+        .row,
+        .container {
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Counter</h1>
+    <div class="container">
+        <div class="row">
+            <div class="title">Apple</div>
+            <div class="quantity">
+                <button class="btn-minus">-</button>
+                <span class="count">0</span>
+                <button class="btn-plus">+</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title">Mango</div>
+            <div class="quantity">
+                <button class="btn-minus">-</button>
+                <span class="count">0</span>
+                <button class="btn-plus">+</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title">Banana</div>
+            <div class="quantity">
+                <button class="btn-minus">-</button>
+                <span class="count">0</span>
+                <button class="btn-plus">+</button>
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+        const containerRef = document.querySelector('.container');
+
+        containerRef.addEventListener('click', (e) => {
+
+            e.stopPropagation();
+            const target = e.target;
+            if (target.classList.contains('btn-plus')) {
+                const countRef = target.previousElementSibling;
+                let count = parseInt(countRef.innerText);
+                countRef.innerText = ++count;
+            }
+
+            else if (target.classList.contains('btn-minus')) {
+                const countRef = target.nextElementSibling;
+                let count = parseInt(countRef.innerText);
+                if (count > 0) {
+                    countRef.innerText = --count;
+                }
+            }
+
+        });
+
+        document.addEventListener('click', (e) => {
+            alert('Document Clicked');
+        });
+
+    </script>
+</body>
+
+</html>
