@@ -3,8 +3,7 @@ public class PickFromBothSides {
     public int solve(int[] A, int B) {
 
         int n = A.length;
-        int[] pre = new int[n];
-        int[] suf = new int[n];
+        int[] pre = new int[n], suf = new int[n];
 
         for (int i = 0; i < n; i++) {
 

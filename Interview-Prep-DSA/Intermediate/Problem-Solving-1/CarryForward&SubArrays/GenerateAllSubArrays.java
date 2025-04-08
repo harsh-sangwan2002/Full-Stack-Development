@@ -10,14 +10,13 @@ public class GenerateAllSubArrays {
 
             for (int j = i; j < n; j++) {
 
-                int[] temp = new int[j - i + 1];
+                int[] arr = new int[j - i + 1];
 
                 for (int k = i; k <= j; k++)
-                    temp[k - i] = A[k];
+                    arr[k - i] = A[k];
 
-                res[idx++] = temp;
+                res[idx++] = arr;
             }
-
         }
 
         return res;

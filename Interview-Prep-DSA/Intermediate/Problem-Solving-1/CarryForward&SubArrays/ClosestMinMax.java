@@ -2,11 +2,11 @@ public class ClosestMinMax {
 
     private int[] findMinMax(int[] A) {
 
-        int min = A[0], max = A[0];
+        int max = A[0], min = A[0];
 
         for (int val : A) {
-            min = Math.min(min, val);
             max = Math.max(max, val);
+            min = Math.min(min, val);
         }
 
         return new int[] { min, max };
@@ -14,34 +14,34 @@ public class ClosestMinMax {
 
     public int solve(int[] A) {
 
-        int n = A.length, len = A.length;
         int[] minMax = findMinMax(A);
         int min = minMax[0], max = minMax[1];
+        int n = A.length, ans = A.length, last_min_idx = -1, last_max_idx = -1;
 
         if (max == min)
             return 1;
 
-        int last_min_idx = -1, last_max_idx = -1;
-
         for (int i = 0; i < n; i++) {
 
-            if (A[i] == min) {
+            int val = A[i];
+
+            if (val == min) {
 
                 if (last_max_idx != -1)
-                    len = Math.min(len, i - last_max_idx + 1);
+                    ans = Math.min(ans, i - last_max_idx + 1);
 
                 last_min_idx = i;
             }
 
-            else if (A[i] == max) {
+            else if (val == max) {
 
                 if (last_min_idx != -1)
-                    len = Math.min(len, i - last_min_idx + 1);
+                    ans = Math.min(ans, i - last_min_idx + 1);
 
                 last_max_idx = i;
             }
         }
 
-        return len;
+        return ans;
     }
 }
