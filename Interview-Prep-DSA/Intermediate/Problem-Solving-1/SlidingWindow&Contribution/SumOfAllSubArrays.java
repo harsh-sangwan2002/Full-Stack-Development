@@ -2,13 +2,13 @@ public class SumOfAllSubArrays {
 
     public long subarraySum(int[] A) {
 
-        long sum = 0;
         int n = A.length;
+        long sum = 0L;
 
         for (int i = 0; i < n; i++) {
 
             long freq = (i + 1) * 1L * (n - i);
-            long contri = freq * A[i];
+            long contri = freq * 1L * A[i];
             sum += contri;
         }
 

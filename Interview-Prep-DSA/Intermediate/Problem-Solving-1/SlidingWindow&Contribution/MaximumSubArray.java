@@ -1,25 +1,24 @@
 public class MaximumSubArray {
-
+    
     public int maxSubarray(int A, int B, int[] C) {
 
-        int max = 0;
+        int n = A, maxSum = Integer.MIN_VALUE;
 
-        for (int i = 0; i < C.length; i++) {
+        for(int i=0; i<n; i++){
 
             int sum = 0;
 
-            for (int j = i; j < C.length; j++) {
+            for(int j=i; j<n; j++){
 
-                sum += C[j];
+                sum+=C[j];
 
-                if (sum <= B)
-                    max = Math.max(max, sum);
+                if(sum>B)
+                break;
 
-                else
-                    break;
+                maxSum = Math.max(maxSum,sum);
             }
         }
 
-        return max;
+        return maxSum;
     }
 }

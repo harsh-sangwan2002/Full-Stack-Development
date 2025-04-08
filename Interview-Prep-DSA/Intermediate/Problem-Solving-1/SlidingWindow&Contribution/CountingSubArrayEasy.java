@@ -1,24 +1,25 @@
-public class CountingSubArraysEasy {
+public class CountingSubArrayEasy {
 
     public int solve(int[] A, int B) {
 
-        int n = A.length, countSubArrays = 0;
+        int n = A.length, count = 0;
 
         for (int i = 0; i < n; i++) {
 
             int sum = 0;
+
             for (int j = i; j < n; j++) {
 
                 sum += A[j];
 
                 if (sum < B)
-                    countSubArrays++;
+                    count++;
 
-                else if (sum >= B)
+                else
                     break;
             }
         }
 
-        return countSubArrays;
+        return count;
     }
 }

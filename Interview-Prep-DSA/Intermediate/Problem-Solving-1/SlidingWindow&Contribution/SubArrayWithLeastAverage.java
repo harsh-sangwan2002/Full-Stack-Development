@@ -1,4 +1,4 @@
-public class SubArrayWithLeastAvg {
+public class SubArrayWithLeastAverage {
 
     public int solve(int[] A, int B) {
 
@@ -7,15 +7,14 @@ public class SubArrayWithLeastAvg {
         for (int i = 0; i < B; i++)
             sum += A[i];
 
-        int min = sum;
-
+        int minAvg = sum;
         for (int i = B; i < n; i++) {
 
             sum -= A[i - B];
             sum += A[i];
 
-            if (sum < min) {
-                min = sum;
+            if (sum < minAvg) {
+                minAvg = sum;
                 idx = i - B + 1;
             }
         }
