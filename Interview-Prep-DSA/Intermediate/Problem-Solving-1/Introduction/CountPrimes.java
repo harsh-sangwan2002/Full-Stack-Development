@@ -1,11 +1,11 @@
 public class CountPrimes {
 
-    private boolean checkPrime(int n) {
+    private boolean isPrime(int n) {
 
         if (n <= 1)
             return false;
 
-        for (int i = 2; i * i <= n; i++) {
+        for (int i = 2; i <= Math.sqrt(n); i++) {
 
             if (n % i == 0)
                 return false;
@@ -16,14 +16,14 @@ public class CountPrimes {
 
     public int solve(int A) {
 
-        int primes = 0;
+        int count = 0;
 
         for (int i = 2; i <= A; i++) {
 
-            if (checkPrime(i))
-                primes++;
+            if (isPrime(i))
+                count++;
         }
 
-        return primes;
+        return count;
     }
 }
