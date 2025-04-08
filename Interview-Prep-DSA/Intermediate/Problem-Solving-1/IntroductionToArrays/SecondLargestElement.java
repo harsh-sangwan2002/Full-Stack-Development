@@ -1,8 +1,8 @@
-public class SecondMax {
+public class SecondLargestElement {
 
     public int solve(int[] A) {
 
-        int max = Integer.MIN_VALUE, smax = Integer.MIN_VALUE;
+        int max = Integer.MIN_VALUE, smax = max;
 
         for (int val : A) {
 
@@ -15,9 +15,6 @@ public class SecondMax {
                 smax = val;
         }
 
-        if (smax == max || smax == Integer.MIN_VALUE)
-            return -1;
-
-        return smax;
+        return smax == Integer.MIN_VALUE ? -1 : smax;
     }
 }

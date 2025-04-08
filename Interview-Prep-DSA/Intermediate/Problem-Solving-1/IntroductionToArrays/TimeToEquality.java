@@ -8,7 +8,7 @@ public class TimeToEquality {
             max = Math.max(max, val);
 
         for (int val : A)
-            time += Math.abs(val - max);
+            time += (max - val);
 
         return time;
     }
