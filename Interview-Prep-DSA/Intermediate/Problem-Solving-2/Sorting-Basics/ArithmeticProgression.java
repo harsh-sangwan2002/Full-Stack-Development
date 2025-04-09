@@ -5,13 +5,13 @@ public class ArithmeticProgression {
     public int solve(int[] A) {
 
         Arrays.sort(A);
-        int n = A.length, k = A[1] - A[0];
+        int diff = A[1] - A[0];
 
-        for (int i = 2; i < n; i++) {
+        for (int i = 2; i < A.length; i++) {
 
             int currDiff = A[i] - A[i - 1];
 
-            if (currDiff != k)
+            if (currDiff != diff)
                 return 0;
         }
 

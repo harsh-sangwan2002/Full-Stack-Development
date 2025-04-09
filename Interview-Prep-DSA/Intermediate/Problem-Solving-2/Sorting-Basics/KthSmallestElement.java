@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
-public class KthSmallest {
+public class KthSmallestElement {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
 
     public int kthsmallest(final int[] A, int B) {
 
