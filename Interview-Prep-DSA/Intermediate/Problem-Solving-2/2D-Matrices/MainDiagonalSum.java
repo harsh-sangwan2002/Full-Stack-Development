@@ -1,13 +1,15 @@
 public class MainDiagonalSum {
-
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    
     public int solve(final int[][] A) {
 
-        int r = 0, c = 0, n = A.length, m = A[0].length, sum = 0;
+        int n = A.length, m = A[0].length, i = 0, j = 0;
+        int sum = 0;
 
-        while (r < n && c < m) {
-            sum += A[r][c];
-            r++;
-            c++;
+        while (i < n && j < m) {
+            sum += A[i][j];
+            i++;
+            j++;
         }
 
         return sum;
