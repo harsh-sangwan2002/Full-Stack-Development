@@ -1,26 +1,25 @@
 public class StringOperations {
-
+    
     public String solve(String A) {
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder(A);
+        sb.append(A);
+        StringBuilder res = new StringBuilder();
 
-        StringBuilder temp = new StringBuilder(A);
-        temp.append(A);
+        for(int i=0; i<sb.length(); i++){
 
-        for (int i = 0; i < temp.length(); i++) {
+            char ch = sb.charAt(i);
+            
+            if(ch>='a' && ch<='z'){
 
-            char ch = temp.charAt(i);
+                if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+                res.append("#");
 
-            if (ch >= 'a' && ch <= 'z') {
-
-                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
-                    sb.append('#');
-
-                else
-                    sb.append(ch);
+                else 
+                res.append(ch);
             }
         }
 
-        return sb.toString();
+        return res.toString();
     }
 }

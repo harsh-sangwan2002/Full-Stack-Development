@@ -2,17 +2,19 @@ public class ToggleCase {
 
     public String solve(String A) {
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder("");
 
-        for (int i = 0; i < A.length(); i++) {
+        for (char ch : A.toCharArray()) {
 
-            char ch = A.charAt(i);
+            if (ch >= 'A' && ch <= 'Z') {
+                char ch2 = (char) (ch + 32);
+                sb.append(ch2);
+            }
 
-            if (ch >= 'A' && ch <= 'Z')
-                sb.append((char) (ch + 32));
-
-            else
-                sb.append((char) (ch - 32));
+            else {
+                char ch2 = (char) (ch - 32);
+                sb.append(ch2);
+            }
         }
 
         return sb.toString();

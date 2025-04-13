@@ -17,10 +17,10 @@ public class LongestPalindromicSubstring {
                 j++;
             }
 
-            int len = j - i - 1;
-            if (len > maxLen) {
+            int currLen = j - i - 1;
+            if (currLen > maxLen) {
+                maxLen = currLen;
                 st = i + 1;
-                maxLen = len;
             }
         }
 
@@ -37,10 +37,10 @@ public class LongestPalindromicSubstring {
                 j++;
             }
 
-            int len = j - i - 1;
-            if (len > maxLen) {
+            int currLen = j - i - 1;
+            if (currLen > maxLen) {
+                maxLen = currLen;
                 st = i + 1;
-                maxLen = len;
             }
         }
 

@@ -1,14 +1,13 @@
-package Concurrency02.NumberPrinter;
+package Concurrency02.Executors;
 
-public class NumberPrinter implements  Runnable{
+public class NumberPrinter implements Runnable{
 
-    private final int numberToPrint;
+    int numberToPrint;
 
-    NumberPrinter(int numberToPrint){
+    public NumberPrinter(int numberToPrint){
         this.numberToPrint = numberToPrint;
     }
 
-    @Override
     public void run(){
         System.out.println(numberToPrint+" -Printed by "+Thread.currentThread().getName());
     }

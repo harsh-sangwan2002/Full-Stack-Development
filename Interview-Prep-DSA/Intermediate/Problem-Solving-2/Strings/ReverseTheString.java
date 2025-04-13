@@ -4,8 +4,9 @@ public class ReverseTheString {
 
     public String solve(String A) {
 
-        int idx = 0;
+        StringBuilder sb = new StringBuilder();
         Stack<StringBuilder> st = new Stack<>();
+        int idx = 0;
 
         while (idx < A.length()) {
 
@@ -15,19 +16,21 @@ public class ReverseTheString {
                 temp.append(A.charAt(idx++));
 
             st.push(temp);
+
+            if (idx >= A.length())
+                break;
+
             idx++;
         }
 
-        StringBuilder sb = new StringBuilder();
         while (st.size() != 0) {
 
             StringBuilder temp = st.pop();
 
-            if (st.size() == 0)
-                sb.append(temp);
+            if (st.size() != 0)
+                temp.append(" ");
 
-            else
-                sb.append(temp + " ");
+            sb.append(temp);
         }
 
         return sb.toString().trim();

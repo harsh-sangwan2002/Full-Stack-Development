@@ -4,13 +4,7 @@ public class IsAlnum {
 
         for (char ch : A) {
 
-            if (ch >= 'a' && ch <= 'z')
-                continue;
-
-            else if (ch >= 'A' && ch <= 'Z')
-                continue;
-
-            else if (ch >= '0' && ch <= '9')
+            if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9'))
                 continue;
 
             else

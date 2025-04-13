@@ -8,19 +8,13 @@ public class Client {
     public static void main(String[] args) {
 
         NumberPrinter numberPrinter = null;
-//        Thread t = null;
-//
-//        for(int i=1; i<=100; i++){
-//            numberPrinter = new NumberPrinter(i);
-//            t = new Thread(numberPrinter);
-//            t.start();
-//        }
+        Thread t = null;
 
-        ExecutorService executorService = Executors.newFixedThreadPool(100);
-
-        for(int i=1; i<=100; i++){
+        for(int i=1; i<=1000000; i++) {
             numberPrinter = new NumberPrinter(i);
-            executorService.submit(numberPrinter);
+            t = new Thread(numberPrinter);
+            t.start();
         }
+
     }
 }
