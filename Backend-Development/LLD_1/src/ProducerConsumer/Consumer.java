@@ -2,11 +2,11 @@ package ProducerConsumer;
 
 import java.util.Queue;
 
-public class Consumer implements Runnable{
+public class Consumer<S> implements Runnable{
 
-    private  Queue<Object> store;
-    private String name;
-    private int maxSize;
+    private final Queue<Object> store;
+    private final String name;
+    private final int maxSize;
 
     public Consumer(Queue<Object> store, String name, int maxSize) {
         this.store = store;
