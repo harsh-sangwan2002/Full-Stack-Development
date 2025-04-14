@@ -12,7 +12,7 @@ public class Subtractor implements  Runnable{
     public void run(){
 
         for(int i=0; i<100; i++){
-            count.value -= i;
+            count.addValue(-i);
         }
     }
 }

@@ -2,7 +2,7 @@ package AdderSubtractorSyncMethod;
 
 public class Count {
 
-    int value;
+    private int value;
 
     public synchronized void addValue(int value){
         this.value+=value;

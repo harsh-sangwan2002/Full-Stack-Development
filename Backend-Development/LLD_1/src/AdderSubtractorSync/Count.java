@@ -1,6 +1,5 @@
 package AdderSubtractorSync;
 
 public class Count {
-
-    int value;
+    int value = 0;
 }

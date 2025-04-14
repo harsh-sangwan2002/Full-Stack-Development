@@ -18,6 +18,6 @@ public class Main {
         t1.join();
         t2.join();
 
-        System.out.println(count.value);
+        System.out.println(count.getValue());
     }
 }

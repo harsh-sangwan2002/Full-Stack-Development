@@ -2,7 +2,7 @@ package AdderSubtractorSync;
 
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args) throws InterruptedException {
 
         Count count = new Count();
 
