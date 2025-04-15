@@ -51,8 +51,8 @@ public class MyHashMap {
 
             size = 0;
 
-            for (int i = 0; i < oldBuckets.length; i++) {
-                for (HMNode<K, V> curr : oldBuckets[i])
+            for (LinkedList<HMNode<K, V>> oldBucket : oldBuckets) {
+                for (HMNode<K, V> curr : oldBucket)
                     this.put(curr.key, curr.value);
             }
         }
@@ -110,9 +110,7 @@ public class MyHashMap {
         public String toString() {
             StringBuilder sb = new StringBuilder("[ ");
 
-            for (int i = 0; i < buckets.length; i++) {
-                LinkedList<HMNode<K, V>> list = buckets[i];
-
+            for (LinkedList<HMNode<K, V>> list : buckets) {
                 for (HMNode<K, V> node : list) {
                     sb.append(node.key).append(": ").append(node.value).append(", ");
                 }
