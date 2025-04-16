@@ -1,6 +1,13 @@
 package Generics;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
+
+    static void doSomething(List<? extends Animal> animals){
+        System.out.println("Do something function");
+    }
 
     public static void main(String[] args) {
 
@@ -19,5 +26,11 @@ public class Main {
         System.out.println(country);
 
         Pair<Double,Double> pair2 = new Pair();
+
+        List<Animal> animals = new ArrayList<>();
+        List<Dog> dogs = new ArrayList<>();
+
+        doSomething(animals);
+        doSomething(dogs);
     }
 }
