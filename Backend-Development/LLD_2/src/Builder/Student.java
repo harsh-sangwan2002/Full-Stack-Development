@@ -25,6 +25,7 @@ public class Student {
         this.phoneNumber = builder.getPhoneNumber();
     }
 
+    // Static Inner class
     public static class Builder {
 
         String name;
