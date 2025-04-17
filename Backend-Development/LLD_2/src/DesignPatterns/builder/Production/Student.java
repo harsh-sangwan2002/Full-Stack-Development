@@ -1,4 +1,4 @@
-package Builder.Production;
+package DesignPatterns.builder.Production;
 
 public class Student {
 
