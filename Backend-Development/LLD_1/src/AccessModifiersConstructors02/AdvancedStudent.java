@@ -1,6 +1,6 @@
 package AccessModifiersConstructors02;
 
-import IntroTopLLDOOPS01.Student;
+import IntroToLLDOOPS01.pkg1.Student;
 
 public class AdvancedStudent extends Student {
 

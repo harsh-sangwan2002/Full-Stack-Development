@@ -1,4 +1,4 @@
-package IntroTopLLDOOPS01;
+package IntroToLLDOOPS01.pkg1;
 
 public class Student {
 
