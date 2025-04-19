@@ -3,32 +3,30 @@ import React, { useEffect, useState } from 'react'
 const Counter = ({ quantity, onUpdate, productId }) => {
 
     const [qty, setQty] = useState(quantity)
-    const [randomNumber, setRandomNumber] = useState(0)
 
     // Mount
-    useEffect(()=>{
-        setInterval(()=>{
-            setRandomNumber(Math.random())
-        },1000)
+    useEffect(() => {
+        setInterval(() => {
+        }, 1000)
         console.log("Counter mounted")
-    },[])
+    }, [])
 
     // Update
-    useEffect(()=>{
+    useEffect(() => {
         console.log("Counter updated")
-    },[qty])
+    }, [qty])
 
     // Re-render
-    useEffect(()=>{
+    useEffect(() => {
         console.log("Counter re-render")
     })
 
     // Unmount
-    useEffect(()=>{
-        return ()=>{
+    useEffect(() => {
+        return () => {
             console.log("Counter unmounted")
         }
-    },[])
+    }, [])
 
     const increment = () => {
         setQty(qty + 1)
