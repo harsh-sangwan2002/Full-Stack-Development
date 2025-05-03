@@ -6,12 +6,15 @@ const readStream = fs.createReadStream(srcFilePath);
 const writeStream = fs.createWriteStream(destFilePath);
 
 readStream.pipe(writeStream);
+
 readStream.on('data', data => {
     console.log(data.toString());
 })
+
 readStream.on('end', () => {
     console.log("Stream end");
 })
+
 readStream.on('error', err => {
     console.log(err);
 })
