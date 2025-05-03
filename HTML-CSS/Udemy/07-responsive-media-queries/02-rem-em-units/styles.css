@@ -1,0 +1,58 @@
+html {
+  /* Easy to calculate */
+  /* font-size: 10px; */
+  /* font-size: 62.5%; */
+
+  /* Default */
+  font-size:16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 900px;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px auto;
+
+  font-size:20px;
+}
+
+p {
+  /* font-size: 1.4rem; */
+  /* font-size:2rem; */
+  font-size:20px;
+  margin:1rem 0;
+}
+
+h1{
+  font-size:2rem;
+  padding:0.3rem 0;
+}
+
+ul{
+  font-size:1.4em;
+}
+
+/* Absolute units -   
+px - pixels
+cm - centimeters
+mm - millimeters
+in - inches
+pt - points
+pc - picas*/
+
+/* Relative units -
+% - percentage
+rem & em
+vh & vw
+vmax - viewport max
+vmin - viewport min*/

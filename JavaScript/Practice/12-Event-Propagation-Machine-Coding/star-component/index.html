@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Component</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            margin-top: 5rem;
+        }
+
+        .container>* {
+            margin: 1rem 0;
+        }
+
+        .stars {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .star {
+            font-size: 2rem;
+        }
+
+        .filled {
+            color: gold;
+        }
+    </style>
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="container">
+        <h1>Rate this product</h1>
+        <div class="stars">
+            <span class="star" data-index="1">☆</span>
+            <span class="star" data-index="2">☆</span>
+            <span class="star" data-index="3">☆</span>
+            <span class="star" data-index="4">☆</span>
+            <span class="star" data-index="5">☆</span>
+        </div>
+        <div class="rating">
+            <h2>Rating: <span class="rating-count">0</span></h2>
+        </div>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>I am a list</h1>
+    <ul>
+        <!-- Make Coffee -->
+    </ul>
+</body>
+<script>
+
+    // 1. Create element
+    const ele = document.createElement('li');
+
+    // 2. Add attribute
+    ele.textContent = "Make Coffee";
+
+    // 3. Select existing element
+    const ul = document.querySelector('ul');
+
+    // 4.Add to the parent/tree
+    ul.appendChild(ele);
+
+</script>
+</html>

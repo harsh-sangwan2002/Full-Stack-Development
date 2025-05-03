@@ -1,0 +1,27 @@
+img {
+  width: 100%;
+  -webkit-filter:grayscale(50%);
+  /* filter:grayscale(50%); */
+  /* filter:blur(5px); */
+  filter:brightness(50%);
+  filter:contrast(50%);
+  filter:drop-shadow(10px 10px 5px red);
+  filter:hue-rotate(100deg);
+  filter:invert(100%);
+  filter:opacity(50%);
+  filter:saturate(70%);
+  filter: sepia(200%);
+
+  /* Reset */
+  filter:none;
+}
+
+/* -webkit -> Chrome, Safari, Newer version of Opera and Edge
+-moz -> Firefix
+-o -> Old pre webkit versions of Opera
+-ms -> Intenet Explorer & Edge before Chromium */
+
+.container {
+  max-width: 900px;
+  margin: 70px auto;
+}

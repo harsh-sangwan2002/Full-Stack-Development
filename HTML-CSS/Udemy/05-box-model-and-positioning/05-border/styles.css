@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.box {
+  max-width: 400px;
+  margin: 20px;
+  padding: 20px;
+
+  /* Shorthand */
+  border:3px solid black;
+
+  /* Same as above */
+  /* border-style: dashed;
+  border-color:red; */
+}
+
+.box-1{
+  border:none;
+  border-top:3px solid blue;
+}
+
+.box-2{
+  border-radius: 10px;
+}
+
+.box-3{
+  /* border-radius: 50%; */
+  border-top-left-radius: 5px;
+}

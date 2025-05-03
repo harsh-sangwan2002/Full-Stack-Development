@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+    line-height: 1.6em;
+}
+
+/* Header */
+.header {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-left: 3rem;
+}
+
+.priority {
+    height: 4rem;
+    width: 8rem;
+    border-radius: 5px;
+}
+
+.actions {
+    display: flex;
+    gap: 2rem;
+    margin-right: 20rem;
+}
+
+.create-icon {
+    cursor: pointer;
+    padding: 5px 10px;
+    width: 3rem;
+    font-size: 3rem;
+}
+
+.create-icon:hover {
+    color: green;
+}
+
+.readonly-icon {
+    cursor: pointer;
+    padding: 8px 10px;
+    width: 3rem;
+    font-size: 2rem;
+}
+
+.readonly-icon:hover {
+    color: red;
+}
+
+/* Task Modal */
+.task-modal {
+    width: 40%;
+    height: 400px;
+    background-color: #000;
+    display: flex;
+    border: 1px solid black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.task-modal .left-section {
+    flex: 1;
+    display: flex;
+    width: 70%;
+    position: relative;
+}
+
+.task-modal .left-section textarea {
+    background-color: white;
+    width: 100%;
+    resize: none;
+    border: 1px solid #000;
+    outline: none;
+    font-size: 2rem;
+}
+
+.task-modal .right-section {
+    padding: 20px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.task-modal .right-section .priority {
+    height: 50px;
+    width: 100%;
+}
+
+.task-modal .left-section .close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    color: red;
+    border-radius: 50%;
+    font-size: 14px;
+    left: -10px;
+    top: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.priority.p1 {
+    background-color: pink;
+}
+
+.priority.p2 {
+    background-color: rgb(149, 149, 244);
+}
+
+.priority.p3 {
+    background-color: cyan;
+}
+
+.priority.p4 {
+    background-color: rgb(220, 209, 6);
+}
+
+.priority.selected {
+    border: 3px solid white;
+}
+
+.hide {
+    display: none;
+}
+
+.selected {
+    border: 1px solid grey;
+    color: red;
+}
+
+/* Task Container */
+.task-container {
+    margin-left: 3rem;
+    padding: 1rem;
+    margin-top: 5rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.task {
+    width: 300px;
+    background-color: aquamarine;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.task-priority {
+    padding: 5px 10px;
+    height: 2rem;
+    width: 100%;
+}
+
+.task-id {
+    padding: 5px 10px;
+    background-color: #000;
+    color: #fff;
+}
+
+.task-content textarea {
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    resize: none;
+    outline: none;
+    border: none;
+    height: 200px;
+    width: 100%;
+    background-color: aquamarine;
+}
+
+.task-delete-icon {
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.task-delete-icon:hover {
+    color: red;
+}
+
+.noneditable .task-delete-icon {
+    display: none;
+}
+
+.noneditable .task-content textarea {
+    pointer-events: none;
+}

@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+.container {
+  margin-top: 1rem;
+  border-left: 1px solid black;
+  margin-left: 1rem;
+}
+
+h1 {
+  padding: 1rem;
+}
+
+span {
+  cursor: pointer;
+  margin: 0.5rem;
+}

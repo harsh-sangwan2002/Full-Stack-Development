@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Regaular styling */
+a{
+  text-decoration: none;
+  color:#333;
+}
+
+a:hover{
+  color:red;
+}
+
+a:active{
+  color:blue;
+}
+
+a:focus{
+  color:purple;
+}
+
+a:visited{
+  color:coral;
+}

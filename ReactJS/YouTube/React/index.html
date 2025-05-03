@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro To React</title>
+
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <!-- React DOM -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel transpiler -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+</body>
+
+<script type="text/babel">
+
+    /*
+    let element = document.createElement('h1');
+    element.textContent = 'Hello World';
+    console.log(element)
+    document.getElementById('root').appendChild(element);
+    */
+
+    /*
+    let element = React.createElement('h1', null, 'Hello World');
+    console.log(element);
+    ReactDOM.render(element, document.getElementById('root'));
+    */
+
+    /* Rules for JSX -> 
+        1. No variable/function declaration
+        2. No loops -> forEach, map, filter
+        3. No if-else -> Ternary operator
+        4. No object rendering -> Arrays rendering
+    */
+
+    function Main() {
+        return (
+            <>
+                <Element name="Harsh" place="Delhi" />
+                <Element />
+                <Element />
+                <Element />
+            </>
+        )
+    }
+
+    function Element({ name = 'default', place = 'idk' }) {
+        return (
+            <div>
+                <h1>Hello {name}</h1>
+                <h2>{place}</h2>
+            </div>
+        )
+    }
+
+    ReactDOM.render(<Main />, document.getElementById('root'));
+
+</script>
+
+</html>

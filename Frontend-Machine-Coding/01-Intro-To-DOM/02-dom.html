@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>I am another 1</h1>
+    <h1 class="hifine">I am h1</h1>
+    <h1>I am another 2</h1>
+    <h1>I am another 3</h1>
+    <h2> I am h1</h2>
+    <h3> I am h1</h3>
+
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet inventore adipisci dignissimos
+        voluptatibus ad
+        debitis vel natus nobis? Doloribus fugit vitae veritatis esse! Cumque odio quasi sapiente quisquam est! Odio!
+    </p>
+    <p class="para" id="uniqueId">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet inventore adipisci
+        dignissimos
+        voluptatibus ad
+        debitis vel natus nobis? Doloribus fugit vitae veritatis esse! Cumque odio quasi sapiente quisquam est! Odio!
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet inventore adipisci dignissimos voluptatibus ad
+        debitis vel natus nobis? Doloribus fugit vitae veritatis esse! Cumque odio quasi sapiente quisquam est! Odio!
+    </p>
+
+    <input type="text">
+    <input type="password" id="special">
+    <input type="text">
+    <button>click</button>
+
+</body>
+
+<script>
+     /******** What is DOM -> It is an API that represent an HTML page.
+     * DOM -> 
+     *       Document               Object               Model
+     *       file.html              element/tags         structure(generic-tree)
+     ********************/
+
+    // Read the first element using CSS selector
+    const h1 = document.querySelector('h1');
+    console.log("First h1 element: ",h1);
+
+    let inputPass = document.querySelector('input[type="password"]');
+    console.log(inputPass);
+
+    // Return all h1 elements using CSS selector
+    // TC : O(Total nodes at targeted level)
+    // result of `querySelectorAll` is not array it's a NodeList and we are allowed to use almost all type of HOF.
+    let h1Elems = document.querySelectorAll('h1');
+    console.log(h1Elems);
+    console.log(h1Elems[0]);
+    console.log(h1Elems[1]);
+
+    h1Elems.forEach(ele=>console.log(ele.textContent));
+
+    // getElementById
+    const specialEle = document.getElementById("special");
+    console.log(specialEle);
+
+    // getElementByClassName -> HTMLCollection
+    const classEle = document.getElementsByClassName('para');
+    console.log(classEle);
+
+    const newArr = Array.from(classEle);
+    console.log(newArr);
+
+</script>
+</html>

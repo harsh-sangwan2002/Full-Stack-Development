@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="module" defer></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Kanban Board</title>
+</head>
+
+<body>
+    <!-- ToolBar Container-->
+    <div class="toolbox-container">
+        <div class="toolbox-priority-container">
+            <div class="color pink"></div>
+            <div class="color blue"></div>
+            <div class="color green"></div>
+            <div class="color purple"></div>
+        </div>
+
+        <div class="action-btn-container">
+            <div class="add-btn">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="remove-btn">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+    </div>
+
+    <!-- Ticket Modal -->
+    <div class="modal-container">
+        <textarea class="textarea-container" placeholder="Enter your task"></textarea>
+        <div class="priority-color-container">
+            <div class="priority-color pink"></div>
+            <div class="priority-color blue"></div>
+            <div class="priority-color green border"></div>
+            <div class="priority-color purple"></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

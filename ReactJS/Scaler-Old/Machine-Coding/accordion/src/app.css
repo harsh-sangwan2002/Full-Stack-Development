@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+
+.faq {
+    margin-top: 5rem;
+}
+
+
+.faq-item {
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 10px auto;
+    border: 3px solid black;
+    text-align: left;
+}
+
+.btn {
+    cursor: pointer;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <!-- Entire DOM tree can be accessed using document -->
+    <!-- DOM is in form of a Tree -->
+    <h1 id="heading">DOM</h1>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+    <div class="container">
+        <div class="parent">
+            <ul>
+                <li>Child 1</li>
+                <li>Child 2</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="parent">
+        <p>Some details here</p>
+        <a href="https://kodekarma.dev">Kode Karma</a>
+    </div>
+
+    <button class="random-button">Show Random Number</button>
+
+    <script>
+        var title = 'Chirag Goel JS class'
+        const buttonRef = document.querySelector('.random-button');
+
+        function showRandom() {
+            alert(Math.random() * 10 + 1);
+        }
+
+        buttonRef.addEventListener('click', showRandom);
+
+    </script>
+</body>
+
+</html>

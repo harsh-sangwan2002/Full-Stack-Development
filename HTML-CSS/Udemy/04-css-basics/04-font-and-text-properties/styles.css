@@ -1,0 +1,19 @@
+body{
+    font-family: 'Popins', sans-serif;
+    line-height:1.6;
+}
+
+h2{
+    /* font-size: x-large;
+    font-weight: bold;
+    font-style: normal;
+    font-variant: normal; */
+
+    font: x-large bold normal normal;
+
+    text-transform: capitalize;
+    text-indent: 20px;
+    letter-spacing: 2px;
+    word-spacing:5px;
+    text-align: center;
+}

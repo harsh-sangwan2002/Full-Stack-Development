@@ -1,0 +1,3 @@
+1. React.js -> It is a JS library, used for making UI
+2. Benefits -> Fast & efficient - uses Virtual DOM
+3. Virtual DOM -> Virtual representation of actual DOM

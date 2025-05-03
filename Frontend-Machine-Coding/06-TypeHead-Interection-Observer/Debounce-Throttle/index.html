@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+</body>
+<script>
+    const inputBox = document.querySelector('input');
+
+    let count = 0;
+    function work() {
+        console.log("Network Request ", count);
+        count++;
+    }
+
+    // Debounce -> Rate Limiting, based on user events
+    function debounce(cb, delay) {
+
+        let timerId;
+
+        return function () {
+            clearTimeout(timerId);
+            timerId = setTimeout(() => {
+                cb();
+            }, delay)
+        }
+    }
+    let optDebounceFn = debounce(work, 500);
+
+    // Throttling -> Rate Limiting in terms of interval
+    function throttling(cb, delay) {
+        let flag = true;
+
+        return function () {
+            if (flag) {
+                work();
+                flag = false;
+            }
+
+            setTimeout(() => {
+                flag = true;
+            }, delay)
+        }
+    }
+    let optThrottlingFn = throttling(work,2000);
+
+    inputBox.addEventListener('input', e => {
+        // optDebounceFn();
+        optThrottlingFn();
+    })
+</script>
+
+</html>

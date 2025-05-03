@@ -1,0 +1,31 @@
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container>* {
+    margin-top: 3rem;
+}
+
+.star-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+
+.star {
+    font-size: 2rem;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.grey {
+    color: grey;
+}

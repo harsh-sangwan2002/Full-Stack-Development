@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing</title>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text">
+        <ul>
+            <li>Item 1</li>
+        </ul>
+    </div>
+</body>
+
+<script>
+
+    function debounce(cb, delay) {
+
+        let timerId;
+        return function (...args) {
+
+            clearTimeout(timerId);
+
+            timerId = setTimeout(() => {
+                cb(...args);
+            }, delay);
+        }
+    }
+
+    async function fetchProducts() {
+
+        const res = await fetch('https://fakestoreapi.com/products');
+        const data = await res.json();
+        renderProducts(data);
+    }
+
+    function renderProducts(data) {
+        console.log(data);
+    }
+
+    const debouncedFetchProducts = debounce(fetchProducts, 1000);
+
+    const inputRef = document.querySelector('input');
+    inputRef.addEventListener('keyup', (e) => {
+        console.log(e.target.value);
+        debouncedFetchProducts();
+    })
+
+
+</script>
+
+</html>

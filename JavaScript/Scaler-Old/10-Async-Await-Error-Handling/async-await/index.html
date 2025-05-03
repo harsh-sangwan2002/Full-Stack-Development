@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Task Queue, MicroTask Queue, Call Stack, UIRender</h1>
+    <!-- Synchronous code always have the highest priority -->
+</body>
+<script>
+    console.log("A sync task");
+
+    // To execute a piece of code before rendering
+    requestAnimationFrame(function(){
+        console.log("B requestAnimationFrame");
+    })
+
+    /************ Callback queue/ task queue ************/
+    setTimeout(() => {
+        console.log("C CallBack queue");
+    }, 0)
+
+    /************ fn will go in micro-task queue ************/
+    Promise.resolve().then(() => {
+        console.log("E MicroTask Queue");
+    }).then(() => {
+        console.log("F MicroTask Queue");
+    })
+
+    queueMicrotask(function(){
+        console.log("D MicroTask Queue");
+    })
+
+    Promise.resolve().then(() => {
+        console.log("I MicroTask Queue");
+        return Promise.resolve();
+    }).then(() => {
+        console.log("J MicroTask Queue");
+    })
+
+    queueMicrotask(function(){
+        console.log("K MicroTask Queue");
+    })
+
+    console.log("G sync task");
+</script>
+
+</html>

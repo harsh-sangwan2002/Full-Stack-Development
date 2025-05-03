@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin, Padding & Border</title>
+    <style>
+        div {
+            background-color: red;
+            height: 100px;
+            width: 100px;
+
+            border:10px solid black;
+            padding:10px;
+            /* border-left:2px dashed black; */
+
+            /* Top Right Bottom Left */
+            /* margin: 5px 10px 15px 20px; */
+
+            /* Top Left-Right Bottom */
+            /* margin:5px 10px 15px; */
+        }
+
+        /* Margin collapses vertically & not horizontally. */
+        .box-1{
+            margin-bottom:20px;
+        }
+
+        .box-2{
+            margin-top:10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box-1"></div>
+    <div class="box box-2"></div>
+</body>
+
+</html>
