@@ -1,14 +1,13 @@
 const express = require('express');
-const mongoose = require('mongoose');
 
 const connectDB = require('./config/db');
-const productRouter = require('./routes/product.router');
-const userRouter = require('./routes/user.router');
+const productRouter = require('./routes/product.route');
+const userRouter = require('./routes/user.route');
 
 const app = express();
 app.use(express.json());
 
-// Routes
+// routes
 app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);
 
