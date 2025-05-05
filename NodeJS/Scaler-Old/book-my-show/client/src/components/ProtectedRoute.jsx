@@ -39,8 +39,8 @@ export default function ProtectedRoute({ children }) {
                             navigate("/admin");
                         } else if (user.role === "partner") {
                             navigate("/partner");
-                        } else if (user.role === "user") {
-                            navigate("/profile");
+                        } else {
+                            navigate("/user");
                         }
                     }
                 },
@@ -58,24 +58,8 @@ export default function ProtectedRoute({ children }) {
     ];
 
     useEffect(() => {
-        const getUser = async () => {
-            try {
-                dispatch(showLoader());
-                const resp = await GetCurrentUser();
-                dispatch(setUser(resp.data));
-            } catch (err) {
-                console.log(err);
-            } finally {
-                dispatch(hideLoader());
-            }
-        };
-
-        if (localStorage.getItem("token")) {
-            getUser();
-        } else {
-            //redirect user to login page
-            navigate("/login");
-        }
+        if (localStorage.getItem("token"))
+            navigate("/");
     }, []);
 
     if (loader) {
