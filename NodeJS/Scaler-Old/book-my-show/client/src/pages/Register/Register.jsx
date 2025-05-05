@@ -8,7 +8,6 @@ const { Title } = Typography;
 const onFinish = async (values) => {
     console.log(values);
     await RegisterUser(values);
-    console.log("User registered successfully");
 };
 
 
