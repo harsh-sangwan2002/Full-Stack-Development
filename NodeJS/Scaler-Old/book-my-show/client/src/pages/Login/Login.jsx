@@ -1,14 +1,20 @@
 import React from 'react';
-import { Button, Form, Input, Row, Col, Typography } from 'antd';
+import { Button, Form, Input, Row, Col, Typography, message } from 'antd';
 import { Link } from 'react-router-dom';
 import { LoginUser } from '../../calls/users';
 
 const { Title } = Typography;
 
 const onFinish = async (values) => {
-    console.log(values);
-    await LoginUser(values);
-    // console.log("User logged in successfully");
+    const res = await LoginUser(values);
+
+    if (res.success) {
+        message.success(res.message);
+        localStorage.setItem('token', res.data);
+    }
+    else {
+        message.error(res.message);
+    }
 };
 
 const Login = () => {
