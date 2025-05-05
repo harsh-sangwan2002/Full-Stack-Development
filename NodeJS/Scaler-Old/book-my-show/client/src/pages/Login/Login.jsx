@@ -1,23 +1,31 @@
 import React from 'react';
 import { Button, Form, Input, Row, Col, Typography, message } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { LoginUser } from '../../calls/users';
 
 const { Title } = Typography;
 
-const onFinish = async (values) => {
-    const res = await LoginUser(values);
-
-    if (res.success) {
-        message.success(res.message);
-        localStorage.setItem('token', res.data);
-    }
-    else {
-        message.error(res.message);
-    }
-};
-
 const Login = () => {
+    const navigate = useNavigate();
+
+    const onFinish = async (values) => {
+        try {
+            const res = await LoginUser(values);
+
+            console.log(res);
+
+            if (res.message) {
+                message.success(res.message);
+                localStorage.setItem('token', res.token);
+                navigate("/");
+            } else {
+                message.error(res.message || 'Login failed');
+            }
+        } catch (error) {
+            message.error('An error occurred while logging in', error.message);
+        }
+    };
+
     return (
         <Row
             justify="center"
@@ -57,7 +65,7 @@ const Login = () => {
                     </Form.Item>
                 </Form>
                 <div>
-                    <p>New user? <Link to="/register" >Register</Link></p>
+                    <p>New user? <Link to="/register">Register</Link></p>
                 </div>
             </Col>
         </Row>

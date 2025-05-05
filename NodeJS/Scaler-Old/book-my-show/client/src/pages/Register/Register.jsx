@@ -8,9 +8,9 @@ const { Title } = Typography;
 const onFinish = async (values) => {
     const res = await RegisterUser(values);
 
-    if (res.success) {
+    if (res) {
         message.success(res.message);
-        localStorage.setItem('token', res.data);
+        localStorage.setItem('token', res.token);
     }
     else {
         message.error(res.message);

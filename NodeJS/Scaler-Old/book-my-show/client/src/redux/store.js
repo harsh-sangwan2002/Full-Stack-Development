@@ -4,8 +4,8 @@ import userReducer from "./userSlice";
 
 const store = configureStore({
     reducer: {
-        loaders: loaderReducer,
-        users: userReducer,
+        loader: loaderReducer,
+        user: userReducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
