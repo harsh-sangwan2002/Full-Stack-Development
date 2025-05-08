@@ -17,20 +17,18 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    createdAt: {
-        type: String,
-    }
 }, { timestamps: true });
-
-const ProductModel = mongoose.model('Product', productSchema);
 
 productSchema.pre('save', function (next) {
     console.log("Pre hook runs");
+    next();
 })
 
 productSchema.post('save', function (doc, next) {
     console.log("Doc updated: ", doc);
     next();
 })
+
+const ProductModel = mongoose.model('Product', productSchema);
 
 module.exports = ProductModel;
