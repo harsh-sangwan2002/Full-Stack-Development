@@ -1,57 +1,68 @@
 import { Button, Checkbox, Form, Input } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { LoginUser } from '../../calls/users';
 
-const onFinish = values => {
-    console.log('Success:', values);
-};
+const App = () => {
 
-const onFinishFailed = errorInfo => {
-    console.log('Failed:', errorInfo);
-};
+    const navigate = useNavigate();
+    const handleLogin = async (values) => {
 
-const App = () => (
-    <>
-        <header className='App-header'>
-            <main className='main-area mw-500 text-center px-3'>
-                <section className="left-section">
-                    <h1>Login to BookMyShow</h1>
-                </section>
-                <section className="right-section">
-                    <Form
-                        layout='vertical'
-                    >
-                        <Form.Item
-                            label="Email"
-                            htmlFor='email'
-                            name="email"
-                            className='d-block'
-                            rules={[{ required: true, message: 'Please input your email!' }]}
+        try {
+
+            const data = await LoginUser(values);
+            console.log(data);
+            navigate('/')
+
+        } catch (err) {
+            console.log(err)
+        }
+    };
+
+    return (
+        <>
+            <header className='App-header'>
+                <main className='main-area mw-500 text-center px-3'>
+                    <section className="left-section">
+                        <h1>Login to BookMyShow</h1>
+                    </section>
+                    <section className="right-section">
+                        <Form
+                            layout='vertical'
+                            onFinish={handleLogin}
                         >
-                            <Input />
-                        </Form.Item>
+                            <Form.Item
+                                label="Email"
+                                htmlFor='email'
+                                name="email"
+                                className='d-block'
+                                rules={[{ required: true, message: 'Please input your email!' }]}
+                            >
+                                <Input />
+                            </Form.Item>
 
-                        <Form.Item
-                            label="Password"
-                            name="password"
-                            htmlFor='password'
-                            className='d-block'
-                            rules={[{ required: true, message: 'Please input your password!' }]}
-                        >
-                            <Input.Password />
-                        </Form.Item>
+                            <Form.Item
+                                label="Password"
+                                name="password"
+                                htmlFor='password'
+                                className='d-block'
+                                rules={[{ required: true, message: 'Please input your password!' }]}
+                            >
+                                <Input.Password />
+                            </Form.Item>
 
-                        <Form.Item label={null}>
-                            <Button type="primary" htmlType="submit">
-                                Login
-                            </Button>
-                        </Form.Item>
-                    </Form>
-                    <div>
-                        <p>New User? <Link to="/register">Register now</Link></p>
-                    </div>
-                </section>
-            </main>
-        </header>
-    </>
-);
+                            <Form.Item label={null}>
+                                <Button type="primary" htmlType="submit">
+                                    Login
+                                </Button>
+                            </Form.Item>
+                        </Form>
+                        <div>
+                            <p>New User? <Link to="/register">Register now</Link></p>
+                        </div>
+                    </section>
+                </main>
+            </header>
+        </>
+    )
+};
 export default App;
