@@ -17,14 +17,6 @@ const App = () => {
         }
     };
 
-    useEffect(() => {
-        if (localStorage.getItem("token"))
-            navigate('/')
-
-        else
-            navigate('/register')
-    }, [])
-
     return (
         <>
             <header className='App-header'>

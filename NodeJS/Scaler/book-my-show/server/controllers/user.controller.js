@@ -51,4 +51,19 @@ const LoginUser = async (req, res) => {
     }
 }
 
-module.exports = { LoginUser, RegisterUser }
+const GetCurrentUser = async (req, res) => {
+
+    try {
+
+        res.status(200).json({
+            message: "Token verified successfully"
+        })
+    } catch (err) {
+        res.status(500).json({
+            message: "Cannot get the user",
+            err
+        })
+    }
+}
+
+module.exports = { LoginUser, RegisterUser, GetCurrentUser }
