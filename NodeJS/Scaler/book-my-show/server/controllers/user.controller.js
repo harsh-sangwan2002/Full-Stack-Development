@@ -55,9 +55,13 @@ const GetCurrentUser = async (req, res) => {
 
     try {
 
-        res.status(200).json({
-            message: "Token verified successfully"
-        })
+        console.log(req.userId);
+        const user = await userModel.findById(req.userId).select('-password'); // Assuming you set `req.userId` in middleware
+        res.status(200).send({
+            success: true,
+            message: "You are authenticated",
+            data: user
+        });
     } catch (err) {
         res.status(500).json({
             message: "Cannot get the user",

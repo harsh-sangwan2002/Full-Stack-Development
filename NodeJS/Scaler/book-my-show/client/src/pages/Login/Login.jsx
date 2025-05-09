@@ -11,7 +11,6 @@ const App = () => {
         try {
 
             const data = await LoginUser(values);
-            console.log(data);
             localStorage.setItem('token', data.token);
             navigate('/')
 

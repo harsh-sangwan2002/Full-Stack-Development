@@ -10,7 +10,6 @@ const App = () => {
 
         try {
             const res = await RegisterUser(values);
-            console.log(res);
             navigate('/login');
         } catch (err) {
             console.log(err);

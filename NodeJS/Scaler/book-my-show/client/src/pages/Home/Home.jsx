@@ -7,7 +7,7 @@ const Home = () => {
         (async function () {
             try {
                 const res = await GetCurrentUser();
-                console.log(res);
+                console.log(res.data);
             } catch (err) {
                 console.log(err);
             }
