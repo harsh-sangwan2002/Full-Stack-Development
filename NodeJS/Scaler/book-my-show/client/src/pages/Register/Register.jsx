@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import { RegisterUser } from '../../calls/users';
@@ -15,6 +16,14 @@ const App = () => {
             console.log(err);
         }
     };
+
+    useEffect(() => {
+        if (localStorage.getItem("token"))
+            navigate('/')
+
+        else
+            navigate('/register')
+    }, [])
 
     return (
         <>

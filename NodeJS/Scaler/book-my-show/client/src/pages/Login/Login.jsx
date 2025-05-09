@@ -1,6 +1,7 @@
 import { Button, Checkbox, Form, Input } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import { LoginUser } from '../../calls/users';
+import { useEffect } from 'react';
 
 const App = () => {
 
@@ -11,12 +12,21 @@ const App = () => {
 
             const data = await LoginUser(values);
             console.log(data);
+            localStorage.setItem('token', data.token);
             navigate('/')
 
         } catch (err) {
             console.log(err)
         }
     };
+
+    useEffect(() => {
+        if (localStorage.getItem("token"))
+            navigate('/')
+
+        else
+            navigate('/login')
+    }, [])
 
     return (
         <>

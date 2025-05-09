@@ -1,4 +1,5 @@
 const userModel = require('../models/user.model');
+const jwt = require('jsonwebtoken');
 
 const RegisterUser = async (req, res) => {
 
@@ -34,11 +35,16 @@ const LoginUser = async (req, res) => {
                 message: "Wrong credentials"
             })
 
-        else
+        else {
+
+            const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+            console.log(token);
             res.status(200).json({
                 message: "Logged in successfully",
-                user
+                user,
+                token
             })
+        }
 
     } catch (err) {
         res.status(500).json("Error while registering: ", err);
