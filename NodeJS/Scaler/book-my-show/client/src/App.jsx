@@ -1,20 +1,34 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
+import { Provider } from 'react-redux'
 import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
+import ProtectedRoute from './components/ProtectedRoute'
+import store from './redux/store'
+import Admin from './pages/Admin/Admin'
+import Partner from './pages/Partner/Partner'
+import Profile from './pages/Profile/Profile'
 
 function App() {
 
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-      </Routes>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route path='/' element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/partner' element={<Partner />} />
+          <Route path='/profile' element={<Profile />} />
+        </Routes>
+      </Router>
+    </Provider>
+
   )
 }
 

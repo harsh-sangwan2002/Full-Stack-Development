@@ -30,3 +30,11 @@ Button {
 h1 {
     font-size: 36px;
 }
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
