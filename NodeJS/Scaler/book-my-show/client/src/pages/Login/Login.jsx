@@ -1,6 +1,6 @@
 import { Button, Checkbox, Form, Input } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
-import { LoginUser } from '../../calls/users';
+import { LoginUser } from '../../calls/user';
 import { useEffect } from 'react';
 
 const App = () => {

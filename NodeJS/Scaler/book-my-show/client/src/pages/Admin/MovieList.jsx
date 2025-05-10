@@ -1,36 +1,34 @@
 import { Table } from 'antd'
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { GetMovies } from '../../calls/movie';
+import { showLoading, hideLoading } from '../../redux/loaderSlice';
 
 const MovieList = () => {
 
-    const movies = [
-        {
-            key: "1",
-            poster: "Image1",
-            name: "Mastney",
-            description: "Set in Nadar Shah's undefeated army was attacked by Sikh Rebellions",
-            duration: 120,
-            genre: "Action",
-            language: "Hindi",
-            releaseDate: "Oct 25, 2023"
-        },
-        {
-            key: "1",
-            poster: "Image1",
-            name: "Mastney",
-            description: "Set in Nadar Shah's undefeated army was attacked by Sikh Rebellions",
-            duration: 120,
-            genre: "Action",
-            language: "Hindi",
-            releaseDate: "Oct 25, 2023"
-        }
-    ]
+    const [movies, setMovies] = useState([]);
+    const dispatch = useDispatch();
+
+    const getData = async () => {
+        dispatch(showLoading());
+        const res = await GetMovies();
+        const allMovies = res.movies;
+        setMovies(allMovies.map(movie => {
+            return {
+                ...movie,
+                key: movie._id,
+            }
+        }))
+        dispatch(hideLoading());
+    }
+
     const tableHeading = [
         {
             title: "Poster",
         },
         {
             title: "Movie name",
-            dataIndex: "name"
+            dataIndex: "movieName"
         },
         {
             title: "Description",
@@ -56,6 +54,10 @@ const MovieList = () => {
             title: "Action"
         }
     ]
+
+    useEffect(() => {
+        getData();
+    }, [])
 
     return (
         <div>

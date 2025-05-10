@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { GetCurrentUser } from './../calls/users';
+import { GetCurrentUser } from './../calls/user';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../redux/userSlice';
 import { hideLoading, showLoading } from '../redux/loaderSlice';
