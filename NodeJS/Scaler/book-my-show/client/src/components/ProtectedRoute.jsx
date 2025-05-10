@@ -19,7 +19,7 @@ const ProtectedRoute = ({ children }) => {
             label: "Home",
             icon: <HomeOutlined />,
             onClick: () => {
-                navigate("/");
+                navigate('/');
             }
         },
         {
@@ -31,6 +31,9 @@ const ProtectedRoute = ({ children }) => {
                     key: "profile",
                     label: "My Profile",
                     icon: <UserOutlined />,
+                    onClick: () => {
+                        navigate('/admin');
+                    }
                 },
                 {
                     key: "logout",
@@ -53,7 +56,6 @@ const ProtectedRoute = ({ children }) => {
             try {
                 dispatch(showLoading());
                 const res = await GetCurrentUser();
-
                 if (res.data.success) {
                     dispatch(setUser(res.data.data));
                 } else {
