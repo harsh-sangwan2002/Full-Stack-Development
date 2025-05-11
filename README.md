@@ -1,220 +1,148 @@
-Full-Stack Development Portfolio
-Welcome to my Full-Stack Development repository! This project showcases a comprehensive collection of my work across frontend, backend, data science, interview preparation, and data structures & algorithms (DSA). Built with a passion for coding and problem-solving, this repository includes a variety of projects, tools, and resources to demonstrate my expertise in multiple programming languages and frameworks.
+# 🚀 Full-Stack Development Portfolio
 
-🌟 Overview
-This repository is a one-stop hub for my coding journey, featuring projects and resources in:
+Welcome to my **Full-Stack Development** repository! This collection showcases my end-to-end work across **Frontend**, **Backend**, **Data Science**, **Systems Programming**, **Interview Prep**, and **DSA**. Built with a passion for code and problem-solving, this repo reflects my journey through a diverse tech stack, tools, and real-world projects.
 
-Frontend: React.js, HTML/CSS, SCSS, JavaScript, TypeScript
-Backend: Node.js, Express, Spring Boot, Java, Python
-Systems Programming: C/C++
-Data Science: Python-based data analysis and machine learning projects
-Interview Prep & DSA: Solutions to common coding problems and algorithmic challenges
-Miscellaneous: Full-stack applications, APIs, and more
+---
 
-Each section is organized to help you navigate through my projects and explore the technologies I’ve worked with.
+## 🌟 Overview
 
-🛠️ Technologies & Tools
-Here’s a snapshot of the tech stack and tools I’ve used in this repository:
+This repository serves as a central hub for everything I’ve built and learned:
 
-<<<<<<< HEAD
-Category
-Technologies
+- 🎨 **Frontend**: React.js, HTML/CSS, SCSS, JavaScript, TypeScript
+- 🛠️ **Backend**: Node.js, Express, Spring Boot, Java, Python
+- 🧠 **Data Science**: Python-based data analysis & ML projects
+- 🧮 **DSA & Interview Prep**: Problem-solving and coding challenges
+- 🧬 **Systems Programming**: C/C++ projects
+- 🌐 **Full-Stack Apps & APIs**: End-to-end applications with documentation
 
-Frontend
-React.js, JavaScript, TypeScript, HTML5, CSS3, SCSS
+---
 
-Backend
-Node.js, Express, Spring Boot, Java, Python
+## 🛠️ Technologies & Tools
 
-Systems Programming
-C, C++
+| Category                | Technologies                                             |
+| ----------------------- | -------------------------------------------------------- |
+| **Frontend**            | React.js, JavaScript, TypeScript, HTML5, CSS3, SCSS      |
+| **Backend**             | Node.js, Express, Spring Boot, Java, Python              |
+| **Systems Programming** | C, C++                                                   |
+| **Data Science**        | Python, Pandas, NumPy, Matplotlib, Scikit-learn          |
+| **Databases**           | MongoDB, MySQL, PostgreSQL                               |
+| **Tools**               | Git, Docker, Webpack, VS Code, Postman, Jupyter Notebook |
+| **Others**              | REST APIs, GraphQL, WebSockets, CI/CD pipelines          |
 
-Data Science
-Python, Pandas, NumPy, Matplotlib, Scikit-learn
+---
 
-Databases
-MongoDB, MySQL, PostgreSQL
+## 📁 Repository Structure
 
-Tools
-Git, Docker, Webpack, VS Code, Postman, Jupyter Notebook
+```
+📦 full-stack-development/
+├── frontend/             # React, HTML, SCSS, JS, TS projects
+├── backend/              # Node.js, Spring Boot, Java, Python APIs
+├── data-science/         # ML models, analytics, visualizations
+├── dsa/                  # DSA problem solutions
+├── interview-prep/       # Coding challenges & interview Q&A
+├── systems-programming/  # C/C++ projects
+├── full-stack-projects/  # Complete applications
+├── docs/                 # Documentation & guides
+└── README.md             # You're here!
+```
 
-Others
-REST APIs, GraphQL, WebSockets, CI/CD pipelines
+---
 
-📂 Repository Structure
-The repository is organized into intuitive directories for easy navigation:
-├── frontend/ # React.js, HTML/CSS, SCSS, JS, TS projects
-├── backend/ # Node.js, Express, Spring Boot, Java, Python APIs
-├── data-science/ # Data analysis, ML models, and visualizations
-├── dsa/ # Data Structures & Algorithms solutions
-├── interview-prep/ # Coding challenges and interview questions
-├── systems-programming/ # C/C++ projects
-├── full-stack-projects/ # End-to-end applications
-├── docs/ # Additional documentation and resources
-└── README.md # You're here!
+## 🌟 Featured Projects
 
-🚀 Featured Projects
-Here are some highlights from the repository:
+### 1. 🛒 **E-Commerce Platform**
 
-=======
+- **Tech Stack**: React.js, Node.js, Express, MongoDB, SCSS
+- **Description**: Full-stack app with user auth, product filtering & payment integration
+- **Path**: `full-stack-projects/ecommerce`
 
+### 2. 💬 **Real-Time Chat App**
 
-Category
-Technologies
+- **Tech Stack**: React.js, TypeScript, Node.js, WebSockets
+- **Description**: Group chat with real-time messaging and typing indicators
+- **Path**: `full-stack-projects/chat-app`
 
+### 3. 📊 **Data Science Dashboard**
 
+- **Tech Stack**: Python, Pandas, Matplotlib, Flask
+- **Description**: Visual dashboard for insights and trend analysis
+- **Path**: `data-science/dashboard`
 
-Frontend
-React.js, JavaScript, TypeScript, HTML5, CSS3, SCSS
+### 4. 🧮 **DSA Solutions**
 
+- **Tech Stack**: Python, C++, Java
+- **Description**: Optimized solutions to top coding problems (LeetCode, HackerRank, etc.)
+- **Path**: `dsa/`
 
-Backend
-Node.js, Express, Spring Boot, Java, Python
+### 5. 🔐 **Spring Boot REST API**
 
+- **Tech Stack**: Java, Spring Boot, MySQL
+- **Description**: Secure REST API with JWT-based authentication
+- **Path**: `backend/spring-boot-api`
 
-Systems Programming
-C, C++
+---
 
+## 🧑‍💻 Getting Started
 
-Data Science
-Python, Pandas, NumPy, Matplotlib, Scikit-learn
+### 📦 Prerequisites
 
+- Node.js (v16+)
+- Python (v3.8+)
+- Java (JDK 17+)
+- Docker (optional)
+- Git
 
-Databases
-MongoDB, MySQL, PostgreSQL
+### 🔧 Installation
 
+```bash
+# Clone the repository
+git clone https://github.com/your-username/full-stack-development.git
 
-Tools
-Git, Docker, Webpack, VS Code, Postman, Jupyter Notebook
+# Navigate to the folder
+cd full-stack-development
 
+# Follow project-specific instructions in their respective README files
+```
 
-Others
-REST APIs, GraphQL, WebSockets, CI/CD pipelines
+---
 
+## 📚 DSA & Interview Prep
 
+Explore the `interview-prep/` and `dsa/` folders for:
 
-📂 Repository Structure
-The repository is organized into intuitive directories for easy navigation:
-├── frontend/                    # React.js, HTML/CSS, SCSS, JS, TS projects
-├── backend/                     # Node.js, Express, Spring Boot, Java, Python APIs
-├── data-science/                # Data analysis, ML models, and visualizations
-├── dsa/                         # Data Structures & Algorithms solutions
-├── interview-prep/              # Coding challenges and interview questions
-├── systems-programming/         # C/C++ projects
-├── full-stack-projects/         # End-to-end applications
-├── docs/                        # Additional documentation and resources
-└── README.md                    # You're here!
+- 💡 Solutions to common coding problems
+- 📈 Complexity analysis (time & space)
+- 🧠 Whiteboard problem walkthroughs
+- 🛠️ Implementations in Python, Java, and C++
 
+---
 
-🚀 Featured Projects
-Here are some highlights from the repository:
->>>>>>> e5f1343a26a387029720ea9724c44011aa9b2f1a
-1. E-Commerce Platform
+## 🤝 Contributing
 
-Tech Stack: React.js, Node.js, Express, MongoDB, SCSS
-Description: A full-stack e-commerce application with user authentication, product filtering, and payment integration.
-Folder: full-stack-projects/ecommerce
+Contributions are welcome! To contribute:
 
-2. Real-Time Chat Application
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "Add your feature"`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a Pull Request
 
-Tech Stack: React.js, TypeScript, Node.js, WebSockets
-Description: A real-time chat app with group messaging and typing indicators.
-Folder: full-stack-projects/chat-app
+---
 
-3. Data Science Dashboard
+## 📫 Contact
 
-Tech Stack: Python, Pandas, Matplotlib, Flask
-Description: A web-based dashboard for visualizing dataset trends and predictions.
-Folder: data-science/dashboard
+- **Email**: [your.email@example.com](mailto:hsangwan2002@gmail.com)
+- **GitHub**: [github.com/your-username](https://github.com/harsh-sangwan2002)
+- **LinkedIn**: [linkedin.com/in/your-linkedin](https://linkedin.com/in/harsh-sangwan2002)
 
-4. DSA Solutions
+---
 
-Tech Stack: Python, C++, Java
-Description: Optimized solutions to problems from LeetCode, HackerRank, and more.
-Folder: dsa/
+## 🌈 Acknowledgments
 
-5. Spring Boot REST API
+- Thanks to the amazing open-source community 🚀
+- Inspired by tutorials, documentation, and coding platforms
+- ☕ Powered by coffee-fueled late-night debugging!
 
-Tech Stack: Java, Spring Boot, MySQL
-Description: A secure RESTful API for managing user data with JWT authentication.
-Folder: backend/spring-boot-api
+---
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e5f1343a26a387029720ea9724c44011aa9b2f1a
-🧑‍💻 Getting Started
-To explore or run the projects locally, follow these steps:
-Prerequisites
-
-Node.js (v16 or higher)
-Python (v3.8 or higher)
-Java (JDK 17 or higher)
-Docker (optional for containerized projects)
-Git for cloning the repository
-
-Installation
-
-Clone the repository:git clone https://github.com/your-username/full-stack-development.git
-
-<<<<<<< HEAD
-Navigate to the project folder:cd full-stack-development
-
-Follow the README.md in each project folder for specific setup instructions (e.g., installing dependencies, running servers).
-
-=======
-
-Navigate to the project folder:cd full-stack-development
-
-
-Follow the README.md in each project folder for specific setup instructions (e.g., installing dependencies, running servers).
-
-
->>>>>>> e5f1343a26a387029720ea9724c44011aa9b2f1a
-📚 Interview Prep & DSA
-The interview-prep/ and dsa/ folders contain:
-
-Solutions to popular coding problems (e.g., Two Sum, Binary Search, Graph Traversal)
-Explanations of time and space complexity
-Tips for technical interviews
-Common whiteboard challenges implemented in Python, Java, and C++
-
-<<<<<<< HEAD
-=======
-
->>>>>>> e5f1343a26a387029720ea9724c44011aa9b2f1a
-🤝 Contributing
-Contributions are welcome! If you’d like to improve a project, fix a bug, or add a new feature:
-
-Fork the repository.
-Create a new branch (git checkout -b feature/your-feature).
-Commit your changes (git commit -m "Add your feature").
-Push to the branch (git push origin feature/your-feature).
-Open a Pull Request.
-
-<<<<<<< HEAD
-=======
-
->>>>>>> e5f1343a26a387029720ea9724c44011aa9b2f1a
-📫 Contact
-Feel free to reach out for collaboration or inquiries:
-
-Email: your.email@example.com
-GitHub: your-username
-LinkedIn: your-linkedin
-
-<<<<<<< HEAD
-=======
-
->>>>>>> e5f1343a26a387029720ea9724c44011aa9b2f1a
-🌈 Acknowledgments
-
-Thanks to the open-source community for amazing tools and libraries.
-Inspired by countless tutorials, documentation, and coding challenges.
-Special shoutout to coffee ☕ for fueling late-night coding sessions!
-
-<<<<<<< HEAD
-=======
-
->>>>>>> e5f1343a26a387029720ea9724c44011aa9b2f1a
-⭐ If you find this repository helpful, please give it a star! ⭐
+⭐ **If you find this repository helpful, don’t forget to give it a star!** ⭐
