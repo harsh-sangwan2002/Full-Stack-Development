@@ -14,12 +14,17 @@ const RegisterUser = async (req, res) => {
         const user = await userModel.create({ name, email, password });
 
         res.status(200).json({
+            success: true,
             message: "User created successfully",
             user
         })
 
     } catch (err) {
-        res.status(500).json("Error while registering: ", err);
+        res.status(500).json({
+            success: false,
+            messgae: "Error while registering",
+            err
+        });
     }
 }
 
@@ -39,6 +44,7 @@ const LoginUser = async (req, res) => {
 
             const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
             res.status(200).json({
+                success: true,
                 message: "Logged in successfully",
                 user,
                 token
@@ -46,7 +52,11 @@ const LoginUser = async (req, res) => {
         }
 
     } catch (err) {
-        res.status(500).json("Error while registering: ", err);
+        res.status(500).json({
+            success: false,
+            messgae: "Error while logging in",
+            err
+        });
     }
 }
 
@@ -62,6 +72,7 @@ const GetCurrentUser = async (req, res) => {
         });
     } catch (err) {
         res.status(500).json({
+            success: false,
             message: "Cannot get the user",
             err
         })

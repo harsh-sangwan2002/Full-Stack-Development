@@ -27,7 +27,10 @@ function App() {
               <Admin />
             </ProtectedRoute>
           } />
-          <Route path='/partner' element={<Partner />} />
+          <Route path='/partner' element={
+            <ProtectedRoute>
+              <Partner />
+            </ProtectedRoute>} />
           <Route path='/profile' element={<Profile />} />
         </Routes>
       </Router>
