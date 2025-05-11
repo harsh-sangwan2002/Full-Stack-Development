@@ -1,4 +1,4 @@
-public class PrefixSum {
+public class InPlacePrefixSum {
 
     public int[] solve(int[] A) {
 

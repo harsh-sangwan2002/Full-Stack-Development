@@ -18,13 +18,8 @@ public class EquilibriumIndex {
 
             long left = 0, right = 0;
 
-            if (i == 0) {
-                right = pre[n - 1] - A[0];
-            }
-
-            else if (i == n - 1) {
-                left = pre[i - 1];
-            }
+            if (i == 0)
+                right = pre[n - 1] - pre[0];
 
             else {
                 left = pre[i - 1];
