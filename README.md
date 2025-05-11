@@ -131,9 +131,9 @@ Contributions are welcome! To contribute:
 
 ## 📫 Contact
 
-- **Email**: [your.email@example.com](mailto:hsangwan2002@gmail.com)
-- **GitHub**: [github.com/your-username](https://github.com/harsh-sangwan2002)
-- **LinkedIn**: [linkedin.com/in/your-linkedin](https://linkedin.com/in/harsh-sangwan2002)
+- **Email**: [hsangwan2002@gmail.com](mailto:hsangwan2002@gmail.com)
+- **GitHub**: [harsh-sangwan2002](https://github.com/harsh-sangwan2002)
+- **LinkedIn**: [harsh-sangwan2002](https://linkedin.com/in/harsh-sangwan2002)
 
 ---
 
