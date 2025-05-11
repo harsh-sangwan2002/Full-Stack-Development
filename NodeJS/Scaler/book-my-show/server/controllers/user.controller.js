@@ -38,7 +38,6 @@ const LoginUser = async (req, res) => {
         else {
 
             const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
-            console.log(token);
             res.status(200).json({
                 message: "Logged in successfully",
                 user,
@@ -55,7 +54,6 @@ const GetCurrentUser = async (req, res) => {
 
     try {
 
-        console.log(req.userId);
         const user = await userModel.findById(req.userId).select('-password'); // Assuming you set `req.userId` in middleware
         res.status(200).send({
             success: true,

@@ -34,34 +34,41 @@ const GetAllMovies = async (req, res) => {
 
 const UpdateMovie = async (req, res) => {
     try {
-        const { id } = req.params;
-        const updatedMovie = await movieModel.findByIdAndUpdate(id, req.body);
+        const body = req.body;
+        const movieId = body.id;
+        const movie = await movieModel.findById(movieId);
+
+        Object.keys(body).forEach((key) => {
+            if (key !== "id") movie[key] = body[key];
+        });
+        await movie.save();
         res.send({
             success: true,
             message: "Movie has been updated successfully",
-            updatedMovie
-        })
-    }
-    catch (err) {
-        res.status(500).json({
+            data: movie,
+        });
+    } catch (err) {
+        res.send({
             success: false,
-            message: "Couln't update movie in the database"
-        })
+            message: err.message,
+        });
     }
-}
+};
+
 const DeleteMovie = async (req, res) => {
     try {
-        const { id } = req.params;
-        await movieModel.findByIdAndDelete(id);
+        const movieId = req.body.id;
+        console.log(req.body);
+        await movieModel.findByIdAndDelete(movieId);
         res.send({
             success: true,
-            message: "Movie has been deleted successfully"
-        })
+            message: "Movie has been deleted successfully",
+        });
     } catch (err) {
-        res.status(500).json({
+        res.send({
             success: false,
-            message: "Couln't delete movie from the database"
-        })
+            message: err.message,
+        });
     }
 }
 

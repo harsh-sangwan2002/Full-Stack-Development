@@ -3,7 +3,7 @@ const { AddMovie, GetAllMovies, DeleteMovie, UpdateMovie } = require('../control
 
 movieRouter.get('/', GetAllMovies)
     .post('/add-movie', AddMovie)
-    .put('/:id', UpdateMovie)
-    .delete('/:id', DeleteMovie)
+    .put('/', UpdateMovie)
+    .put('/delete', DeleteMovie)
 
 module.exports = movieRouter;

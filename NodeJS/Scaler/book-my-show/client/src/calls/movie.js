@@ -9,27 +9,27 @@ export const GetMovies = async () => {
     }
 }
 
-export const CreateMovie = async (data) => {
+export const AddMovie = async (values) => {
     try {
-        const res = await axiosInstance.post('/movies', data);
+        const res = await axiosInstance.post('/movies/add-movie', values);
         return res.data;
     } catch (err) {
         console.log(err);
     }
 }
 
-export const UpdateMovie = async (id, data) => {
+export const UpdateMovie = async (values) => {
     try {
-        const res = await axiosInstance.put(`/movies/${id}`, data);
+        const res = await axiosInstance.put('/movies', values);
         return res.data;
     } catch (err) {
         console.log(err);
     }
 }
 
-export const DeleteMovie = async (id) => {
+export const DeleteMovie = async (values) => {
     try {
-        const res = await axiosInstance.delete(`/movies/${id}`);
+        const res = await axiosInstance.put('/movies/delete', values);
         return res.data;
     } catch (err) {
         console.log(err);

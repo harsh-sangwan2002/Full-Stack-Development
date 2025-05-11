@@ -38,3 +38,7 @@ h1 {
 .justify-content-between {
     justify-content: space-between;
 }
+
+.mt-3 {
+    margin-top: 30px;
+}
