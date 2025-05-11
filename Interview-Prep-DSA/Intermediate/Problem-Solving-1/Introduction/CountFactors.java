@@ -6,11 +6,14 @@ public class CountFactors {
 
         for (int i = 2; i <= Math.sqrt(A); i++) {
 
-            if (i * i == A)
-                factors++;
+            if (A % i == 0) {
 
-            else if (A % i == 0)
-                factors += 2;
+                if (i * i == A)
+                    factors++;
+
+                else
+                    factors += 2;
+            }
         }
 
         return factors;

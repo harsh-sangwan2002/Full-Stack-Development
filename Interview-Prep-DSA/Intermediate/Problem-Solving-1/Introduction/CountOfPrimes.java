@@ -1,9 +1,6 @@
-public class CountPrimes {
+public class CountOfPrimes {
 
     private boolean isPrime(int n) {
-
-        if (n <= 1)
-            return false;
 
         for (int i = 2; i <= Math.sqrt(n); i++) {
 
@@ -16,14 +13,14 @@ public class CountPrimes {
 
     public int solve(int A) {
 
-        int count = 0;
+        int countPrimes = 0;
 
         for (int i = 2; i <= A; i++) {
 
             if (isPrime(i))
-                count++;
+                countPrimes++;
         }
 
-        return count;
+        return countPrimes;
     }
 }

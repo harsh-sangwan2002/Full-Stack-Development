@@ -2,9 +2,6 @@ public class IsPrime {
 
     public int solve(int A) {
 
-        if (A <= 1)
-            return 0;
-
         for (int i = 2; i <= Math.sqrt(A); i++) {
 
             if (A % i == 0)
