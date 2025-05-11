@@ -2,12 +2,11 @@ public class MaximumSubArray {
     
     public int maxSubarray(int A, int B, int[] C) {
 
-        int n = A, maxSum = Integer.MIN_VALUE;
+        int n = A, maxSum = 0;
 
         for(int i=0; i<n; i++){
 
             int sum = 0;
-
             for(int j=i; j<n; j++){
 
                 sum+=C[j];

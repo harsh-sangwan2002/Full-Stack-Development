@@ -2,10 +2,8 @@ public class SubArrayWithGivenLengthSum {
 
     public int solve(int[] A, int B, int C) {
 
-        if (B > A.length)
-            return 0;
+        int n = A.length, sum = 0;
 
-        int sum = 0, n = A.length;
         for (int i = 0; i < B; i++)
             sum += A[i];
 

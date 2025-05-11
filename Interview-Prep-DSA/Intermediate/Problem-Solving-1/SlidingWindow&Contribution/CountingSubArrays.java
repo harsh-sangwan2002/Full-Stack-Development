@@ -1,4 +1,4 @@
-public class CountingSubArrayEasy {
+public class CountingSubArrays {
 
     public int solve(int[] A, int B) {
 
