@@ -3,6 +3,7 @@ public class ArrayRotation {
     private void reverse(int[] A, int lo, int hi) {
 
         while (lo <= hi) {
+
             int temp = A[lo];
             A[lo] = A[hi];
             A[hi] = temp;

@@ -1,4 +1,4 @@
-public class SecondLargestElement {
+public class SecondLargest {
 
     public int solve(int[] A) {
 
@@ -11,8 +11,9 @@ public class SecondLargestElement {
                 max = val;
             }
 
-            else if (val != max && val > smax)
+            else if (val > smax && val != max) {
                 smax = val;
+            }
         }
 
         return smax == Integer.MIN_VALUE ? -1 : smax;

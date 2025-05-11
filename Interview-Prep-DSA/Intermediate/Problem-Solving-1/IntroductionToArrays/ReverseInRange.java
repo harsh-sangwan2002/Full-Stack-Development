@@ -1,19 +1,17 @@
 public class ReverseInRange {
 
-    private void swap(int[] arr, int i, int j) {
-
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
     public int[] solve(int[] A, int B, int C) {
 
-        while (B < C) {
+        int lo = B, hi = C;
 
-            swap(A, B, C);
-            B++;
-            C--;
+        while (lo <= hi) {
+
+            int temp = A[lo];
+            A[lo] = A[hi];
+            A[hi] = temp;
+
+            lo++;
+            hi--;
         }
 
         return A;

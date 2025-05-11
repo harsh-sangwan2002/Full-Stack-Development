@@ -1,16 +1,13 @@
-package GoodPair;
-
 public class sol1 {
 
     public int solve(int[] A, int B) {
 
-        int n = A.length;
-        for (int i = 0; i < n; i++) {
+        for(int i=0; i<A.length; i++){
 
-            for (int j = i + 1; j < n; j++) {
+            for(int j=i+1; j<A.length; j++){
 
-                if (A[i] + A[j] == B)
-                    return 1;
+                if(A[i]+A[j]==B)
+                return 1;
             }
         }
 
