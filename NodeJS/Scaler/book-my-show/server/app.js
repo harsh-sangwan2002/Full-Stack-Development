@@ -11,9 +11,11 @@ app.use(cookieParser());
 const connectToDB = require('./config/db');
 const userRouter = require('./routes/user.route');
 const movieRouter = require('./routes/movie.route');
+const theatreRouter = require('./routes/theatre.route');
 
 app.use('/api/users', userRouter);
 app.use('/api/movies', movieRouter);
+app.use('/api/theatres', theatreRouter);
 
 app.listen(3000, async () => {
     console.log("Backend server is running on 3000.");
