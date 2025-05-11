@@ -1,9 +1,8 @@
-public class SubArray {
+public class SubArrayInGivenRange {
 
     public int[] solve(int[] A, int B, int C) {
 
-        int len = C - B + 1;
-        int[] res = new int[len];
+        int[] res = new int[C - B + 1];
 
         for (int i = B; i <= C; i++)
             res[i - B] = A[i];

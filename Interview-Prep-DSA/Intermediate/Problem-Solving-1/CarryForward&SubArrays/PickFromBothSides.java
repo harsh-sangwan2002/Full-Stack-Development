@@ -23,10 +23,9 @@ public class PickFromBothSides {
                 suf[i] = suf[i + 1] + A[i];
         }
 
-        int max = Math.max(suf[n - B], pre[B - 1]);
+        int max = Math.max(pre[B - 1], suf[n - B]);
 
         for (int i = 1; i < B; i++) {
-
             int sum = pre[i - 1] + suf[n - B + i];
             max = Math.max(max, sum);
         }
