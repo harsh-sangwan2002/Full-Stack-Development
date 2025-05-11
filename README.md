@@ -1,4 +1,4 @@
-# 🚀 Full-Stack Development Portfolio
+# 🚀 Full-Stack Development
 
 Welcome to my **Full-Stack Development** repository! This collection showcases my end-to-end work across **Frontend**, **Backend**, **Data Science**, **Systems Programming**, **Interview Prep**, and **DSA**. Built with a passion for code and problem-solving, this repo reflects my journey through a diverse tech stack, tools, and real-world projects.
 
