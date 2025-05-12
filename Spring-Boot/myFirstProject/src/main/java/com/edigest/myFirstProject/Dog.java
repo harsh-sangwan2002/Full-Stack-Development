@@ -1,4 +1,4 @@
-package com.company.my_first_project;
+package com.edigest.myFirstProject;
 
 import org.springframework.stereotype.Component;
 
@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class Dog {
 
     public String fun(){
-        return "do something";
+        return "woof";
     }
 }

@@ -1,4 +1,4 @@
-package com.harsh.journalApp.controller;
+package net.edigest.journalApp.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HealthCheck {
 
     @GetMapping("/health-check")
-    public String healthCheck() {
-        return "Ok";
+    public String healthCheck(){
+        return "OK";
     }
 }
