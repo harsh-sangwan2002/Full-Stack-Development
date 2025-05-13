@@ -12,10 +12,12 @@ const connectToDB = require('./config/db');
 const userRouter = require('./routes/user.route');
 const movieRouter = require('./routes/movie.route');
 const theatreRouter = require('./routes/theatre.route');
+const showRouter = require('./routes/show.route');
 
 app.use('/api/users', userRouter);
 app.use('/api/movies', movieRouter);
 app.use('/api/theatres', theatreRouter);
+app.use('/api/shows', showRouter);
 
 app.listen(3000, async () => {
     console.log("Backend server is running on 3000.");

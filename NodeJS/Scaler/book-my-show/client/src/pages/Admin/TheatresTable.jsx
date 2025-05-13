@@ -53,7 +53,7 @@ const TheatresTable = () => {
             title: "Owner",
             dataIndex: "owner",
             render: (text, data) => {
-                return data.owner && data.owner.name;
+                return data.owner && data.ownerDetails.name;
             },
         },
         {

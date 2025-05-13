@@ -3,9 +3,24 @@ const theatreModel = require('../models/theatre.model');
 const GetAllTheatres = async (req, res) => {
 
     try {
-        const theatres = await theatreModel.find();
+        console.log('Fetching all theatres...');
+        const theatres = await theatreModel.aggregate([
+            {
+                $lookup: {
+                    from: 'users',            // collection name (lowercase and plural usually)
+                    localField: 'owner',
+                    foreignField: '_id',
+                    as: 'ownerDetails'
+                }
+            },
+            {
+                $unwind: '$ownerDetails'   // Flatten the array if you want a single object
+            }
+        ]);
+        console.log('Fetched theatres:', theatres);
         res.status(200).json({ success: true, theatres });
     } catch (error) {
+        console.error('Error in GetAllTheatres:', error);
         res.status(500).json({ success: false, message: 'Error fetching theatres', error });
     }
 }
