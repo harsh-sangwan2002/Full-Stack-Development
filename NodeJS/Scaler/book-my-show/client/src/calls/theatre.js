@@ -9,7 +9,7 @@ export const GetAllTheatresForOwner = async (values) => {
     }
 }
 
-export const GetAlTheatreForAdmin = async () => {
+export const GetAllTheatreForAdmin = async () => {
     try {
         const resp = await axiosInstance.get(`/theatres/get-all`);
         return resp.data;

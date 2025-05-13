@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { Table, Button, message } from "antd";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useSelector } from "react-redux";
-import { GetAllTheatresForOwner, GetAlTheatreForAdmin } from "../../calls/theatre";
+import { GetAllTheatresForOwner } from "../../calls/theatre";
 import TheatreFormModal from "./TheatreFormModal";
+import DeleteTheatreModal from "./DeleteTheatreModal";
 
 const TheatreList = () => {
     const { user } = useSelector((state) => state.user);
@@ -16,9 +17,10 @@ const TheatreList = () => {
 
     const getData = async () => {
         try {
-            const response = await GetAllTheatresForOwner({ ownerId: user._id }).data;
+            const response = await GetAllTheatresForOwner({ ownerId: user._id });
+            console.log(response);
             if (response.success) {
-                const allTheatres = response.data.theatres
+                const allTheatres = response.theatres
                 setTheatres(allTheatres);
             } else {
                 message.error(response.message);
@@ -128,6 +130,18 @@ const TheatreList = () => {
                         setSelectedTheatre={setSelectedTheatre}
                         setIsModalOpen={setIsModalOpen}
                         formType={formType}
+                        getData={getData}
+                    />
+                )
+            }
+            {
+                isDeleteModalOpen &&
+                (
+                    <DeleteTheatreModal
+                        isDeleteModalOpen={isDeleteModalOpen}
+                        selectedTheatre={selectedTheatre}
+                        setIsDeleteModalOpen={setIsDeleteModalOpen}
+                        setSelectedTheatre={setSelectedTheatre}
                         getData={getData}
                     />
                 )
