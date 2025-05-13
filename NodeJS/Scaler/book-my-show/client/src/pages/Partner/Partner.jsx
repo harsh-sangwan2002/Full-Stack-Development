@@ -9,16 +9,11 @@ const Partner = () => {
             label: "Theatres",
             children: <TheatreList />
         },
-        {
-            key: "2",
-            label: "Bookings",
-            children: <TheatreList />
-        }
     ]
 
     return (
         <div>
-            Partner Page
+            <h1> Partner Page</h1>
             <Tabs items={items} />
         </div>
     )
