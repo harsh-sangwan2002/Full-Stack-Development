@@ -1,0 +1,82 @@
+const userModel = require('../models/user.model');
+const jwt = require('jsonwebtoken');
+
+const RegisterUser = async (req, res) => {
+
+    try {
+
+        const { name, email, password } = req.body;
+        const doesUserExists = await userModel.findOne({ email });
+
+        if (doesUserExists)
+            res.status(500).send("User already exists");
+
+        const user = await userModel.create({ name, email, password });
+
+        res.status(200).json({
+            success: true,
+            message: "User created successfully",
+            user
+        })
+
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            messgae: "Error while registering",
+            err
+        });
+    }
+}
+
+const LoginUser = async (req, res) => {
+
+    try {
+
+        const { email, password } = req.body;
+        const user = await userModel.findOne({ email });
+
+        if (!user || password !== user.password)
+            res.status(500).json({
+                message: "Wrong credentials"
+            })
+
+        else {
+
+            const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+            res.status(200).json({
+                success: true,
+                message: "Logged in successfully",
+                user,
+                token
+            })
+        }
+
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            messgae: "Error while logging in",
+            err
+        });
+    }
+}
+
+const GetCurrentUser = async (req, res) => {
+
+    try {
+
+        const user = await userModel.findById(req.userId).select('-password'); // Assuming you set `req.userId` in middleware
+        res.status(200).send({
+            success: true,
+            message: "You are authenticated",
+            data: user
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Cannot get the user",
+            err
+        })
+    }
+}
+
+module.exports = { LoginUser, RegisterUser, GetCurrentUser }
