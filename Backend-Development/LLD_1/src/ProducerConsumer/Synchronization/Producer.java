@@ -1,4 +1,4 @@
-package ProducerConsumer;
+package ProducerConsumer.Synchronization;
 
 import java.util.Queue;
 
@@ -17,9 +17,11 @@ public class Producer implements Runnable{
     @Override
     public void run(){
         while(true){
-            if(store.size() < maxSize){
-                System.out.println("Producer " + this.name + " is producing, store size: " + store.size());
-                store.add(new Object());
+            synchronized (store){
+                if(store.size() < maxSize){
+                    System.out.println("Producer " + this.name + " is producing, store size: " + store.size());
+                    store.add(new Object());
+                }
             }
         }
     }

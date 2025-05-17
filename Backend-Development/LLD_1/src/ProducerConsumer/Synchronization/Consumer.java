@@ -1,4 +1,4 @@
-package ProducerConsumer;
+package ProducerConsumer.Synchronization;
 
 import java.util.Queue;
 
@@ -17,9 +17,11 @@ public class Consumer implements Runnable{
     @Override
     public void run(){
         while(true){
-            if(this.store.size() > 0){
-                System.out.println("Consumer " + this.name + " is consuming, store size: " + this.store.size());
-                this.store.remove();
+            synchronized (store){
+                if(this.store.size() > 0){
+                    System.out.println("Consumer " + this.name + " is consuming, store size: " + this.store.size());
+                    this.store.remove();
+                }
             }
         }
     }

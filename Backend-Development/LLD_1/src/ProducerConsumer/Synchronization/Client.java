@@ -1,4 +1,4 @@
-package ProducerConsumer;
+package ProducerConsumer.Synchronization;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
@@ -9,7 +9,7 @@ public class Client {
 
     public static void main(String[] args) {
 
-        int maxSize = 6;
+        int maxSize = 5;
         Queue<Object> queue = new ArrayDeque<>();
         Producer p1 = new Producer("P1",maxSize,queue);
         Producer p2 = new Producer("P2",maxSize,queue);
@@ -25,7 +25,7 @@ public class Client {
         Consumer c5 = new Consumer("C5",maxSize,queue);
         Consumer c6 = new Consumer("C6",maxSize,queue);
 
-        ExecutorService executorService = Executors.newCachedThreadPool();
+        ExecutorService executorService = Executors.newFixedThreadPool(4);
 
         executorService.submit(p1);
         executorService.submit(p2);
