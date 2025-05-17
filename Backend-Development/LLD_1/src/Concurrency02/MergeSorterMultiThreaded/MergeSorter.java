@@ -9,39 +9,34 @@ public class MergeSorter implements Callable<List<Integer>> {
     List<Integer> listToSort;
     ExecutorService executorService;
 
-    public MergeSorter(List<Integer> listToSort, ExecutorService executorService) {
+    public MergeSorter(List<Integer> listToSort, ExecutorService executorService){
         this.listToSort = listToSort;
         this.executorService = executorService;
     }
 
     @Override
-    public List<Integer> call () throws Exception {
-        // Merge Sort logic implementation will happen here
-        int n = listToSort.size();
-        if(n<=1)
+    public List<Integer> call() throws Exception{
+        if(listToSort.size() <= 1){
             return listToSort;
+        }
 
         List<Integer> leftHalf = new ArrayList<>();
         List<Integer> rightHalf = new ArrayList<>();
 
-        for(int i=0; i<n/2; i++) {
+        for(int i=0; i<listToSort.size()/2; i++){
             leftHalf.add(listToSort.get(i));
         }
 
-        for(int i=n/2; i<n; i++) {
+        for(int i=listToSort.size()/2; i<listToSort.size(); i++){
             rightHalf.add(listToSort.get(i));
         }
 
-        MergeSorter leftMergeSorter = new MergeSorter(leftHalf, executorService);
-        MergeSorter rightMergeSorter = new MergeSorter(rightHalf, executorService);
+        Future<List<Integer>> leftFuture = executorService.submit(new MergeSorter(leftHalf, executorService));
+        Future<List<Integer>> rightFuture = executorService.submit(new MergeSorter(rightHalf, executorService));
 
-        Future<List<Integer>> leftSortedFuture = executorService.submit(leftMergeSorter);
-        Future<List<Integer>> rightSortedFuture = executorService.submit(rightMergeSorter);
-
-        List<Integer> leftSorted = leftSortedFuture.get();
-        List<Integer> rightSorted = rightSortedFuture.get();
-
-        return  mergeSortedLists(leftSorted, rightSorted);
+        leftHalf = leftFuture.get();
+        rightHalf = rightFuture.get();
+        return mergeSortedLists(leftHalf, rightHalf);
     }
 
     public List<Integer> mergeSortedLists(List<Integer> left, List<Integer> right){
