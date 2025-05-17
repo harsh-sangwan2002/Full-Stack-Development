@@ -6,6 +6,7 @@ public class Main {
         System.out.println("Printing a string: "+name);
     }
 
+    // Method name is same but signature is different
     public static void print(int x){
         System.out.println("Printing an integer: "+x);
     }
