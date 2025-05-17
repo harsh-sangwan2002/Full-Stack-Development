@@ -11,12 +11,4 @@ let obj2 = {
     lastName: "Parker"
 }
 
-// Function borrowing - call
-obj.firstName.call(obj2, "New York", "USA");
-
-// apply
 obj.firstName.apply(obj2, ["New York", "USA"]);
-
-// bind
-const fn = obj.firstName.bind(obj2, "New York");
-fn("USA");
