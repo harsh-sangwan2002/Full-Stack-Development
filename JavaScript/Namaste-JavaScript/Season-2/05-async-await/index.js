@@ -1,13 +1,13 @@
 const p1 = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve('Promise Resolved Value!!');
-    }, 20000)
+    }, 2000)
 })
 
 const p2 = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve('Promise Resolved Value!!');
-    }, 40000)
+    }, 4000)
 })
 
 // await is a keybword that can only be used inside an async function.
@@ -25,6 +25,8 @@ async function handlePromise() {
     const val2 = await p2;
     console.log("Namaste JavaScript2");
     console.log(val2);
+
+    console.log("Bye")
 }
 handlePromise();
 
