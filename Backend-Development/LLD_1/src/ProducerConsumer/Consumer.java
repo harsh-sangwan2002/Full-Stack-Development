@@ -2,24 +2,24 @@ package ProducerConsumer;
 
 import java.util.Queue;
 
-public class Consumer<S> implements Runnable{
+public class Consumer implements Runnable{
 
-    private final Queue<Object> store;
     private final String name;
     private final int maxSize;
+    private final Queue<Object> store;
 
-    public Consumer(Queue<Object> store, String name, int maxSize) {
-        this.store = store;
+    public Consumer(String name, int maxSize, Queue<Object> store){
         this.name = name;
         this.maxSize = maxSize;
+        this.store = store;
     }
 
     @Override
     public void run(){
         while(true){
-            if(!store.isEmpty()){
-                System.out.println("Consumer " + name + " consumed an item. Current size: " + store.size());
-                store.remove();
+            if(this.store.size() > 0){
+                System.out.println("Consumer " + this.name + " is consuming, store size: " + this.store.size());
+                this.store.remove();
             }
         }
     }
