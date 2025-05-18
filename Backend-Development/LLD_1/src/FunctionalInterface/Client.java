@@ -40,25 +40,19 @@ public class Client {
         Comparator<Car> comparator = new Comparator<Car>() {
             @Override
             public int compare(Car c1, Car c2) {
-                if (c1.price < c2.price) {
-                    return -1;
-                } else if (c1.price > c2.price) {
-                    return 1;
-                } else {
-                    return 0;
-                }
+                return c1.speed - c2.speed;
             }
         };
+
+        Comparator<Car> comparator2 = (c1, c2) -> c1.speed - c2.speed;
+        cars.sort(comparator2);
         System.out.println(cars);
-        cars.sort((c1, c2) -> {
-            if (c1.price < c2.price) {
-                return -1;
-            } else if (c1.price > c2.price) {
-                return 1;
-            } else {
-                return 0;
-            }
-        });
-        System.out.println(cars);
+
+        // Filter out expensive cars
+        List<Car> expensiveCars = cars.stream().filter(c -> c.price > 5000).toList();
+        System.out.println(expensiveCars);
+
+        // For every car, return the price
+        System.out.println(cars.stream().map(c->c.price).toList());
     }
 }
