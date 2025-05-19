@@ -3,17 +3,17 @@ import { Link } from "react-router-dom"
 const Header = () => {
     return (
         <div className="header">
-            <Link>
+            <Link to="/">
                 <h1>IMDB</h1>
             </Link>
             <ul>
-                <li>
+                <li className="header-links">
                     <Link to="/">Movies</Link>
                 </li>
-                <li>
+                <li className="header-links">
                     <Link to="/details">Details</Link>
                 </li>
-                <li>
+                <li className="header-links">
                     <Link to="/watchlist">WatchList</Link>
                 </li>
             </ul>
