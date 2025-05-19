@@ -1,36 +1,32 @@
-import React, { useState } from 'react'
+import { useState } from "react";
 
-const TodoList = () => {
+const TodoList = ({ title }) => {
 
-    const [currTodo, setTodo] = useState("")
-    const [todos, setTodos] = useState([])
+    const [items, setItems] = useState(["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7"]);
+    let newItem = '';
 
-    const handleAdd = () => {
-        setTodos([...todos, currTodo])
-        setTodo("")
+    const handleAddTodo = () => {
+        // React will only re-render if there is a change in props or state.
+        setItems([...items, newItem]);
     }
 
-    const handleRemove = (idx) => {
-
-        const newTodos = todos.filter((item, index) => index !== idx)
-        setTodos(newTodos);
+    const handleChange = (e) => {
+        newItem = e.target.value;
+        console.log(newItem);
     }
 
     return (
         <div>
-            <h1>Todo List</h1>
-            <div>
-                <input type="text" value={currTodo} onChange={(e) => setTodo(e.target.value)} placeholder='Enter new todo' />
-                <button onClick={handleAdd}>Add Todo</button>
+            <h1>{title || "Todo List"}</h1>
+            <div style={{ display: 'flex' }}>
+                <input type="text" placeholder="Enter a todo" onChange={handleChange} />
+                <button onClick={handleAddTodo}>Add Todo</button>
             </div>
             <ul>
                 {
-                    todos.map((item, index) => {
-                        return <div key={index} style={{ display: 'flex', gap: '1rem' }}>
-                            <li key={index}>{item}</li>
-                            <button onClick={() => handleRemove(index)}>Remove</button>
-                        </div>
-                    })
+                    items.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                    ))
                 }
             </ul>
         </div>
