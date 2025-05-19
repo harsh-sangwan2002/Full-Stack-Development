@@ -8,12 +8,42 @@ const data = {
     age: 22
 }
 
+const performSanity = async (req, res, next) => {
+    if (!req.body && !req.body.password) {
+        console.log("error");
+    }
+    console.log("performing basic sanity");
+    console.log("checked the data");
+    next();
+}
+
+const checkAuth = async (req, res, next) => {
+    console.log("checking for valid email");
+    console.log("checked the data");
+    next();
+}
+
+const middleware1 = async (req, res, next) => {
+    console.log(req.method);
+    console.log(req.url);
+    console.log("This is first checkout");
+    next();
+}
+
+const middleware2 = async (req, res, next) => {
+    console.log(req.method);
+    console.log(req.url);
+    console.log("This is second checkout");
+    next();
+}
+
+app.use(middleware1, middleware2);
+
 app.get('/', (req, res) => {
-    // res.send('<h1>Hello World</h1>');
     res.send(data);
 })
 
-app.post('/', (req, res) => {
+app.post('/login', performSanity, checkAuth, (req, res) => {
     res.send("Post request success");
 })
 
@@ -29,6 +59,10 @@ app.put('/', (req, res) => {
 
 app.delete('/', (req, res) => {
     res.send("Delete request success")
+})
+
+app.get('/search', (req, res) => {
+    res.send(req.query);
 })
 
 app.get('/search/:id', (req, res) => {
