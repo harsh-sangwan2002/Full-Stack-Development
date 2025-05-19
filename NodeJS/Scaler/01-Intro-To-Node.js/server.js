@@ -1,13 +1,15 @@
 const http = require('http');
+const fs = require('fs');
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
 
     res.setHeader('Content-Type', 'text/html');
-    res.write('<h1>Hello World</h1>');
+    const html = await fs.promises.readFile('index.html');
+    res.write(html);
     res.end();
 })
 
-server.listen(3000, (err) => {
+server.listen(3000, 'localhost', (err) => {
     if (err)
         console.log(err);
 
