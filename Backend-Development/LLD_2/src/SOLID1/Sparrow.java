@@ -1,4 +1,4 @@
-package SOLID_1;
+package SOLID1;
 
 public class Sparrow extends Bird{
 
