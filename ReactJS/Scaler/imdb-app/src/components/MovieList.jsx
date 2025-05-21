@@ -1,11 +1,12 @@
 import Movie from "./Movie";
 
-const MovieList = ({ movies, watchlist, setWatchlist }) => {
+const MovieList = ({ movies }) => {
+
     return (
         <div className="movie-list">
             {
                 movies.map((movie, idx) => (
-                    <Movie movie={movie} key={idx} watchlist={watchlist} setWatchlist={setWatchlist} />
+                    <Movie movie={movie} key={idx} />
                 ))
             }
         </div>

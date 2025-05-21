@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { WatchListContext } from "../context/WatchListProvider";
 
-const WatchListPage = ({ watchlist }) => {
+const WatchListPage = () => {
 
+    const { watchlist } = useContext(WatchListContext);
     const [list, setList] = useState(watchlist);
 
     let genreids = {

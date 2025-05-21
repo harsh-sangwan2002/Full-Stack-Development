@@ -1,20 +1,21 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom"
+import { WatchListContext } from "../context/WatchListProvider";
 
-const Movie = ({ movie, watchlist, setWatchlist }) => {
+const Movie = ({ movie }) => {
 
+    const { watchlist, setWatchlist } = useContext(WatchListContext);
     const handleClick = (e) => {
         e.preventDefault();
 
         if (watchlist[movie.id]) {
             const newWatchlist = { ...watchlist };
             delete newWatchlist[movie.id];
-            localStorage.setItem('watchlist', JSON.stringify(newWatchlist));
             setWatchlist(newWatchlist);
         }
 
         else {
             const newWatchlist = { ...watchlist, [movie.id]: movie };
-            localStorage.setItem('watchlist', JSON.stringify(newWatchlist));
             setWatchlist(newWatchlist);
         }
 
