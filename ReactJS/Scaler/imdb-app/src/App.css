@@ -39,6 +39,17 @@ a {
     color: rgb(100, 108, 200);
 }
 
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
 
 /* Headings */
 h1 {
@@ -57,11 +68,13 @@ button {
     font-family: inherit;
     background-color: #1f1f1f;
     cursor: pointer;
-    transition: border-color 0.25s;
+    transition: all 0.20s ease-in;
+    color: white;
 }
 
 button:hover {
     background-color: #646cff;
+    color: white;
 }
 
 button:focus,
@@ -143,7 +156,7 @@ button:focus-visible {
 .movie-list-page,
 .watchlist-container {
     text-align: center;
-    padding: 1rem;
+    padding: 4rem;
     background-color: inherit;
     color: inherit;
     min-height: 100vh;
@@ -174,14 +187,25 @@ button:focus-visible {
 }
 
 .container .left-section {
-    width: 20%;
+    width: 25%;
     display: flex;
 }
 
 .container .right-section {
     display: flex;
-    flex: 2;
+    flex: 1;
     flex-direction: column;
+}
+
+.container .right-section input {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #1e1e1e;
+    color: white;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid #8ab4f8;
+    border-radius: 10px;
 }
 
 .container .right-section table {
@@ -197,20 +221,20 @@ button:focus-visible {
     flex-direction: column;
 }
 
-.genre {
+.genre-item {
     padding: 15px;
     border: 1px solid #555;
     border-radius: 10px;
     cursor: pointer;
     font-size: 20px;
-    background-color: #8ab4f8;
+    background-color: #535bf2;
     text-align: center;
-    color: #000;
+    color: #fff;
     transition: background-color 0.3s ease;
 }
 
-.genre:hover {
-    background-color: #5393ff;
+.genre-item:hover {
+    background-color: #8ab4f8;
 }
 
 /* Search */
@@ -267,10 +291,11 @@ img {
 .movie-detail-card {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 2rem;
     padding: 2rem;
     max-width: 1000px;
-    margin: 2rem auto;
+    margin: 6rem auto;
     background-color: #1e1e1e;
     color: #fff;
     border-radius: 20px;
@@ -308,12 +333,24 @@ img {
     line-height: 1.6;
 }
 
+.movie-detail-card .meta .buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.movie-detail-card .meta .buttons a {
+    transition: all 0.3s ease;
+}
+
+.movie-detail-card .meta .buttons a:hover {
+    color: white;
+}
+
 .movie-detail-card .meta p {
     margin-bottom: 0.5rem;
 }
 
 .homepage-link {
-    display: inline-block;
     margin-top: 1rem;
     padding: 10px 20px;
     background-color: #646cff;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
@@ -40,9 +40,12 @@ const SingleMovieDetail = () => {
                     {movie.belongs_to_collection && (
                         <p><strong>Collection:</strong> {movie.belongs_to_collection.name}</p>
                     )}
-                    <a className="homepage-link" href={movie.homepage} target="_blank" rel="noreferrer">
-                        Visit Official Site
-                    </a>
+                    <div className="buttons">
+                        <a className="homepage-link" href={movie.homepage} target="_blank" rel="noreferrer">
+                            Visit Official Site
+                        </a>
+                        <button id="go-back"> <Link to="/">Go Back</Link></button>
+                    </div>
                 </div>
             </div>
         </div>
