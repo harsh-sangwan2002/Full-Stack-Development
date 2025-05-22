@@ -4,6 +4,10 @@ This project is a simplified clone of the **Internet Movie Database (IMDB)** bui
 
 ---
 
+## Live Demo
+
+[Link](https://imdb-app-harsh.netlify.app/)
+
 ## 🛠️ Tech Stack
 
 - **React**: UI Library
@@ -22,6 +26,7 @@ npm create vite@latest imdb-app --template react
 cd imdb-app
 npm install
 ```
+
 ````
 
 ### 2. Install Dependencies
@@ -219,3 +224,4 @@ imdb-app/
 ---
 
 ## 🙌 Happy Coding!
+````
