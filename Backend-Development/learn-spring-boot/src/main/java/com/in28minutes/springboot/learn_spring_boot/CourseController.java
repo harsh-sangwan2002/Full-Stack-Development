@@ -13,6 +13,7 @@ public class CourseController {
     public List<Course> retrieveAllCourses(){
         return Arrays.asList(
                 new Course(1, "Spring Boot", "in28Minutes"),
+                new Course(2, "Java", "in28Minutes"),
                 new Course(2, "Java", "in28Minutes")
                 // Add more courses here
         );
