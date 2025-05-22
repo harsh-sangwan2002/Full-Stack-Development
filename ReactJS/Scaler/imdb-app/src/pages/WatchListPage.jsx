@@ -1,9 +1,12 @@
-import { useContext, useEffect, useState } from "react"
-import { WatchListContext } from "../context/WatchListProvider";
+import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromWatchlist } from "../redux/WatchListSlice";
 
 const WatchListPage = () => {
 
-    const { watchlist } = useContext(WatchListContext);
+    const watchlist = useSelector(state => state.watchList);
+    const dispatch = useDispatch();
+
     const [list, setList] = useState(watchlist);
 
     let genreids = {
@@ -89,6 +92,10 @@ const WatchListPage = () => {
         setList(sortedMovies);
     }
 
+    const handleRemove = (id) => {
+        dispatch(removeFromWatchlist(id));
+    }
+
     useEffect(() => {
         setList(watchlist);
     }, [watchlist]);
@@ -120,6 +127,7 @@ const WatchListPage = () => {
                                 <th><span onClick={handlePopularityAsc}>⬆️ </span>Popularity<span onClick={handlePopularityDesc}> ⬇️</span></th>
                                 <th><span onClick={handleVoteAverageAsc}>⬆️ </span>Vote Average<span onClick={handleVoteAverageDesc}> ⬇️</span></th>
                                 <th><span onClick={handleReleaseDateAsc}>⬆️ </span>Release Date <span onClick={handleReleaseDateDesc}> ⬇️</span></th>
+                                <th>Remove</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -134,6 +142,7 @@ const WatchListPage = () => {
                                             <td>{movie.popularity}</td>
                                             <td>{movie.vote_average}</td>
                                             <td>{movie.release_date}</td>
+                                            <td><button onClick={() => handleRemove(movie.id)}>Remove</button></td>
                                         </tr>
                                     )
                                 })
