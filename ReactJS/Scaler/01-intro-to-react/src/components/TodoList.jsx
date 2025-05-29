@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Heading = ({ title, color }) => {
     return (
         <h1 style={{ color: `${color}`, background: 'yellow' }}>{title}</h1>
