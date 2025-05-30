@@ -1,11 +1,8 @@
-import React from 'react'
+import Hero from "@/components/hero";
+import scaleImg from "public/scale.jpg";
 
-function page() {
+export default function Reliability() {
   return (
-    <div>
-      Scaler Page
-    </div>
+    <Hero imgData={scaleImg} imgAlt="Scale Image" title="Scale your app to infinity." />
   )
 }
-
-export default page
