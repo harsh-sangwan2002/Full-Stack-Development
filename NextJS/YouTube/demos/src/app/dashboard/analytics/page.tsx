@@ -48,6 +48,49 @@ const Analytics = () => {
                         </div>
                     ))}
                 </div>
+
+                <div className="mb-8">
+                    <h2 className="text-xl font-semibold text-gray-700 mb-4">Website Traffic</h2>
+                    <div className="bg-gray-100 rounded-lg h-72"></div>
+                </div>
+
+                <div className="mb-8">
+                    <h2 className="text-xl font-semibold text-gray-700 mb-4">Website Traffic</h2>
+                    <div className="bg-gray-100 rounded-lg h-72"></div>
+                </div>
+                {/* Recent Activities */}
+                <div className="mb-8">
+                    <h2 className="text-2xl font-semibold text-gray-700 mb-4">Recent Activities</h2>
+                    <ul className="space-y-4">
+                        <li className="flex items-center justify-between bg-white rounded-lg shadow-md p-4">
+                            <div>
+                                <h3 className="text-lg font-semibold text-gray-700">User Registration</h3>
+                                <p className="text-sm text-gray-600">New user signed up on 2026-02-16</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500">+10 Users</p>
+                            </div>
+                        </li>
+                        <li className="flex items-center justify-between bg-white rounded-lg shadow-md p-4">
+                            <div>
+                                <h3 className="text-lg font-semibold text-gray-700">Sales Increase</h3>
+                                <p className="text-sm text-gray-600">Sales grew by 12% on 2025-02-14</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500">+$15,000</p>
+                            </div>
+                        </li>
+                        <li className="flex items-center justify-between bg-white rounded-lg shadow-md p-4">
+                            <div>
+                                <h3 className="text-lg font-semibold text-gray-700">Website Traffic Surge</h3>
+                                <p className="text-sm text-gray-600">Traffic increased by 8% on 2026-02-16</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500">+200 Visits</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     )
