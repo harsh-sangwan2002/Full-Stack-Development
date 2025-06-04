@@ -9,7 +9,9 @@ const server = http.createServer(async (req, res) => {
     res.end();
 })
 
-server.listen(3000, 'localhost', (err) => {
+const host = 'localhost', port = 3000;
+
+server.listen(port, host, (err) => {
     if (err)
         console.log(err);
 
