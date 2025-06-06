@@ -1,7 +1,11 @@
 const express = require('express');
-const app = express();
+require('dotenv').config();
 
+const app = express();
 app.use(express.json());
+
+const connectToDB = require('./utils/db');
+const productRouter = require('./routes/product.route');
 
 const data = {
     name: "Harsh",
@@ -38,6 +42,8 @@ const middleware2 = async (req, res, next) => {
 }
 
 app.use(middleware1, middleware2);
+
+app.use('/api/products', productRouter);
 
 app.get('/', (req, res) => {
     res.send(data);
@@ -81,6 +87,7 @@ app.use((req, res) => {
     res.send("404 Error");
 })
 
-app.listen(3000, () => {
+app.listen(3000, async () => {
     console.log("Backend server is running on port 3000.");
+    await connectToDB();
 })
