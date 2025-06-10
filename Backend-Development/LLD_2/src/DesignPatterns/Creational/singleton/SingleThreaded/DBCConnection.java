@@ -2,9 +2,6 @@ package DesignPatterns.Creational.singleton.SingleThreaded;
 
 public class DBCConnection {
 
-    private String username;
-    private String password;
-    private String url;
     static private DBCConnection dbc;
 
     private DBCConnection() {
