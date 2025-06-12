@@ -2,7 +2,7 @@ package DesignPatterns.Structural.adapter;
 
 public class PhonePe {
 
-    // Ideally we should use Dependency Injection to inject the BankAPI implementation
+    // Ideally, we should use Dependency Injection to inject the BankAPI implementation
     private static BankAPI bankAPI = new ICICIBankAdapter();
 
     public static void sendMoney(String from, String to, int amount) {
