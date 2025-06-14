@@ -1,4 +1,4 @@
-public class SumOfAllSubarrays {
+public class SumOfAllSubArrays {
 
     public long subarraySum(int[] A) {
 
