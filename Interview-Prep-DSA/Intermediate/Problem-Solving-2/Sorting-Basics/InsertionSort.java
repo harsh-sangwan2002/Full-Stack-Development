@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class BubbleSort {
+public class InsertionSort {
 
-    private static void bubbleSort(int[] arr) {
+    private static void insertionSort(int[] arr) {
 
         int n = arr.length;
 
@@ -37,7 +37,7 @@ public class BubbleSort {
             arr[i] = scn.nextInt();
         }
 
-        bubbleSort(arr);
+        insertionSort(arr);
         printArray(arr);
         System.out.println();
 
