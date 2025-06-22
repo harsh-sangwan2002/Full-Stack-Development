@@ -1,96 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forms</title>
+    <title>Form</title>
 </head>
+
 <body>
-    <h1>Survey Form</h1>
-    <form>
+    <form action="">
+        <div>
+            <label for="username">username</label>
+            <input id="username" type="text" placeholder="Enter username">
+        </div>
 
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Enter your form">
-        <br>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter password">
+        </div>
 
-        <label>
-            Email:
-            <input type="email" placeholder="Enter your email" min="12">
-        </label>
-        <br>
+        <div>
+            <input type="checkbox" id="rememeber"> <label for="rememeber">Remember me</label>
+        </div>
 
-        <label>
-            Password:
-            <input type="text" placeholder="Enter your password" min="12">
-        </label>
-        <br>
-
-        <label>
-            DOB:
-            <input type="date" placeholder="Enter your date-of-birth" min="12">
-        </label>
-        <br>
-
-        <p>Gender</p>
-        <label>
-            Male
-            <input type="radio" name="gender">
-        </label>
-        <label>
-            Female
-            <input type="radio" name="gender">
-        </label>
-        <label>
-            Other
-            <input type="radio" name="gender">
-        </label>
-        <br>
-
-        <p>Fav Food</p>
-        <label>
-            Shahi Paneer
-            <input type="checkbox">
-        </label>
-        <label>
-            Pav Bhaji
-            <input type="checkbox">
-        </label>
-        <label>
-            Mix Veg
-            <input type="checkbox">
-        </label>
-        <label>
-            Mushroom
-            <input type="checkbox">
-        </label>
-        <br>
-
-        <label>
-            Upload your resume
-            <input type="file">
-        </label>
-        <br>
-
-        <label>
-            Fav Color:
-            <input type="color">
-        </label>
-        <br>
-
-        <label>
-            Eye Color:
-            <select name="">
-                <option value="">----Select Color of your eye----</option>
-                <option value="">Z-Black</option>
-                <option value="">Brown</option>
-                <option value="">Blue</option>
-                <option value="">Green</option>
-            </select>
-        </label>
-        <br>
-
-        <label for="comment">Comment</label>
-        <textarea placeholder="Write your comment"></textarea>
+        <button>Login</button>
     </form>
 </body>
+
 </html>
