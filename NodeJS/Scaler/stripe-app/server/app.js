@@ -1,6 +1,7 @@
 const express = require('express');
-const stripe = require('stripe')("sk_test_51OFdcbSGhfLbNXF0IPg8j62wbN93EkMYZ9xVRIrofZP5DALbScTus6pVsfUVgD5aOCCqNmIKM8avKyrJTCRB7EDG00cSm96kL7");
 const cors = require('cors');
+require('dotenv').config();
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const nodemailer = require('nodemailer');
 
 const app = express();
@@ -42,21 +43,21 @@ app.post('/api/make-payment', async (req, res) => {
 app.post.get('/api/send-email', async (req, res) => {
     try {
         const transporter = nodemailer.createTransport({
-            host:"smtp.sendgrid.net",
-            port:587,
-            auth:{
-                user:"apiKey",
-                pass:""
+            host: "smtp.sendgrid.net",
+            port: 587,
+            auth: {
+                user: "apiKey",
+                pass: ""
             }
         })
 
         // Define the email details
         const mailOptions = {
-            from:"hsangwan2002@gmail.com",
-            to:"hsangwan2002@gmail.com",
-            subject:"Welcome to Scaler, buddy",
-            html:"<h3>Welcome to Scaler</h3>",
-            text:"Testing text"
+            from: "hsangwan2002@gmail.com",
+            to: "hsangwan2002@gmail.com",
+            subject: "Welcome to Scaler, buddy",
+            html: "<h3>Welcome to Scaler</h3>",
+            text: "Testing text"
         }
     } catch (err) {
         res.status(500).json({

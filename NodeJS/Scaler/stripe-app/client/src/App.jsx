@@ -34,13 +34,13 @@ function StripeIntegration() {
         token={onToken}
         billingAddress
         amount={5000}
-        stripeKey='pk_test_51OFdcbSGhfLbNXF0z35zvvpr8pkrgFukrZQjRrvFvUskZ2tz9b39XEwfhg5SSAkxSyFvZYtTFuqM9fSCaG2lkMG800Oyz4gqr4'
+        stripeKey={import.meta.env.VITE_STRIPE_PUBLIC_KEY}
       >
         <Button type='primary' shape='round' size='large'>
           Pay Now
         </Button>
       </StripeCheckout>
-    </div>
+    </div >
   )
 }
 
