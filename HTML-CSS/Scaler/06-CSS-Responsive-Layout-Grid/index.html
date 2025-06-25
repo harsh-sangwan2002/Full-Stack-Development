@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Responsivene Layoud Grid</title>
     <style>
-        .container{
-            display:grid;
-            /* grid-template-columns: 600px 600px 800px; */
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: 300px 300px 300px 300px;
-            column-gap: 30px;
-            row-gap:40px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .item{
-            border:1px solid #ccc;
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: #ccc;
+
+            display: grid;
+            /* grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 100px 200px 80px; */
+            grid-template: 100px 200px 80px / repeat(3, 1fr);
+            column-gap: 5px;
+            row-gap: 10px;
+        }
+
+        .box {
+            border: 1px solid black;
+        }
+
+        .box-1 {
+            background-color: aqua;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-        <div class="item">4</div>
-        <div class="item">5</div>
-        <div class="item">6</div>
-        <div class="item">7</div>
-        <div class="item">8</div>
-        <div class="item">9</div>
-        <div class="item">10</div>
-        <div class="item">11</div>
-        <div class="item">12</div>
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+        <div class="box box-4">4</div>
+        <div class="box box-5">5</div>
+        <div class="box box-6">6</div>
+        <div class="box box-7">7</div>
+        <div class="box box-8">8</div>
+        <div class="box box-9">9</div>
+        <div class="box box-10">10</div>
+        <div class="box box-11">11</div>
+        <div class="box box-12">12</div>
     </div>
 </body>
+
 </html>

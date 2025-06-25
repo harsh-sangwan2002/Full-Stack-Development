@@ -6,47 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid Area</title>
     <style>
-        .container {
-            width:100vw;
-            height:100vh;
-            display: grid;
-            grid-template-areas:
-                "header header header header"
-                "navbar body body body"
-                "navbar body body body"
-                "navbar body body body"
-                "navbar body body body"
-                "footer footer footer footer";
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .navbar {
-            grid-area: navbar;
-            background-color: aqua;
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-areas:
+                'header header header header'
+                'sidebar maincontent maincontent rightmenu'
+                'sidebar maincontent maincontent rightmenu'
+                'sidebar maincontent maincontent rightmenu'
+                'sidebar maincontent maincontent rightmenu'
+                'footer footer footer footer';
         }
 
         .header {
+            background-color: aqua;
             grid-area: header;
-            background-color: red;
-        }
-
-        .body {
-            grid-area: body;
-            background-color: blue;
         }
 
         .footer {
+            background-color: bisque;
             grid-area: footer;
-            background-color: yellow;
+        }
+
+        .sidebar {
+            background-color: pink;
+            grid-area: sidebar;
+        }
+
+        .right-menu {
+            background-color: aquamarine;
+            grid-area: rightmenu;
+        }
+
+        .main-content {
+            background-color: darkolivegreen;
+            grid-area: maincontent;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="navbar"></div>
-        <div class="header"></div>
-        <div class="body"></div>
-        <div class="footer"></div>
+        <div class="header">1</div>
+        <div class="footer">2</div>
+        <div class="sidebar">3</div>
+        <div class="right-menu">4</div>
+        <div class="main-content">5</div>
     </div>
 </body>
 
