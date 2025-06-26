@@ -1,4 +1,4 @@
-// Named function
+// Named function / function declaration
 function sum(a,b,c){
     let total = a+b+c;
     return total;
