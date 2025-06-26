@@ -1,4 +1,4 @@
-// Example - 1
+// Example - 1 (Impure function)
 function sum(arr) {
     arr[0] = 0;
     let total = 0;
@@ -13,7 +13,7 @@ let newArr = [1, 2, 3, 4, 5];
 // console.log(sum(newArr)); // 14
 // console.log(newArr); // [0,2,3,4,5]
 
-// Example - 2
+// Example - 2 (Impure function)
 function sum1() {
     let arr = arguments;
     arr[0] = 0;
@@ -30,7 +30,7 @@ let i = 1, j = 2, k = 3, l = 4;
 // console.log(sum1(i, j, k, l)); // 9
 // console.log(i, j, k, l); // 1 2 3 4
 
-// Example - 3
+// Example - 3 (Impure function)
 let newArr1 = [1, 2, 3, 4];
 function sum3() {
     newArr1[0] = 0;
@@ -48,7 +48,7 @@ function sum3() {
 newArr1[2] = 5;
 // console.log(sum3());
 
-// example - 4
+// example - 4 (Impure function)
 var c = 0;
 
 function sum4(a, b) {
