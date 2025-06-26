@@ -46,10 +46,7 @@ const newArr2 = arr.map((item, idx) => {
 // console.log(newArr2);
 
 const calculateArea = () => myRadiusArray.map((radius, idx) => Math.PI * radius * radius)
-
-
 const calculateCircumference = () => myRadiusArray.map((radius, idx) => 2 * Math.PI * radius);
-
 
 console.log(calculateArea());
 console.log(calculateCircumference());
