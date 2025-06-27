@@ -21,9 +21,12 @@
     function debounce(cb, delay) {
 
         let timerId;
+
         return function (...args) {
 
-            clearTimeout(timerId);
+            if (timerId) {
+                clearTimeout(timerId);
+            }
 
             timerId = setTimeout(() => {
                 cb(...args);
