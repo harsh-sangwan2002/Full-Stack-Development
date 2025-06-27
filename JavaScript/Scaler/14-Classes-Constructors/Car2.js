@@ -11,6 +11,14 @@ class Car {
         this.#trackingId = 123456;
     }
 
+    static staticMethod() {
+        console.log("I am a static method");
+    }
+
+    getTrackingId() {
+        return this.#trackingId;
+    }
+
 
     totalPrice() {
         return this.price + this.tax;
@@ -26,5 +34,6 @@ class SuperCar extends Car {
 
 let car = new SuperCar('BMW', 'Black', 100000, 20000, 400);
 console.log(car);
+Car.staticMethod();
 console.log(car.noOfWheels);
 console.log(Car.noOfWheels);
