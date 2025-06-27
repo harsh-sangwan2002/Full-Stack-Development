@@ -24,7 +24,7 @@ class SuperCar extends Car {
     }
 }
 
-let Car1 = new SuperCar('BMW', 'Black', 100000, 20000, 400);
-console.log(Car1);
-console.log(Car1.noOfWheels);
+let car = new SuperCar('BMW', 'Black', 100000, 20000, 400);
+console.log(car);
+console.log(car.noOfWheels);
 console.log(Car.noOfWheels);
