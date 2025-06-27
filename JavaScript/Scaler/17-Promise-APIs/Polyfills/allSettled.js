@@ -14,8 +14,30 @@ const fetchUserPosts = () => {
     })
 }
 
+Promise.myAllSettled = function (promises) {
+
+    return new Promise((resolve, reject) => {
+
+        let results = [];
+        let completed = 0;
+
+        promises.forEach((promise, index) => {
+            promise.then((data) => {
+                results[index] = { status: 'fulfilled', value: data };
+            }).catch((err) => {
+                results[index] = { status: 'rejected', reason: err };
+            }).finally(() => {
+                completed++;
+                if (completed === promises.length) {
+                    resolve(results);
+                }
+            });
+        });
+    })
+}
+
 // Gives results for all the promises whether promise is resolved or rejected
-Promise.allSettled([fetchUserData(), fetchUserPosts()]).then(arr => {
+Promise.myAllSettled([fetchUserData(), fetchUserPosts()]).then(arr => {
     console.log(arr);
 }).catch(err => {
     console.log(err);
