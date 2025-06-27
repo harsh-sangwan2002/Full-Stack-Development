@@ -1,6 +1,7 @@
-function fn() {
+const shared = {};
 
-    return fn;
+function fn() {
+    return shared;
 }
 
-console.log(fn() == new fn())
+console.log(fn() === new fn());
