@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling & Capturing</title>
+    <style>
+        .orange {
+            background-color: orange;
+            height: 40rem;
+            width: 40rem;
+        }
+
+        .blue {
+            background-color: blue;
+            height: 20rem;
+            width: 20rem;
+
+            position: relative;
+            top: 10rem;
+            left: 10rem;
+        }
+
+        .yellow {
+            background-color: yellow;
+            height: 10rem;
+            width: 10rem;
+
+            position: relative;
+            left: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="orange">
+        <div class="blue">
+            <div class="yellow"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let orange = document.querySelector('.orange');
+    let blue = document.querySelector('.blue');
+    let yellow = document.querySelector('.yellow');
+
+    orange.addEventListener('click', function (e) {
+        console.log('Orange Div Clicked');
+        e.stopPropagation(); // Prevents the event from bubbling up to the parent elements
+    });
+
+    blue.addEventListener('click', function (e) {
+        console.log('Blue Div Clicked');
+        e.stopPropagation(); // Prevents the event from bubbling up to the parent elements
+    });
+
+    yellow.addEventListener('click', function (e) {
+        console.log('Yellow Div Clicked');
+        e.stopPropagation(); // Prevents the event from bubbling up to the parent elements
+    });
+</script>
+
+</html>
