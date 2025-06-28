@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <!-- On clicking the button add sayHello to the page -->
     <button>Say Hello</button>
 </body>
 
@@ -16,7 +17,7 @@
     const body = document.querySelector('body');
     button.addEventListener('click', () => {
         const pTag = document.createElement('p');
-        pTag.textContent = 'Hello World';
+        pTag.textContent = 'sayHello';
         body.appendChild(pTag);
     });
 </script>
