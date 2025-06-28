@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-6</title>
+    <style>
+        .cell {
+            margin: auto;
+            margin-top: 10rem;
+            height: 20rem;
+            width: 20rem;
+            display: flex;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cell"></div>
+</body>
+
+<script>
+    const cell = document.querySelector('.cell');
+
+    cell.addEventListener('mouseenter', () => {
+        let imageEle = document.createElement('img');
+        cell.style.background = "url('https://m.media-amazon.com/images/I/71wWX5Sq1OL._UF1000,1000_QL80_.jpg')";
+    });
+
+    cell.addEventListener('mouseleave', () => {
+        cell.style.background = "none";
+    });
+
+</script>
+
+</html>
