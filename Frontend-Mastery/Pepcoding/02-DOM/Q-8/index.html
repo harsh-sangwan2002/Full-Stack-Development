@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .pink {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            position: relative;
+        }
+
+        .blue {
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+            position: relative;
+            top: 75px;
+            left: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pink">
+        <div class="blue"></div>
+    </div>
+</body>
+
+<script>
+    let pink = document.querySelector('.pink');
+    pink.addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) {
+            alert('Pink box clicked');
+        }
+    })
+</script>
+
+</html>
