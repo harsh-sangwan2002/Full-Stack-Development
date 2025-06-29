@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, #00c6ff, #01316b);
+            height: 100vh;
+            width: 100vw;
+            font-family: Arial, Helvetica, sans-serif;
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        span {
+            color: white;
+            font-size: 48px;
+        }
+
+        input {
+            outline: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        button {
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <span>0</span>
+    <input type="number">
+    <button>Begin Countdown</button>
+</body>
+
+<script>
+    let span = document.querySelector('span');
+    let button = document.querySelector('button');
+
+
+    button.addEventListener('click', () => {
+        let time = document.querySelector('input');
+        time = parseInt(time.value) || 0;
+        span.textContent = time;
+
+        let countdown = setInterval(() => {
+            if (time <= 0) {
+                clearInterval(countdown);
+                return;
+            }
+            time--;
+            span.textContent = time;
+        }, 1000);
+    });
+</script>
+
+</html>
