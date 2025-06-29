@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firing Media Queries Using JS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        div {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+<script>
+    let div = document.querySelector('div');
+    window.addEventListener('resize', (e) => {
+        let width = window.innerWidth;
+        console.log(width);
+        if (width <= 600) {
+            div.style.backgroundColor = 'lightgreen';
+        }
+
+        else if (width <= 1024) {
+            div.style.backgroundColor = 'lightblue';
+        }
+
+        else {
+            div.style.backgroundColor = 'lightpink';
+        }
+    })
+</script>
+
+</html>
