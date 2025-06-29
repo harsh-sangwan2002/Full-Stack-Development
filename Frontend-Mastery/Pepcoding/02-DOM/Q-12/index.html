@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            margin-top: 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5rem;
+        }
+
+        h1 {
+            text-transform: uppercase;
+        }
+
+        th {
+            font-size: 24px;
+            color: white;
+            background-color: black;
+        }
+
+        td,
+        th {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        button {
+            width: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Database</h1>
+
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Sameer</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Rohan</td>
+                    <td>100</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form action="">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div>
+                <label for="marks">Marks</label>
+                <input type="number" id="marks" name="marks">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+<script>
+    const form = document.querySelector('form');
+    const tbody = document.querySelector('tbody');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const marks = document.getElementById('marks').value;
+
+        if (name && marks) {
+            const newRow = document.createElement('tr');
+            const rowCount = tbody.rows.length + 1;
+
+            newRow.innerHTML = `
+                <td>${rowCount}</td>
+                <td>${name}</td>
+                <td>${marks}</td>
+            `;
+
+            tbody.appendChild(newRow);
+
+            // Clear the form fields
+            form.reset();
+        } else {
+            alert('Please fill in both fields.');
+        }
+    });
+</script>
+
+</html>
