@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .pink {
+            height: 50rem;
+            width: 50rem;
+            background-color: pink;
+        }
+
+        .green {
+            height: 40rem;
+            width: 40rem;
+            background-color: green;
+            margin: 5rem auto;
+        }
+
+        .blue {
+            height: 30rem;
+            width: 30rem;
+            background-color: blue;
+            margin: 5rem auto;
+        }
+
+        .yellow {
+            height: 20rem;
+            width: 20rem;
+            background-color: yellow;
+            margin: 5rem auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pink">
+        <div class="green">
+            <div class="blue">
+                <div class="yellow"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let divElement = document.querySelector('div');
+    // while (divElement.children.length > 0) {
+    //     divElement = divElement.children[0];
+    // }
+    // divElement.remove();
+
+    function removeDeepest(divEle) {
+
+        if (divEle.children.length === 0) {
+            divEle.remove();
+            return;
+        }
+
+        removeDeepest(divEle.children[0]);
+    }
+    // removeDeepest(divElement);
+
+    let allDivElements = document.querySelectorAll('div');
+    allDivElements[allDivElements.length - 1].remove();
+</script>
+
+</html>
