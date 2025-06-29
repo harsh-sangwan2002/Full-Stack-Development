@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .balls {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .ball {
+            height: 1rem;
+            width: 1rem;
+            border-radius: 50%;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="balls">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
+</body>
+
+<script>
+    let allBalls = document.querySelectorAll('.ball');
+
+    function animateBalls(idx) {
+
+        idx %= allBalls.length;
+
+        let currBall = allBalls[idx];
+        let prevBall;
+        if (idx == 0)
+            prevBall = allBalls[allBalls.length - 1];
+        else
+            prevBall = allBalls[idx - 1];
+
+        currBall.style.opacity = 0;
+        prevBall.style.opacity = 1;
+
+        setTimeout(() => {
+            animateBalls(idx + 1);
+        }, 300)
+    }
+    animateBalls(0);
+</script>
+
+</html>
