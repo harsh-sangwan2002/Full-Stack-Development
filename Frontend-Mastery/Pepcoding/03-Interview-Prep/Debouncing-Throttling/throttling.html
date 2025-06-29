@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttling</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    function throttleFn(cb, delay) {
+
+        let flag = true;
+
+        return function (...args) {
+
+            if (flag) {
+                cb(...args);
+                flag = false;
+                setTimeout(() => {
+                    cb(...args);
+                    flag = false;
+                }, delay);
+            }
+        }
+    }
+</script>
+
+</html>

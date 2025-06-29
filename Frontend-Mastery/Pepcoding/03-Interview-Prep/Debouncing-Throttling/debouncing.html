@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter something...">
+</body>
+
+<script>
+
+    const input = document.querySelector('input');
+
+    function debouncedFn(cb, delay) {
+
+        let timerId;
+
+        return function (...args) {
+
+            if (timerId)
+                clearTimeout(timerId);
+
+            timerId = setTimeout(() => {
+                cb(...args);
+            }, delay)
+        }
+    }
+    const searchProduct = (value) => {
+        fetch(`https://dummyjson.com/products/${value}`)
+            .then(res => res.json())
+            .then(console.log);
+    }
+    const debouncedSearchProduct = debouncedFn(searchProduct, 1000);
+
+    input.addEventListener('input', (e) => {
+        debouncedSearchProduct(e.target.value);
+    });
+</script>
+
+</html>
