@@ -1,0 +1,1 @@
+document.cookie = "name=pepcoder; secure; samesite=strict";
