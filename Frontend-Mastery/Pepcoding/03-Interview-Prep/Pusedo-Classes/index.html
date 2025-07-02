@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Classes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Pseudo Class */
+        div p:first-child {
+            background-color: red;
+        }
+
+        p:nth-child(odd) {
+            background-color: green;
+        }
+
+        p:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Yo!! Some text.</p>
+    <p>Yo!! Some text.</p>
+</body>
+
+</html>
