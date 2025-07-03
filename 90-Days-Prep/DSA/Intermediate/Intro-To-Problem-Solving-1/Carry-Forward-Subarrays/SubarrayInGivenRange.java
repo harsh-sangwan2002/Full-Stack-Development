@@ -1,3 +1,5 @@
+// TC -> (N)
+// SC -> O(1)
 public class SubarrayInGivenRange {
 
     public int[] solve(int[] A, int B, int C) {
