@@ -1,3 +1,4 @@
+/* Basic Utilities */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -21,40 +22,6 @@ a {
 
 a:hover {
   color: #535bf2;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-
-h1 {
-  font-size: 2.5em;
-  line-height: 1.1;
-}
-
-header {
-  background-color: lightblue;
-  padding: 1rem 5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 3rem;
-}
-
-header ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  list-style: none;
-}
-
-header ul li {
-  font-size: 1.2rem;
 }
 
 button {
@@ -90,5 +57,84 @@ button:focus-visible {
 
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+}
+
+header {
+  background-color: lightblue;
+  padding: 1rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+header ul li {
+  font-size: 1.2rem;
+}
+
+/* Movie List */
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 5rem auto;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  max-width: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  gap: 1rem;
+}
+
+.movie img {
+  height: 200px;
+}
+
+.movie button {
+  margin-bottom: 1rem;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Media Queries */
+@media screen and (max-width:768px) {
+
+  header {
+    flex-direction: column;
+    gap: 2rem;
   }
 }

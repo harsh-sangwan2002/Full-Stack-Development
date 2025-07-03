@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
     return (
         <header className='header'>
-            <h1>IMDB</h1>
+            <h1><Link to="/" style={{ color: 'white', fontWeight: 'bold' }}>IMDB</Link></h1>
             <ul>
                 <li><Link to="/">Movies</Link></li>
                 <li><Link to="/details">Details</Link></li>

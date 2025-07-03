@@ -4,7 +4,6 @@ import MovieDetailPage from './pages/MovieDetailPage'
 import MovieListPage from './pages/MovieListPage'
 import WatchListPage from './pages/WatchListPage'
 import NotFound from './pages/NotFound'
-import './App.css'
 
 function App() {
 
