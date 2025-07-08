@@ -1,0 +1,25 @@
+.blue {
+    /* red, green, blue */
+    color: #FFFFFF;
+    /* rgba */
+    color: rgba(255, 255, 0, 1);
+    /* hsla */
+    color: hsla(0, 100%, 50%, 0);
+}
+
+h1 {
+    color: green;
+}
+
+body {
+    color: red;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    border: 10px solid black;
+    background-color: red;
+    padding: 20px;
+    margin: 50px;
+}
