@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: aliceblue;
+        }
+
+        h1:hover {
+            background-color: orange;
+        }
+
+        button:hover {
+            background-color: #a70909;
+            padding: 10px;
+        }
+
+        div:nth-child(2n) {
+            background-color: #13e486;
+        }
+
+        h1::before {
+            content: "After !";
+            color: #a70909;
+        }
+
+        p::first-letter {
+            background-color: #a70909;
+            font-size: 100px;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <input type="checkbox" disabled name="" id="">
+    <button>Submit</button>
+
+    <h1>Hover</h1>
+    <button>Focus</button>
+    <input type="text" required="true">
+    <input type="checkbox">
+    <input type="text" disabled="true">
+    <div>
+        <div>one</div>
+        <div>two</div>
+        <div>three</div>
+    </div>
+
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <h2>First letter selector</h2>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione id quasi eaque praesentium animi facilis ad
+        modi sit quisquam voluptate!
+    </p>
+</body>
+
+</html>

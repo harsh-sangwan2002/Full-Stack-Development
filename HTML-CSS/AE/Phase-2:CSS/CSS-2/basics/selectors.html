@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #313131;
+        }
+
+        /* h1 {
+            background-color: #1580f3;
+        } */
+        .bg-orange {
+            background-color: orange;
+        }
+
+        #bg-green {
+            background-color: green;
+        }
+
+        a[target="_blank"] {
+            background-color: #d00d2e;
+            padding: 10px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            background-color: #3d0202;
+        }
+
+        ul li {
+            background-color: #fff;
+        }
+
+        header>a {
+            background-color: #1e8df5;
+        }
+
+        img+p {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <h2 class="bg-orange">Lorem ipsum dolor sit amet.</h2>
+    <h3 id="bg-green" class="bg-orange">Lorem ipsum dolor sit amet.</h3>
+    <a href="https://www.pwskills.com" target="_parent">SKILLS</a>
+
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <h3>Lorem ipsum dolor sit amet.</h3>
+
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+    <li>Four</li>
+
+    <header>
+        <a href="#">Google</a>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <a href="#">Logo</a>
+            </ul>
+        </nav>
+        <a href="#">Bing</a>
+    </header>
+
+    <div>
+        <img src="#" alt="">
+        <p>Change me</p>
+        <p>Change me three</p>
+        <div>
+            <p>Change me too</p>
+        </div>
+    </div>
+
+    <a href="https://www.pwskills.com" target="_parent">SKILLS</a>
+    <a href="https://www.google.com" target="_blank">SKILLS</a>
+</body>
+
+</html>
