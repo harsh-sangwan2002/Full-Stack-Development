@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #555555;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6em;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: green;
+}
+
+.clr {
+    clear: both;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.button {
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+}
+
+.button:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.box-1 {
+    background-color: #333;
+    color: #fff;
+
+    /* border-top: 5px solid red;
+    border-right: 5px solid red;
+    border-bottom: 5px solid red;
+    border-left: 5px solid red; */
+    border: 1px solid red;
+    border-width: 3px;
+    border-bottom-width: 10px;
+    border-top-style: dotted;
+
+    padding: 20px;
+    margin: 20px;
+}
+
+.box-1 h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    text-decoration: underline;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    word-spacing: 1em;
+}
+
+.box-2 {
+    border: 3px dotted #ccc;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.categories {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.categories h2 {
+    text-align: center;
+}
+
+.categories ul {
+    padding: 0;
+    padding-left: 20px;
+    list-style: none;
+}
+
+.categories li {
+    padding-bottom: 8px;
+    border-bottom: dotted 1px #333;
+}
+
+.my-form {
+    padding: 20px;
+}
+
+.my-form .from-group {
+    padding-bottom: 15px;
+}
+
+label {
+    display: block;
+}
+
+.my-form input[type="text"],
+.my-form input[type="email"],
+.my-form textarea {
+    padding: 8px;
+    width: 100%;
+}
+
+.block {
+    float: left;
+    width: 33.3%;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#main-block {
+    float: left;
+    width: 70%;
+}
+
+#sidebar {
+    float: right;
+    width: 30%;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+}
+
+.p-box {
+    width: 800px;
+    height: 500px;
+    border: 1px solid #000;
+    margin: 30px 0;
+    position: relative;
+    background: url('https://t3.ftcdn.net/jpg/06/30/06/32/360_F_630063258_Pazc3vbQLlnRbyMMCZey2yvOBhtnuyOn.jpg') no-repeat center center/cover;
+}
+
+.p-box h1 {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}
+
+.p-box h2 {
+    position: absolute;
+    bottom: 40px;
+    right: 100px;
+}
+
+.fix-me {
+    position: fixed;
+    top: 400px;
+}
+
+.my-list li:first-child {
+    background: red;
+}
+
+.my-list li:last-child {
+    background: blue;
+}
+
+.my-list li:nth-child(5) {
+    background: yellow;
+}
+
+.my-list li:nth-child(even) {
+    background: grey;
+}
