@@ -6,15 +6,13 @@ function counter(a) {
     if (a === 0)
         return count;
 
-    else {
-        return function inner(b) {
-            count++;
-            if (b === 0)
-                return count;
+    return function inner(b) {
+        count++;
+        if (b === 0)
+            return count;
 
-            else
-                return inner;
-        }
+        else
+            return inner;
     }
 }
 
@@ -29,25 +27,22 @@ function sum(a) {
     if (!a)
         return 0;
 
-    else {
+    return function inner(b) {
 
-        return function inner(b) {
+        if (!b)
+            return a;
 
-            if (!b)
-                return a;
-
-            else {
-                a += b;
-                return inner;
-            }
+        else {
+            a += b;
+            return inner;
         }
     }
 }
 
 console.log(sum()); // 0
 console.log(sum(1)()); // 1
-console.log(sum(3)(4)()); // 7
-console.log(sum(3)(7)(8)()); // 18
+console.log(sum(1)(2)()); // 3
+console.log(sum(1)(2)(3)()); // 6
 
 /********************* Question-3 ***********************/
 function createEvenStack() {
@@ -134,10 +129,10 @@ function memoize(cb) {
 let efficientCalcFn = memoize(calc);
 console.time();
 let res2 = efficientCalcFn(1000000000);
-console.log("res",res2);
+console.log("res", res2);
 console.timeEnd();
 
 console.time();
 let res3 = efficientCalcFn(1000000000);
-console.log("res",res3);
+console.log("res", res3);
 console.timeEnd();

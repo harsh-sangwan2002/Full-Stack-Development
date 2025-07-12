@@ -33,17 +33,17 @@ const config = {
  * -> Adding a new key-value pair is not allowed.
 
  * **************************/
-// let nonExtendableObj = Object.preventExtensions(config);
-// nonExtendableObj.database = Object.preventExtensions(nonExtendableObj.database);
+let nonExtendableObj = Object.preventExtensions(config);
+nonExtendableObj.database = Object.preventExtensions(nonExtendableObj.database);
 
-// nonExtendableObj.appName = "asdkjh";
-// nonExtendableObj.tempServer = "127.0.0.8";
-// nonExtendableObj.database.newPwd = "123";
+nonExtendableObj.appName = "asdkjh";
+nonExtendableObj.tempServer = "127.0.0.8";
+nonExtendableObj.database.newPwd = "123";
 
-// console.log(nonExtendableObj);
+console.log(nonExtendableObj);
 
 /*******
- * Object.seal -> 
+ * Object.seal ->
  * -> adding and deletion is not allowed.
  * -> updation is allowed.
  * ->  It applied at current level only

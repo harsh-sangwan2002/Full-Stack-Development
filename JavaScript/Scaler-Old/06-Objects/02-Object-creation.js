@@ -23,19 +23,19 @@ let obj = {
 console.log(obj);
 
 /******************* 2.Object Constructor ********************/
-// const obj1 = new Object();
-// obj1.name = "Harsh";
-// console.log(obj1);
+const obj1 = new Object();
+obj1.name = "Harsh";
+console.log(obj1);
 
 /******************* 3.Object.create() ********************/
 let obj2 = Object.create(obj);
-console.log(obj2);
+// console.log(obj2);
 
 /** overriden the name prop*/
 obj2.name = "Symphony";
 obj2.lastname = "Rogers";
-console.log("1. ", obj2.name, " ", obj2.lastname, " ", obj2.address);
-console.log("2. ", obj.lastname);
+console.log("1.", obj2.name, obj2.lastname, obj2.address);
+console.log("2.", obj.lastname);
 
 console.log(obj.isPrototypeOf(obj2)); // true: is 'obj' parent of 'obj2'
 
@@ -43,15 +43,16 @@ let obj3 = Object.create(obj2);
 obj3.friends = ["Tony", "Bruce"];
 obj3.fullName = "Harsh Sangwan";
 obj3.age = 26;
-console.log(obj3);
+// console.log(obj3);
 
-console.log(obj.isPrototypeOf(obj3)); // true
+// console.log(obj.isPrototypeOf(obj3)); // true
 
 // Loop iterates over all the keys
 for (let key in obj3) {
 
-    if (obj3.hasOwnProperty(key))
-        console.log(key, obj3[key]);
+    if (obj3.hasOwnProperty(key)) {
+        // console.log(key, obj3[key]);
+    }
 }
 
 // Different data-types and their parents
