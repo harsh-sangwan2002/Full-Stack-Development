@@ -20,7 +20,7 @@ console.log("line number 19", a);
 
 // 2nd Statement->
 var f = 5;
-function fn(){
+function fn() {
     f = 6;
 }
 fn();

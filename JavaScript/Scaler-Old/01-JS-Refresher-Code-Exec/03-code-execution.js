@@ -3,9 +3,9 @@ let a = 10;
 console.log(a);
 
 fn();
-function fn(){
+function fn() {
     console.log("I am fn.");
-    function inner(){
+    function inner() {
         console.log("I am inner.");
     }
     inner();
@@ -13,7 +13,7 @@ function fn(){
 
 /****
  * Exceution context : 
- *      1. It either belong to the code outside every function 
+ *      1. It either belongs to the code outside every function 
  *      2. whenever a function is called
  * 
  * Execution context contains
@@ -28,17 +28,17 @@ function fn(){
  *      2. execution  -> left to right , top to bottom 
  * **/
 
-console.log("b",b);
+console.log("b", b);
 var b = 10;
 
 real();
-function real(){
+function real() {
     console.log("I am real. Always run me.");
 }
-function real(){
+function real() {
     console.log("No, I am the real one.");
 }
-function real(){
+function real() {
     console.log("You both are wasted.");
 }
 
