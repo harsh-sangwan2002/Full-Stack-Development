@@ -9,21 +9,21 @@ let cap = {
 }
 
 let ironMan = {
-    name:"Tony",
-    team:"Iron Man",
+    name: "Tony",
+    team: "Iron Man",
 }
 
 // Borrow the methods only once with defined number of params
 // equivalent to ironMan.petersTeam("Peter","Natasha","Mahesh");
-cap.petersTeam.call(ironMan,"Peter","Natasha","Mahesh");
+cap.petersTeam.call(ironMan, "Peter", "Natasha", "Mahesh");
 
 /**************** Apply: 
  * Borrow the method only once with n number of params *****************/
-let memberArray = ["Thor","Loki","Natasha","Sanket","Mahesh"];
-cap.petersTeam.apply(ironMan,memberArray);
+let memberArray = ["Thor", "Loki", "Natasha", "Sanket", "Mahesh"];
+cap.petersTeam.apply(ironMan, memberArray);
 
 const boundFn = cap.petersTeam.bind(ironMan);
-boundFn("cap","war machine","winter soldier");
+boundFn("cap", "war machine", "winter soldier");
 
 // Guess the answer -----------
 var name = "Steve";

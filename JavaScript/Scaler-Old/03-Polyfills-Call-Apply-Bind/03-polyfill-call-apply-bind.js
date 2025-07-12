@@ -56,14 +56,14 @@ Function.prototype.myApply = function (reqObj, args) {
 const boundFn = cap.petersTeam.bind(ironMan, "Peter", "Natasha");
 boundFn("Mahesh");
 
-Function.prototype.myBind = function (reqObj,...args) {
+Function.prototype.myBind = function (reqObj, ...args) {
 
     // Get your function
     let functionToBeInvoked = this;
 
     // Return the function
-    return function(...args2){
-        functionToBeInvoked.call(reqObj,...args,...args2);
+    return function (...args2) {
+        functionToBeInvoked.call(reqObj, ...args, ...args2);
     }
 };
 

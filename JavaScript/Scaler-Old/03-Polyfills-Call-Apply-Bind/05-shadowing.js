@@ -63,14 +63,14 @@
 
 // reverse is allowed
 var fruits = "apple";
-console.log("21",fruits); // apple
-{ 
+console.log("21", fruits); // apple
+{
     let fruits;
     fruits = "orange";
-    console.log("25",fruits); // orange
+    console.log("25", fruits); // orange
     {
         let fruits;
-        console.log("28",fruits) // undefined
+        console.log("28", fruits) // undefined
     }
     console.log(fruits); // orange
 }
