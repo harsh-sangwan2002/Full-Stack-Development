@@ -31,8 +31,8 @@ for (let key in fn) {
 const addFn = function (a, b) {
     return a + b;
 }
-console.log(addFn(10, 20));
-console.log(typeof addFn); // function
+// console.log(addFn(10, 20));
+// console.log(typeof addFn); // function
 
 // HOF -> Function that takes in function as an argument or return it.
 function outer() {
@@ -43,7 +43,7 @@ function outer() {
 function inner() {
     console.log("I am inner");
 }
-outer(inner);
+// outer(inner);
 
 // Arrays are objects disguised as an array -> key are numbers
 let arr = [
@@ -62,8 +62,8 @@ let arr = [
     }
 ]
 
-for(let key in arr){
-    console.log(key,arr[key]);
+for (let key in arr) {
+    // console.log(key,arr[key]);
 }
 
 // IIFE function

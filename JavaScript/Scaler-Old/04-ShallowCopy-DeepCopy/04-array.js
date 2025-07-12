@@ -3,7 +3,7 @@ let arr = [1,2,3,4,5,6,7,8];
 /************************** Slice **************************/
 // startIdx, lastIdx-1
 // TC:O(n), SC:O(n)
-// Doesn't modifies tha original array
+// Doesn't modify tha original array
 let slicedArr = arr.slice(2,5);
 console.log(arr);
 console.log(slicedArr);

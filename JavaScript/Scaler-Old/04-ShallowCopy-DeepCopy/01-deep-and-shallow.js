@@ -57,8 +57,7 @@ console.log(person);
 console.log(person2);
 console.log(person3);
 
-/**************************** Deep Copy
- * JSON.stringify & JSON.prase ****************************/
+/**************************** Deep Copy-> JSON.stringify & JSON.prase ****************************/
 
 // Convert obj to string
 let stringObj = JSON.stringify(person);
