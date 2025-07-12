@@ -17,27 +17,26 @@
 // GEC -> Var will go to global object.
 // All the var and non data type variables are become part of window at the time of compilation. 
 // Because of that we are able to access these variables before its decalrtion.
-firstVal = "Steve";
+var firstVal = "Steve";
 var firstVal2 = "Rogers";
 let secondVal = "Loki";
-console.log("First: ", window.firstVal);
-console.log("second: ", secondVal);
-console.log(window);
-console.log(this);
+// console.log("First: ", window.firstVal);
+// console.log("second: ", secondVal);
+// console.log(window);
+// console.log(this);
 
 let cap = {
     // property
     firstName: "Steve",
     // method
     sayHi: function () {
-
-        console.log("Hi from ", this.firstName);
+        console.log("Hi from", this.firstName);
     }
 }
-cap.sayHi(); // Steve
+// cap.sayHi(); // Steve
 let sayHiAdd = cap.sayHi;
 var firstName = "Loki";
-sayHiAdd(); // Loki
+// sayHiAdd(); // Loki
 
 
 // Rules for this:
@@ -59,7 +58,7 @@ let cap2 = {
 }
 
 // EC by this -> cap
-cap2.sayHi(10);
+// cap2.sayHi(10);
 
 /***************** Question-3 *******************/
 // var -> GEC 
@@ -74,7 +73,7 @@ let cap3 = {
         iAmInner();
     }
 }
-cap3.sayHi();
+// cap3.sayHi();
 
 // rules for this
 // GEC -> this -> window object
@@ -100,7 +99,7 @@ let cap4 = {
         subInner();
     }
 }
-cap4.sayHi();
+// cap4.sayHi();
 
 /***************** Question-5 *******************/
 var firstName = "Thanos";
@@ -113,7 +112,6 @@ let cap5 = {
             console.log("94", this.firstName); // Steve
             const iAmInner = function () {
                 console.log("114", this.firstName); // Thanos
-
                 const iAmSuperInner = () => {
                     console.log("117", this.firstName); // Thanos
                 }

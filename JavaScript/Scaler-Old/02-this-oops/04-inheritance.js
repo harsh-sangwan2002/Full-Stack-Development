@@ -6,7 +6,7 @@
 // 5. Then we will create a house with that new architecture.
 
 /************************ Statement-1 ************************/
-let arr = [1,2,3,4,5];
+let arr = [1, 2, 3, 4, 5];
 
 console.log(arr);
 arr.push("hello");
@@ -19,8 +19,8 @@ console.log(arr.toString());
 // 1. Resuse of code
 // 2. Saving memory space
 
-let arr1 = [1,2,3,4];
-let arr2 = [1,2,3,4,5,6,7];
+let arr1 = [1, 2, 3, 4];
+let arr2 = [1, 2, 3, 4, 5, 6, 7];
 
 /************************ Bad way of giving a feature ************************/
 // arr1.sum = function(){
@@ -41,11 +41,11 @@ let arr2 = [1,2,3,4,5,6,7];
 // console.log(arr2.sum());
 
 /************************ Parent(Prototype) ************************/
-Array.prototype.sum = function(){
+Array.prototype.sum = function () {
 
     let sum = 0;
 
-    this.forEach(val=>sum+=val);
+    this.forEach(val => sum += val);
     return sum;
 }
 console.log(arr1.sum());

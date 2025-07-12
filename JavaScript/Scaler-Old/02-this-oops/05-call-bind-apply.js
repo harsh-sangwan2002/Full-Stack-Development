@@ -14,12 +14,12 @@ let ironMan = {
     team: "Iron Man"
 }
 
-cap.petersTeam("Black Panther","Winter Soldier","Thor");
+cap.petersTeam("Black Panther", "Winter Soldier", "Thor");
 
 // Borrow a function from another function
 // This will use 'ironMan' object as 'this' and call peterTeam function on it.
-cap.petersTeam.call(ironMan,"Iron Man","Winter Soldier","Rogers");
-cap.petersTeam.apply(ironMan,["Iron Man","Winter Soldier","Rogers"]);
+cap.petersTeam.call(ironMan, "Iron Man", "Winter Soldier", "Rogers");
+cap.petersTeam.apply(ironMan, ["Iron Man", "Winter Soldier", "Rogers"]);
 
 let stolenMethod = cap.petersTeam.bind(ironMan);
-stolenMethod("Natasha","Antman","Rogers");
+stolenMethod("Natasha", "Antman", "Rogers");

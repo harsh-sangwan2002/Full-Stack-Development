@@ -21,12 +21,11 @@ let cap = {
     firstName: "Steve",
     // method
     sayHi: function () {
-        console.log(this)
-        // console.log("Hi from ", this.firstName); // TypeError
+        console.log("Hi from", this.firstName); // TypeError
     }
 }
 
-cap.sayHi();
+// cap.sayHi();
 let sayHiAdd = cap.sayHi;
 var firstName = "loki";
 // sayHiAdd(); // you will get hit by error, this = undefined.  
@@ -37,7 +36,7 @@ let cap2 = {
     sayHi: function () {
         console.log("47", this.firstName);
         const iAmInner = function () {
-            // console.log("49", this.firstName); // TypeError
+            console.log("49", this.firstName); // TypeError
         }
         // EC by this kind of call -> undefined
         iAmInner();
@@ -45,7 +44,7 @@ let cap2 = {
 }
 
 // EC by this -> ?? -> cap
-cap2.sayHi();
+// cap2.sayHi();
 
 /***************** Question-3 *******************/
 "use strict"
@@ -60,7 +59,7 @@ let cap3 = {
         iAmInner();
     }
 }
-cap3.sayHi();
+// cap3.sayHi();
 
 /***************** Question-4 *******************/
 let cap4 = {
@@ -72,11 +71,9 @@ let cap4 = {
             console.log("94", this.firstName); // Steve
             const iAmInner = () => {
                 console.log("95", this.firstName); // Steve
-
                 const iAmSupperInner = function () {
-                    console.log("49", this.firstName); // TypeError
+                    // console.log("49", this.firstName); // TypeError
                 }
-
                 iAmSupperInner();
             }
             iAmInner();
@@ -84,4 +81,4 @@ let cap4 = {
         subInner();
     }
 }
-// cap4.sayHi();
+cap4.sayHi();
