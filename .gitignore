@@ -1,5 +1,5 @@
 /finalized-codes
 Java-OOPS/
 **/node_modules/
-.DS_Store
+*.DS_Store
 *.env
