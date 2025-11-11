@@ -22,8 +22,7 @@
 //      * arrfns block scope refer to -> functions
 //      * */
 //     let arrFn = [];
-//     var i = 0;
-//     // let i = 0;
+//     let i = 0;
 //     for (i = 0; i < 3; i++) {
 //         arrFn.push(function fn() {
 //             i++;

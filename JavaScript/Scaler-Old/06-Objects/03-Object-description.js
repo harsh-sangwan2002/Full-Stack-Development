@@ -1,27 +1,27 @@
 let obj = {};
 
-Object.defineProperty(obj,'name',{
-    value:"Harsh",
-    enumerable:true
+Object.defineProperty(obj, 'name', {
+    value: "Harsh",
+    enumerable: true
 });
-Object.defineProperty(obj,'age',{
-    value:21,
-    enumerable:true
+Object.defineProperty(obj, 'age', {
+    value: 21,
+    enumerable: true
 });
-Object.defineProperty(obj,'test',{
-    value:"fail",
-    enumerable:false
+Object.defineProperty(obj, 'test', {
+    value: "fail",
+    enumerable: false
 });
-Object.defineProperty(obj,'test2',{
-    value:"fail2",
-    enumerable:true
+Object.defineProperty(obj, 'test2', {
+    value: "fail2",
+    enumerable: true
 });
-Object.defineProperty(obj,'tes3',{
-    value:"fail3",
-    enumerable:false
+Object.defineProperty(obj, 'tes3', {
+    value: "fail3",
+    enumerable: false
 });
 
-// console.log(obj);
+console.log(obj);
 
 // for(let key in obj){
 //     console.log(key,obj[key]);
@@ -41,8 +41,8 @@ but in both cases you can't not override the value.
 obj.name = 'Steve';
 console.log(obj);
 
-for(let key in obj){
-    console.log(key,obj[key]);
+for (let key in obj) {
+    console.log(key, obj[key]);
 }
 
 /*
