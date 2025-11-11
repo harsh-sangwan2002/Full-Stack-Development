@@ -2,9 +2,9 @@
 const print = console.log;
 // a. object
 let cap = {
-    name:"Steve",
-    occupation:"Software Engineer",
-    age:21,
+    name: "Steve",
+    occupation: "Software Engineer",
+    age: 21,
 }
 cap.newProp = "Hello";
 delete cap.name;
@@ -17,9 +17,9 @@ let arrKeys = Object.keys(cap);
 // b. map
 const personMap = new Map();
 
-personMap.set('name','Jasbir');
-personMap.set('age',35);
-personMap.set('occupation',"Software Engineer");
+personMap.set('name', 'Jasbir');
+personMap.set('age', 35);
+personMap.set('occupation', "Software Engineer");
 
 personMap.delete('name');
 
@@ -86,9 +86,9 @@ preferenceMap.set(user1, preferenecsObj1);
 preferenceMap.set(user2, preferenecsObj2);
 preferenceMap.set(user3, preferenecsObj3);
 
-console.log(preferenceMap);
-console.log("first Users name", user1.name);
-console.log("first users preference", preferenceMap.get(user1));
+// console.log(preferenceMap);
+// console.log("first Users name", user1.name);
+// console.log("first users preference", preferenceMap.get(user1));
 
 /******************object format of implementaion************************/
 // const user1 = {
@@ -112,9 +112,9 @@ console.log("first users preference", preferenceMap.get(user1));
 // print(cap);
 // print(personMap);
 
-print("````````````````");
+// print("````````````````");
 let strMap = JSON.stringify(personMap);
-// console.log("strMap: " , strMap);
-print("````````````````");
-let strObj=JSON.stringify(cap);
-// print("strObj: " , strObj);
+console.log("strMap: ", strMap);
+// print("````````````````");
+let strObj = JSON.stringify(cap);
+// print("strObj: ", strObj);

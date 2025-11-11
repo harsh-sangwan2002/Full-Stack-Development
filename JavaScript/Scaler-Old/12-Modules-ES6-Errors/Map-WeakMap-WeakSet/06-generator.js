@@ -1,4 +1,4 @@
-function* fn(){
+function* fn() {
     console.log("Before first yield");
     console.log("Before first yield");
     console.log("Before first yield");
