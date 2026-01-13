@@ -17,6 +17,5 @@ obj = {
     isStudent: true,
 }
 
-obj[2] = false;
 console.log(obj, typeof obj);
 console.log(obj instanceof Object);
