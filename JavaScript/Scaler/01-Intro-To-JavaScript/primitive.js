@@ -1,27 +1,36 @@
-// number
+// // The keywords which are used to declare the variables are let, var and const
+// 1. number
 let a = 10;
-console.log(typeof a);
+// // to check the data-type of a variable, we use typeof operator
+console.log(typeof a); // number
+console.log(a); // 10
 
-// string
+// 2. string
 a = "String";
-console.log(a, typeof a);
+console.log(a);
+console.log(typeof a);
 
-// boolean
+// 3. boolean
 a = true;
+console.log(a);
 console.log(typeof a);
 
-// null 
+// 4. null 
 a = null;
-console.log(typeof a);
+console.log(a);
+console.log(typeof a); // object -> It's a bug in JS
 
-// undefined
+// 5. undefined
 let b;
+console.log(b);
 console.log(typeof b);
 
-// bigint
+// 6. bigint
 a = 1237862367786n;
+console.log(a);
 console.log(typeof a);
 
-// symbol
+// 7. symbol
 a = Symbol('123');
-console.log(a, typeof a);
+console.log(a);
+console.log(typeof a);

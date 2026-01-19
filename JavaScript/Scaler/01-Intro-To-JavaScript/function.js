@@ -1,4 +1,6 @@
+// 1. Function declaration
 function printName(firstName, lastName) {
+    // String interpolation -> To access a variable we can use ${}
     console.log(`My name is ${firstName} ${lastName}`);
 }
 

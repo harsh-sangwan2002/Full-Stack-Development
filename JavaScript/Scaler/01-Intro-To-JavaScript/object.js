@@ -1,3 +1,4 @@
+// Objects are defined inside {} using key:value pair
 // Keys will be converted to string
 let obj = {
     0: "0",
