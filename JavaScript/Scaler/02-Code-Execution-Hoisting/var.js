@@ -1,5 +1,4 @@
-// let vs var vs const
-// It is also hoisted
+// It is hoisted in Global scope
 console.log(x);
 var x = 10;
 console.log(x); // 10
