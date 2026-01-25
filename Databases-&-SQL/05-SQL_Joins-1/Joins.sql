@@ -23,4 +23,3 @@ join language l
 on f.language_id = l.language_id
 join actor a 
 on fa.actor_id  = a.actor_id;
-
