@@ -1,5 +1,7 @@
-/* YOUR QUERY GOES HERE
-   Example: SELECT * FROM departments; 
+/*
+Write a query to find the details of those employees who work in the departments with numbers included in 30, 40, or 90.
+
+Return the result ordered by employee_id in ascending order.
 */
 Select 
     employee_id,

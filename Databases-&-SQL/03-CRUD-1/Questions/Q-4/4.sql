@@ -1,5 +1,5 @@
-/* YOUR QUERY GOES HERE
-   Example: SELECT * FROM orderdetails; 
+/*
+Write a query to calculate the sub_total for each order line and return the columns orderNumber, productCode, and sub_total. 
 */
 Select 
     orderNumber, 
